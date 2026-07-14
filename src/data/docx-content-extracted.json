@@ -1,0 +1,747 @@
+{
+  "core-banking-solution": {
+    "capabilities": [
+      {
+        "name": "Core Banking Modernization",
+        "desc": "Core Banking Platform Assessment, Legacy Modernization & Transformation, Digital Core Banking Strategy, Core Banking Migration Planning, Cloud-Native Core Banking Architecture, API-First Banking Platform Design"
+      },
+      {
+        "name": "Deposits Management",
+        "desc": "Savings Accounts, Current Accounts, Fixed Deposits, Recurring Deposits, Term Deposits, Interest & Charges Management, Account Lifecycle Management"
+      },
+      {
+        "name": "Lending & Credit",
+        "desc": "Retail Lending, Corporate Lending, SME Lending, Loan Origination, Loan Servicing, Credit Decisioning, Collateral Management, Collections & Recovery"
+      },
+      {
+        "name": "Customer Management",
+        "desc": "Customer Information File (CIF), Customer 360, KYC & Customer Due Diligence, Relationship Management, Customer Onboarding, Risk Profiling"
+      },
+      {
+        "name": "Payments",
+        "desc": "Domestic Payments, Cross-Border Payments, Real-Time Payments, Payment Hub Integration, Standing Instructions, Direct Debits, Bill Payments"
+      },
+      {
+        "name": "Transaction Processing",
+        "desc": "Real-Time Transaction Processing, Multi-Currency Support, Multi-Entity Processing, Branch Operations, Teller Operations"
+      },
+      {
+        "name": "Cash Management",
+        "desc": ""
+      },
+      {
+        "name": "Product Factory",
+        "desc": "Product Configuration, Interest Rules, Pricing Engine, Fees & Charges, Campaign Management, Product Lifecycle Management"
+      },
+      {
+        "name": "Treasury & Liquidity",
+        "desc": ""
+      },
+      {
+        "name": "Liquidity Management",
+        "desc": "Cash Position Management, Treasury Integration, Interest Rate Management"
+      },
+      {
+        "name": "Financial Accounting",
+        "desc": "General Ledger, Sub Ledger, Financial Posting, Reconciliation, Financial Reporting, Period-End Processing"
+      },
+      {
+        "name": "Risk & Compliance",
+        "desc": "AML Integration, Fraud Detection, Regulatory Reporting, Basel Support, Audit Trail, Compliance Monitoring"
+      },
+      {
+        "name": "Digital Banking Integration",
+        "desc": "Mobile Banking, Internet Banking, Corporate Banking, ATM Integration, POS Integration, Open Banking APIs, Embedded Banking"
+      },
+      {
+        "name": "Enterprise Integration",
+        "desc": "API Gateway, Event-Driven Architecture, Microservices, Enterprise Service Bus, Kafka/Event Streaming, Third-Party Integration"
+      },
+      {
+        "name": "Data & Analytics",
+        "desc": "Enterprise Data Platform, Real-Time Analytics, Customer Analytics, Operational Dashboards, Regulatory Analytics, AI Insights"
+      },
+      {
+        "name": "AI & Intelligent Automation",
+        "desc": "AI Virtual Assistant, Intelligent Decision Engine, Predictive Analytics, Intelligent Workflow, Document Intelligence, GenAI Copilot, Agentic AI"
+      }
+    ],
+    "subitems": [
+      {
+        "name": "Security",
+        "desc": "Identity & Access Management, Role-Based Access Control, Multi-Factor Authentication, Encryption, Data Privacy, Zero Trust Architecture, Security Monitoring"
+      },
+      {
+        "name": "Consulting Services",
+        "desc": "Digital Banking Strategy, Core Banking Assessment, Business Process Consulting, Enterprise Architecture, Technology Roadmap, Target Operating Model"
+      },
+      {
+        "name": "Implementation Services",
+        "desc": "End-to-End Core Banking Implementation, Greenfield Deployments, Multi-Country Rollouts, Branch Rollouts, Agile Delivery, Program Management"
+      },
+      {
+        "name": "Migration Services",
+        "desc": "Legacy Core Banking Migration, Data Migration, Product Migration, Customer Migration, Account Migration, Parallel Run & Cutover, Post-Go-Live Support"
+      },
+      {
+        "name": "System Integration",
+        "desc": "API Development, Middleware Integration, Payment Integration, CRM Integration, Treasury Integration, Digital Channels Integration, Third-Party Ecosystem Integration"
+      },
+      {
+        "name": "Data Services",
+        "desc": "Enterprise Data Platform Implementation, Data Engineering, Data Quality, Data Governance, Master Data Management, Data Migration, Real-Time Data Integration"
+      },
+      {
+        "name": "AI & Analytics Services",
+        "desc": "AI Strategy, Agentic AI Implementation, Revenue Assurance, Intelligent Automation, Predictive Analytics, Executive Dashboards, Business Intelligence"
+      },
+      {
+        "name": "Testing Services",
+        "desc": "Functional Testing, Integration Testing, Performance Testing, Security Testing, Automation Testing, User Acceptance Testing, Production Readiness Assessment"
+      },
+      {
+        "name": "Managed Services",
+        "desc": "Application Support, L1/L2/L3 Support, Production Monitoring, Incident Management, Release Management, Performance Optimization, Service Desk"
+      },
+      {
+        "name": "Cloud & DevOps",
+        "desc": "Cloud Migration, Kubernetes, CI/CD Implementation, Infrastructure Automation, Platform Engineering, Observability, Disaster Recovery"
+      },
+      {
+        "name": "Security & Compliance",
+        "desc": "Security Assessment, Vulnerability Management, Identity Management, Compliance Assessment, Audit Support, Cyber Resilience"
+      },
+      {
+        "name": "Product Engineering",
+        "desc": "Banking Product Development, API Product Development, Microservices Development, Digital Banking Solutions, Platform Modernization, AI Product Engineering"
+      }
+    ],
+    "benefits": [
+      "AI-First Core Banking Modernization",
+      "Enterprise Data Platform (DataXentra)",
+      "AI Intelligence Platform (AgenNova)",
+      "AI Revenue Assurance Platform (RevNexure)",
+      "API-First & Cloud-Native Architecture",
+      "Event-Driven Microservices",
+      "Enterprise Security by Design",
+      "Banking Domain Expertise",
+      "End-to-End Digital Transformation Services",
+      "Accelerated Implementation Framework",
+      "Enterprise-Grade Scalability and Performance"
+    ]
+  },
+  "retail-banking": {
+    "capabilities": [
+      {
+        "name": "1. Customer & Relationship Management",
+        "desc": "Customer Onboarding, Digital KYC & eKYC, Customer Information Management (CIF), Customer 360° View, Relationship Management, Household Relationship Management, Customer Segmentation, Risk Profiling, Customer Lifecycle Management, Consent Management"
+      },
+      {
+        "name": "2. Deposit Management",
+        "desc": "Savings Accounts, Current Accounts, Salary Accounts, Fixed Deposits, Recurring Deposits, Term Deposits, Joint Accounts, Minor Accounts, Interest Calculation, Charges & Fee Management, Sweep Accounts, Dormant Account Management, Account Closure, Nomination Management"
+      },
+      {
+        "name": "3. Lending & Credit",
+        "desc": "Personal Loans, Home Loans, Vehicle Loans, Education Loans, Gold Loans, Consumer Durable Loans, Loan Origination, Loan Servicing, EMI Management, Interest & Penalty Calculation, Loan Restructuring, Collections Management, NPA Management, Loan Settlement"
+      },
+      {
+        "name": "4. Cards Management",
+        "desc": "Debit Cards, Credit Cards, Virtual Cards, Prepaid Cards, Card Issuance, PIN Management, Card Activation, Card Blocking, Card Replacement, Limit Management"
+      },
+      {
+        "name": "Rewards & Loyalty",
+        "desc": "Contactless Payments"
+      },
+      {
+        "name": "5. Payments & Transfers",
+        "desc": "Domestic Fund Transfer, International Transfer, RTGS, NEFT, IMPS, UPI, QR Payments, Bill Payments, Standing Instructions, Auto Debit, Merchant Payments, Utility Payments, Wallet Integration, Request to Pay"
+      },
+      {
+        "name": "6. Digital Banking",
+        "desc": "Internet Banking, Mobile Banking, Digital Wallet, Self-Service Portal, Digital Onboarding, Digital Document Upload, eStatements, Secure Messaging, Push Notifications, Chatbot, Voice Banking, Video Banking"
+      },
+      {
+        "name": "7. Branch Banking",
+        "desc": "Teller Operations, Cash Deposit, Cash Withdrawal, Cheque Deposit, Demand Draft, Passbook Printing, Safe Deposit Locker, Customer Service Requests, Branch Cash Management"
+      },
+      {
+        "name": "8. ATM & Self-Service",
+        "desc": "Cash Withdrawal, Cash Deposit, Mini Statement, Balance Inquiry, PIN Change, Cardless Cash Withdrawal, Card Activation, Cheque Deposit, QR Cash Withdrawal"
+      },
+      {
+        "name": "9. Customer Service",
+        "desc": "Service Requests, Complaint Management, Dispute Management, Case Management, Call Center Integration, Customer Feedback, SLA Management, Omnichannel Support"
+      },
+      {
+        "name": "10. Personal Financial Management (PFM)",
+        "desc": "Expense Analysis, Budget Planning, Savings Goals, Spending Insights, Financial Health Score, Personalized Recommendations, Subscription Tracking, Cash Flow Forecasting"
+      },
+      {
+        "name": "11. Product & Pricing",
+        "desc": "Product Catalog, Product Configuration, Interest Rate Management, Fee Management, Campaign Management, Promotional Offers, Bundled Products, Product Eligibility Rules"
+      },
+      {
+        "name": "12. Treasury & Liquidity (Retail)",
+        "desc": "Deposit Liquidity Monitoring, Interest Rate Management, Branch Cash Forecasting, Liquidity Position, Internal Fund Transfer Pricing"
+      },
+      {
+        "name": "13. Risk & Compliance",
+        "desc": "AML Monitoring, KYC Compliance, Sanctions Screening, Fraud Detection, Transaction Monitoring, Regulatory Reporting, FATCA & CRS, Risk Scoring, Audit Trail"
+      },
+      {
+        "name": "14. Security & Identity",
+        "desc": "Multi-Factor Authentication, Biometric Authentication, Identity Verification, Role-Based Access Control, Device Registration, Fraud Prevention, Session Management, Consent & Privacy Management"
+      },
+      {
+        "name": "15. Notifications & Communication",
+        "desc": "SMS Alerts, Email Alerts, Push Notifications, WhatsApp Notifications, Marketing Campaigns, Personalized Offers, Customer Surveys"
+      },
+      {
+        "name": "16. Analytics & AI",
+        "desc": "Customer 360 Analytics, Customer Segmentation, Churn Prediction, Cross-Sell & Upsell, Next Best Offer, Credit Risk Analytics, Fraud Analytics, Customer Lifetime Value, Behavioral Analytics, AI Relationship Manager, Generative AI Assistant"
+      },
+      {
+        "name": "17. Revenue Assurance",
+        "desc": "Interest Validation, Fee Validation, Product Pricing Validation, Revenue Leakage Detection, Transaction Reconciliation, GL Reconciliation, Exception Management, Recovery Management, Root Cause Analysis, Revenue Analytics"
+      },
+      {
+        "name": "18. Open Banking & Integration",
+        "desc": "API Gateway, Open Banking APIs, Fintech Integration, Payment Gateway Integration, CRM Integration, ERP Integration, Digital Identity Integration, Third-Party Services, Event Streaming"
+      },
+      {
+        "name": "19. Workflow & Operations",
+        "desc": "Business Process Management, Approval Workflow, Document Management, Task Management, Maker-Checker, SLA Monitoring, Exception Handling, Case Routing"
+      }
+    ],
+    "subitems": [],
+    "benefits": [
+      "A modern retail banking platform should provide:",
+      "AI-Driven Customer Experience",
+      "Omnichannel Banking",
+      "Cloud-Native Architecture",
+      "API-First Integration",
+      "Real-Time Transaction Processing",
+      "Intelligent Automation",
+      "Embedded Analytics",
+      "Regulatory Compliance",
+      "Enterprise-Grade Security",
+      "Hyper-Personalized Banking Services"
+    ]
+  },
+  "corporate-banking": {
+    "capabilities": [
+      {
+        "name": "Corporate Customer Management",
+        "desc": "Corporate Customer Onboarding, Corporate KYC & AML, Customer Information Management (CIF), Relationship Management, Group & Subsidiary Management, Customer 360° View, Credit Risk Profiling"
+      },
+      {
+        "name": "Account Management",
+        "desc": "Current Accounts, Business Savings Accounts, Multi-Currency Accounts, Escrow Accounts, Virtual Accounts, Cash Management Accounts, Interest & Fee Management, Account Lifecycle Management"
+      },
+      {
+        "name": "Corporate Payments",
+        "desc": "Domestic Payments, Cross-Border Payments, Bulk Payments, Payroll Processing, Supplier Payments"
+      },
+      {
+        "name": "Collections",
+        "desc": "Direct Debit, Standing Instructions, Real-Time Payments, Payment Factory"
+      },
+      {
+        "name": "Cash Management",
+        "desc": "Cash Position Reporting"
+      },
+      {
+        "name": "Liquidity Management",
+        "desc": "Cash Concentration, Notional Pooling, Physical Pooling, Sweeping, Cash Forecasting, Intraday Liquidity"
+      },
+      {
+        "name": "Receivables Management",
+        "desc": "Virtual Accounts, Lockbox Services, Electronic Collections, QR Collections, Direct Debit Collections, Reconciliation, Collection Analytics"
+      },
+      {
+        "name": "Liquidity Management",
+        "desc": "Liquidity Forecasting, Intercompany Funding, Investment Sweeps, Short-Term Investments, Working Capital Optimization"
+      },
+      {
+        "name": "Lending",
+        "desc": "Working Capital Finance, Term Loans, Overdrafts, Cash Credit, Revolving Credit Facilities, Syndicated Loans, Loan Origination, Loan Servicing, Covenant Monitoring"
+      },
+      {
+        "name": "Trade Finance",
+        "desc": "Letters of Credit, Bank Guarantees, Documentary Collections, Import Finance, Export Finance, Supply Chain Finance, Invoice Financing, Receivables Financing"
+      },
+      {
+        "name": "Treasury & Foreign Exchange",
+        "desc": "FX Spot, FX Forward, FX Swaps"
+      },
+      {
+        "name": "Money Market",
+        "desc": "Treasury Deposits, Hedging, Foreign Currency Accounts"
+      },
+      {
+        "name": "Digital Corporate Banking",
+        "desc": "Corporate Internet Banking, Mobile Banking, Host-to-Host Connectivity, API Banking, ERP Integration, SWIFT Connectivity, Self-Service Portal"
+      },
+      {
+        "name": "Merchant & Collections",
+        "desc": "Merchant Acquiring, POS Management, QR Payments, Payment Gateway, E-Commerce Payments, Settlement Management"
+      },
+      {
+        "name": "Risk & Compliance",
+        "desc": "AML Monitoring, Sanctions Screening, Fraud Detection, Transaction Monitoring, Regulatory Reporting, KYC Compliance, Audit Trail"
+      },
+      {
+        "name": "Workflow & Operations",
+        "desc": "Maker-Checker, Approval Workflows, Document Management, Case Management, SLA Management, Exception Handling"
+      },
+      {
+        "name": "Analytics & AI",
+        "desc": "Customer 360 Analytics, Cash Flow Analytics, Liquidity Analytics, Revenue Analytics, Credit Risk Analytics, Fraud Analytics, AI-Powered Insights, Predictive Analytics"
+      },
+      {
+        "name": "Security & Access",
+        "desc": "Role-Based Access Control, Multi-Factor Authentication, Digital Signatures, Entitlement Management, Identity & Access Management"
+      }
+    ],
+    "subitems": [],
+    "benefits": [
+      "Real-Time Cash Visibility",
+      "End-to-End Treasury Services",
+      "Integrated Trade Finance",
+      "Intelligent Liquidity Management",
+      "API-First Banking",
+      "AI-Driven Insights",
+      "Secure & Compliant Operations",
+      "Cloud-Native Architecture",
+      "Enterprise-Scale Processing"
+    ]
+  },
+  "commercial-banking": {
+    "capabilities": [
+      {
+        "name": "Customer & Relationship Management",
+        "desc": "Commercial Customer Onboarding, KYC & AML, Customer Information Management (CIF), Relationship Management, Customer 360° View, Group & Entity Management, Customer Segmentation"
+      },
+      {
+        "name": "Account Management",
+        "desc": "Business Current Accounts, Business Savings Accounts, Multi-Currency Accounts, Escrow Accounts, Virtual Accounts, Interest & Fee Management, Account Lifecycle Management"
+      },
+      {
+        "name": "Commercial Lending",
+        "desc": "Working Capital Loans, Term Loans, Overdraft Facilities, Cash Credit, Revolving Credit Facilities, Commercial Mortgages, Equipment & Asset Finance, Commercial Vehicle Finance, Invoice Financing, Factoring, Loan Origination, Loan Servicing, Loan Restructuring, Collections & Recovery"
+      },
+      {
+        "name": "Payments & Collections",
+        "desc": "Domestic Payments, Cross-Border Payments, Bulk Payments, Payroll Processing, Supplier Payments, Customer Collections, Direct Debit, Standing Instructions, Real-Time Payments, QR & Merchant Collections"
+      },
+      {
+        "name": "Cash Management",
+        "desc": "Cash Position Reporting, Cash Concentration"
+      },
+      {
+        "name": "Liquidity Management",
+        "desc": "Sweeping, Notional Pooling, Physical Pooling, Cash Forecasting"
+      },
+      {
+        "name": "Trade & Supply Chain Finance",
+        "desc": "Letters of Credit, Bank Guarantees, Documentary Collections, Import Finance, Export Finance, Supply Chain Finance, Receivables Finance, Distributor Finance"
+      },
+      {
+        "name": "Treasury & Foreign Exchange",
+        "desc": "Foreign Exchange Services, FX Spot & Forward, Hedging Solutions, Treasury Deposits, Money Market Services"
+      },
+      {
+        "name": "Merchant Services",
+        "desc": "POS Management, Payment Gateway, QR Payments, Merchant Settlement, E-Commerce Payments"
+      },
+      {
+        "name": "Digital Commercial Banking",
+        "desc": "Internet Banking, Mobile Banking, API Banking, Host-to-Host Connectivity, ERP Integration, Self-Service Portal, Digital Document Management"
+      },
+      {
+        "name": "Risk & Compliance",
+        "desc": "AML Monitoring, Sanctions Screening, Fraud Detection, Credit Risk Assessment, Transaction Monitoring, Regulatory Reporting, Audit Trail"
+      },
+      {
+        "name": "Workflow & Operations",
+        "desc": "Maker-Checker, Approval Workflows, Document Management, Case Management, Exception Handling, SLA Management"
+      },
+      {
+        "name": "Analytics & AI",
+        "desc": "Customer 360 Analytics, Cash Flow Analytics, Credit Risk Analytics, Portfolio Analytics, Fraud Analytics, Profitability Analysis, AI-Powered Relationship Insights, Predictive Analytics"
+      },
+      {
+        "name": "Security & Access Management",
+        "desc": "Multi-Factor Authentication, Role-Based Access Control, Digital Signatures, Identity & Access Management, Entitlement Management"
+      }
+    ],
+    "subitems": [],
+    "benefits": [
+      "Accelerated loan processing",
+      "Improved working capital management",
+      "Integrated trade and cash management"
+    ]
+  },
+  "investment-banking": {
+    "capabilities": [
+      {
+        "name": "Client & Relationship Management",
+        "desc": "Institutional Client Onboarding, Corporate Client Onboarding, KYC & AML, Customer Information Management (CIF), Relationship Management, Client 360° View, Client Segmentation"
+      },
+      {
+        "name": "Capital Markets",
+        "desc": "Equity Capital Markets (ECM), Debt Capital Markets (DCM), Initial Public Offerings (IPO), Follow-on Public Offerings (FPO), Private Placements, Rights Issues, Convertible Securities, Structured Products, Underwriting, Syndication"
+      },
+      {
+        "name": "Mergers & Acquisitions (M&A)",
+        "desc": "Buy-Side Advisory, Sell-Side Advisory, Due Diligence, Valuation Services, Deal Structuring, Transaction Advisory, Deal Execution, Post-Merger Integration"
+      },
+      {
+        "name": "Corporate Finance",
+        "desc": "Capital Raising, Financial Advisory, Project Finance, Infrastructure Finance, Leveraged Finance, Acquisition Finance, Corporate Restructuring, Debt Advisory"
+      },
+      {
+        "name": "Trading & Markets",
+        "desc": "Equities Trading, Fixed Income Trading, Foreign Exchange (FX) Trading, Commodities Trading, Derivatives Trading, Money Market Trading, Securities Lending, Prime Brokerage"
+      },
+      {
+        "name": "Treasury Services",
+        "desc": ""
+      },
+      {
+        "name": "Liquidity Management",
+        "desc": "Funding Management"
+      },
+      {
+        "name": "Cash Management",
+        "desc": "Collateral Management, Asset Liability Management (ALM)"
+      },
+      {
+        "name": "Investment Portfolio Management",
+        "desc": ""
+      },
+      {
+        "name": "Securities Services",
+        "desc": "Securities Settlement, Custody Services, Clearing Services, Asset Servicing, Corporate Actions Processing, Securities Reconciliation"
+      },
+      {
+        "name": "Wealth & Asset Management",
+        "desc": ""
+      },
+      {
+        "name": "Portfolio Management",
+        "desc": "Investment Advisory, Discretionary Portfolio Management, Alternative Investments, Mutual Funds, Exchange Traded Funds (ETFs), Pension & Retirement Solutions"
+      },
+      {
+        "name": "Risk Management",
+        "desc": "Market Risk Management, Credit Risk Management, Liquidity Risk Management, Counterparty Risk Management, Operational Risk Management, Stress Testing, Value at Risk (VaR), Limit Management"
+      },
+      {
+        "name": "Compliance & Regulatory",
+        "desc": "AML Monitoring, KYC Compliance, Sanctions Screening, Trade Surveillance, Regulatory Reporting, Best Execution Monitoring, Insider Trading Surveillance, Audit & Compliance"
+      },
+      {
+        "name": "Digital Investment Banking",
+        "desc": "Electronic Trading Platform, Digital Client Portal, Investment Research Portal, API Integration, Real-Time Market Data, Mobile Trading, Digital Document Management"
+      },
+      {
+        "name": "Research & Analytics",
+        "desc": "Equity Research, Fixed Income Research, Economic Research, Industry Research, Quantitative Analytics, Market Intelligence, Investment Performance Analytics, ESG Analytics"
+      },
+      {
+        "name": "AI & Intelligent Automation",
+        "desc": "AI Investment Insights, Algorithmic Trading, Predictive Market Analytics, Portfolio Optimization, Intelligent Deal Sourcing, Automated Due Diligence, Fraud Detection, Generative AI Research Assistant"
+      },
+      {
+        "name": "Security & Access Management",
+        "desc": "Multi-Factor Authentication, Role-Based Access Control, Identity & Access Management, Digital Signatures, Entitlement Management, Data Encryption"
+      }
+    ],
+    "subitems": [],
+    "benefits": [
+      "End-to-end capital markets and advisory services",
+      "Faster deal execution and settlement",
+      "Intelligent portfolio and investment management",
+      "AI-powered market insights and trading analytics",
+      "Integrated treasury, custody, and securities services",
+      "Regulatory compliance and risk management",
+      "Scalable, secure, and cloud-native investment banking platform"
+    ]
+  },
+  "wealth-management": {
+    "capabilities": [
+      {
+        "name": "Client & Relationship Management",
+        "desc": "Client Onboarding, Digital KYC & AML, Customer Information Management (CIF), Client 360° View, Relationship Management, Family & Household Management, Client Segmentation, Financial Goal Profiling, Risk Profiling, Suitability Assessment"
+      },
+      {
+        "name": "Financial Planning",
+        "desc": "Goal-Based Financial Planning, Retirement Planning, Education Planning, Estate Planning, Tax Planning, Insurance Planning, Cash Flow Planning, Wealth Preservation, Financial Health Assessment"
+      },
+      {
+        "name": "Portfolio Management",
+        "desc": "Portfolio Construction, Portfolio Rebalancing, Asset Allocation, Investment Policy Management, Model Portfolio Management, Portfolio Performance Tracking, Benchmarking, Portfolio Risk Analysis"
+      },
+      {
+        "name": "Investment Management",
+        "desc": "Equities"
+      },
+      {
+        "name": "Fixed Income",
+        "desc": "Mutual Funds, Exchange Traded Funds (ETFs), Bonds, Structured Products, Alternative Investments, Private Equity, Hedge Funds, Real Estate Investments, Commodities, Multi-Asset Investments"
+      },
+      {
+        "name": "Advisory Services",
+        "desc": "Investment Advisory, Discretionary Portfolio Management, Non-Discretionary Advisory, Robo Advisory, ESG Investing, Thematic Investing, Tax-Efficient Investing, Succession Planning, Trading & Execution, Order Management, Trade Execution, Securities Settlement, Corporate Actions Processing, Dividend Processing, Investment Switching"
+      },
+      {
+        "name": "Banking Services",
+        "desc": "Wealth Accounts, Multi-Currency Accounts"
+      },
+      {
+        "name": "Cash Management",
+        "desc": "Deposits, Foreign Exchange, Credit Against Securities, Margin Lending"
+      },
+      {
+        "name": "Trust & Estate Services",
+        "desc": "Trust Administration, Estate Administration, Will & Succession Planning, Beneficiary Management, Family Office Services, Philanthropy Advisory"
+      },
+      {
+        "name": "Risk & Compliance",
+        "desc": "AML Monitoring, KYC Compliance, Suitability Monitoring, Portfolio Risk Monitoring, Regulatory Reporting, Audit Trail, Fraud Detection"
+      },
+      {
+        "name": "Digital Wealth Management",
+        "desc": "Client Portal, Mobile Wealth App, Digital Onboarding, eStatements, Secure Messaging, Video Advisory, Document Management, Digital Signatures"
+      },
+      {
+        "name": "Analytics & AI",
+        "desc": "Client 360 Analytics, Portfolio Analytics, Performance Attribution, Investment Insights, Risk Analytics, Predictive Portfolio Analysis, AI-Powered Investment Recommendations, Next Best Action, Personalized Investment Insights, Generative AI Wealth Assistant"
+      },
+      {
+        "name": "Reporting",
+        "desc": "Portfolio Valuation, Performance Reports, Capital Gains Reporting, Tax Reports, Regulatory Reports, Consolidated Wealth Statements"
+      },
+      {
+        "name": "Security & Access Management",
+        "desc": "Multi-Factor Authentication, Role-Based Access Control, Identity & Access Management, Consent Management, Data Encryption"
+      }
+    ],
+    "subitems": [],
+    "benefits": [
+      "Personalized, goal-based wealth management",
+      "AI-driven investment advice and portfolio optimization",
+      "Comprehensive portfolio and performance analytics",
+      "Seamless omnichannel client experience",
+      "Integrated banking, investment, and estate planning",
+      "Regulatory compliance with robust risk controls",
+      "Scalable, secure, and cloud-native wealth management platform"
+    ]
+  },
+  "cards-payments": {
+    "capabilities": [
+      {
+        "name": "Card Product Management",
+        "desc": "Debit Cards, Credit Cards, Prepaid Cards, Virtual Cards, Commercial Cards, Corporate Cards, Co-Branded Cards, Contactless Cards, Multi-Currency Cards"
+      },
+      {
+        "name": "Card Issuance & Lifecycle",
+        "desc": "Card Issuance, Instant Card Issuance, Card Personalization, Card Activation, PIN Generation & Management, Card Renewal, Card Replacement, Card Blocking & Unblocking, Card Closure"
+      },
+      {
+        "name": "Transaction Processing",
+        "desc": "Authorization, Clearing, Settlement, Transaction Routing, Transaction Reversal, Chargeback Management, Dispute Management, Reconciliation"
+      },
+      {
+        "name": "Payment Processing",
+        "desc": "POS Payments, ATM Transactions, E-Commerce Payments, Mobile Payments, QR Code Payments, Contactless Payments, Wallet Payments, Tokenized Payments, Recurring Payments, Bill Payments, Peer-to-Peer (P2P) Payments, Cross-Border Payments, Merchant Management, Merchant Onboarding, Merchant Acquiring, Merchant Settlement, Merchant Pricing, Merchant Risk Management, Merchant Analytics"
+      },
+      {
+        "name": "Switching & Network Integration",
+        "desc": "Card Switch, ATM Switch, Payment Switch, Network Routing, Multi-Network Support, Scheme Integration, ISO 8583 Messaging"
+      },
+      {
+        "name": "Card Controls",
+        "desc": "Transaction Limits, Spend Controls, Channel Controls, Geographic Controls, Merchant Category Controls, Temporary Card Lock, Card Usage Preferences"
+      },
+      {
+        "name": "Rewards & Loyalty",
+        "desc": "Rewards Management, Cashback Programs, Loyalty Points, Offers & Promotions, Partner Rewards, Redemption Management"
+      },
+      {
+        "name": "Fraud & Risk Management",
+        "desc": "Real-Time Fraud Detection, Transaction Monitoring, AML Monitoring, Sanctions Screening, Velocity Checks, Risk Scoring, 3D Secure Authentication, Tokenization, PCI DSS Compliance"
+      },
+      {
+        "name": "Digital Channels",
+        "desc": "Mobile Card Management, Internet Banking Integration, Digital Wallet Integration, Self-Service Portal, Push Notifications, SMS & Email Alerts"
+      },
+      {
+        "name": "Collections & Credit (Credit Cards)",
+        "desc": "Credit Limit Management, Billing & Statements, EMI Conversion, Interest & Fee Calculation, Minimum Payment Calculation, Delinquency Management, Collections & Recovery"
+      },
+      {
+        "name": "Analytics & AI",
+        "desc": "Customer Spend Analytics, Transaction Analytics, Merchant Analytics, Fraud Analytics, Revenue Analytics, Customer Segmentation, AI-Powered Fraud Detection, Personalized Offers, Predictive Spend Analysis, Next Best Offer"
+      },
+      {
+        "name": "Compliance & Security",
+        "desc": "PCI DSS Compliance, EMV Compliance, Tokenization, Strong Customer Authentication (SCA), Multi-Factor Authentication (MFA), Role-Based Access Control, Audit Trail, Regulatory Reporting"
+      }
+    ],
+    "subitems": [],
+    "benefits": [
+      "End-to-end card lifecycle management",
+      "Real-time payment authorization, clearing, and settlement",
+      "Secure omnichannel payment processing",
+      "AI-powered fraud prevention and risk management",
+      "Intelligent rewards and customer engagement",
+      "Integrated merchant acquiring and payment acceptance",
+      "Cloud-native, API-first, and highly scalable cards & payments platform"
+    ]
+  },
+  "transaction-banking": {
+    "capabilities": [
+      {
+        "name": "Client & Relationship Management",
+        "desc": "Corporate Customer Onboarding, KYC & AML, Customer Information Management (CIF), Customer 360° View, Relationship Management, Corporate Hierarchy Management, Multi-Entity Management"
+      },
+      {
+        "name": "Account Management",
+        "desc": "Current Accounts, Multi-Currency Accounts, Virtual Accounts, Escrow Accounts, Interest & Fee Management, Account Lifecycle Management, Balance & Statement Services"
+      },
+      {
+        "name": "Payments",
+        "desc": "Domestic Payments, Cross-Border Payments, Real-Time Payments, Bulk Payments, Payroll Processing, Supplier Payments, Tax Payments, Utility Payments, Standing Instructions, Direct Debits, Payment Factory"
+      },
+      {
+        "name": "Collections",
+        "desc": ""
+      },
+      {
+        "name": "Receivables Management",
+        "desc": "Virtual Account Collections, QR Code Collections, Direct Debit Collections, Lockbox Services, Electronic Bill Presentment, Collection Reconciliation"
+      },
+      {
+        "name": "Cash Management",
+        "desc": "Cash Position Reporting, Cash Concentration"
+      },
+      {
+        "name": "Liquidity Management",
+        "desc": "Cash Forecasting, Physical Pooling, Notional Pooling, Automated Sweeping, Working Capital Optimization"
+      },
+      {
+        "name": "Liquidity Management",
+        "desc": "Intraday Liquidity, Intercompany Funding, Investment Sweeps, Short-Term Investments, Liquidity Forecasting, Treasury Integration"
+      },
+      {
+        "name": "Trade Finance",
+        "desc": "Letters of Credit, Bank Guarantees, Documentary Collections, Import Finance, Export Finance, Supply Chain Finance, Receivables Finance, Payables Finance"
+      },
+      {
+        "name": "Treasury & Foreign Exchange",
+        "desc": "Foreign Exchange Services, FX Spot & Forward, Hedging Solutions, Treasury Deposits, Multi-Currency Settlement, Digital Transaction Banking, Corporate Internet Banking, Mobile Banking, API Banking, Host-to-Host Connectivity, ERP Integration, SWIFT Connectivity, Open Banking APIs, Self-Service Portal"
+      },
+      {
+        "name": "Workflow & Operations",
+        "desc": "Maker-Checker, Approval Workflows, Payment Authorization, Exception Management, Case Management, SLA Management, Document Management"
+      },
+      {
+        "name": "Risk & Compliance",
+        "desc": "AML Monitoring, Sanctions Screening, Fraud Detection, Transaction Monitoring, Regulatory Reporting, KYC Compliance, Audit Trail"
+      },
+      {
+        "name": "Analytics & AI",
+        "desc": "Cash Flow Analytics, Liquidity Analytics, Payment Analytics, Collection Analytics, Transaction Analytics, Customer Profitability Analytics, AI-Powered Cash Forecasting, Predictive Liquidity Management, Intelligent Payment Routing, Anomaly Detection"
+      },
+      {
+        "name": "Security & Access Management",
+        "desc": "Multi-Factor Authentication, Role-Based Access Control, Identity & Access Management, Digital Signatures, Entitlement Management, Data Encryption"
+      }
+    ],
+    "subitems": [],
+    "benefits": [
+      "End-to-end transaction banking services",
+      "Real-time payments and collections",
+      "Optimized cash and liquidity management",
+      "Integrated trade finance and treasury services",
+      "API-first connectivity with ERP and enterprise systems",
+      "AI-driven cash flow insights and forecasting",
+      "Secure, compliant, and cloud-native transaction banking platform"
+    ]
+  },
+  "treasury-capital-markets": {
+    "capabilities": [
+      {
+        "name": "Treasury Management",
+        "desc": ""
+      },
+      {
+        "name": "Liquidity Management",
+        "desc": ""
+      },
+      {
+        "name": "Cash Management",
+        "desc": "Funding Management, Asset & Liability Management (ALM), Balance Sheet Management, Interest Rate Risk Management, Liquidity Risk Management, Capital Planning, Internal Funds Transfer Pricing (FTP)"
+      },
+      {
+        "name": "Money Market",
+        "desc": "Call Money, Notice Money, Term Money, Interbank Borrowing, Interbank Lending, Certificates of Deposit (CD), Commercial Paper (CP), Repurchase Agreements (Repo), Reverse Repo"
+      },
+      {
+        "name": "Foreign Exchange (FX)",
+        "desc": "Spot Trading, Forward Contracts, FX Swaps, Currency Options, Cross-Currency Swaps, FX Position Management, FX Exposure Management, FX Settlement"
+      },
+      {
+        "name": "Fixed Income",
+        "desc": "Government Securities, Treasury Bills, Corporate Bonds, Municipal Bonds, Commercial Paper, Certificates of Deposit, Bond Trading, Bond Portfolio Management"
+      },
+      {
+        "name": "Derivatives",
+        "desc": "Interest Rate Swaps, Currency Swaps, Credit Derivatives, Equity Derivatives, Commodity Derivatives, Futures, Options, Structured Derivatives"
+      },
+      {
+        "name": "Securities Trading",
+        "desc": "Equities Trading, Fixed Income Trading, FX Trading, Commodities Trading, Exchange-Traded Securities, Over-the-Counter (OTC) Trading, Electronic Trading"
+      },
+      {
+        "name": "Investment Portfolio Management",
+        "desc": "Portfolio Construction, Asset Allocation, Investment Strategy, Portfolio Rebalancing, Performance Measurement, Investment Limits Monitoring, Benchmarking"
+      },
+      {
+        "name": "Capital Markets",
+        "desc": "Equity Capital Markets (ECM), Debt Capital Markets (DCM), IPO Management, Bond Issuance, Syndication, Underwriting, Structured Finance, Securitization"
+      },
+      {
+        "name": "Risk Management",
+        "desc": "Market Risk Management, Credit Risk Management, Counterparty Risk Management, Liquidity Risk Management, Operational Risk Management, Value at Risk (VaR), Stress Testing, Limit Management, Scenario Analysis"
+      },
+      {
+        "name": "Settlement & Custody",
+        "desc": "Trade Capture, Trade Confirmation, Clearing, Settlement, Custody Services, Corporate Actions Processing, Securities Reconciliation, Collateral Management"
+      },
+      {
+        "name": "Compliance & Regulatory",
+        "desc": "KYC & AML, Sanctions Screening, Trade Surveillance, Regulatory Reporting, Basel Compliance, IFRS Accounting, Audit Trail, Best Execution Monitoring, Digital Treasury, Treasury Workstation, Electronic Trading Platform, API Integration, SWIFT Connectivity, Market Data Integration, Straight-Through Processing (STP), Real-Time Position Monitoring"
+      },
+      {
+        "name": "Analytics & AI",
+        "desc": "Market Analytics, Portfolio Analytics, Liquidity Analytics, Risk Analytics, Profitability Analytics, AI-Powered Trading Insights, Predictive Market Analytics, Intelligent Hedging Recommendations, Algorithmic Trading, Anomaly Detection"
+      },
+      {
+        "name": "Security & Access Management",
+        "desc": "Multi-Factor Authentication, Role-Based Access Control, Identity & Access Management, Digital Signatures, Data Encryption, Entitlement Management"
+      }
+    ],
+    "subitems": [],
+    "benefits": [
+      "Enterprise-wide treasury and capital markets operations",
+      "Real-time liquidity, funding, and balance sheet optimization",
+      "End-to-end trading, settlement, and custody processing",
+      "Advanced market and risk analytics with AI-driven insights",
+      "Integrated treasury, investment, and capital markets platform",
+      "Regulatory compliance with robust governance and controls",
+      "Cloud-native, API-first, secure, and highly scalable architecture"
+    ]
+  }
+}

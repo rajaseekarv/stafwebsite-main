@@ -1,0 +1,711 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');*/
+@import url("https://use.typekit.net/mkv0nuz.css");
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Stafróf Intelligence Corporation — design tokens
+ * Cinematic enterprise direction: cosmic dark surfaces, electric blue/violet brand.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand */
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-brand-purple: var(--brand-purple);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-muted-2: var(--muted-2);
+
+  /* Cosmic dark palette */
+  --color-cosmic: var(--cosmic);
+  --color-cosmic-2: var(--cosmic-2);
+  --color-cosmic-3: var(--cosmic-3);
+  --color-cosmic-line: var(--cosmic-line);
+
+  --font-display: "Aptos", "Poppins", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Aptos", "Poppins", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in: fade-in 0.6s ease-out both;
+  --animate-shimmer: shimmer 8s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Brand tokens — exact hex from nearform.com */
+  --ink: #0b112c;
+  --ink-2: #1e243b;
+  --brand: #00e676;       /* Nearform Green */
+  --brand-2: #00f07c;     /* Bright Green */
+  --brand-purple: #8644ff; /* Nearform Purple */
+  --surface: #F4F5F7;
+  --surface-2: #ECEEF2;
+  --muted-2: #8A8F9C;
+  --brand-dark-blue: #011c49;
+  --main-menu-color: #eeeeee;
+  --full-black: { #000000; }
+
+  /* "Cosmic" dark sections — Nearform dark navy theme */
+  --cosmic: #0b112c;
+  --cosmic-2: #131b3d;
+  --cosmic-3: #1d2752;
+  --cosmic-line: rgba(0, 230, 118, 0.2);
+
+  /* shadcn semantic */
+  --background: oklch(1 0 0);
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --primary: var(--brand);
+  --primary-foreground: oklch(0.05 0 0); /* dark text on green button */
+  --secondary: var(--surface);
+  --secondary-foreground: var(--ink);
+  --muted: var(--surface);
+  --muted-foreground: oklch(0.45 0.012 260);
+  --accent: var(--surface);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.58 0.24 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0.005 260);
+  --input: oklch(0.92 0.005 260);
+  --ring: var(--brand);
+}
+
+.dark {
+  --background: var(--cosmic);
+  --foreground: oklch(0.97 0 0);
+  --card: var(--cosmic-2);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: var(--cosmic-2);
+  --popover-foreground: oklch(0.97 0 0);
+  --primary: var(--brand);
+  --primary-foreground: var(--cosmic);
+  --secondary: var(--cosmic-3);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: var(--cosmic-3);
+  --muted-foreground: oklch(0.70 0.012 260);
+  --accent: var(--cosmic-3);
+  --accent-foreground: oklch(0.97 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: var(--brand);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-ink-2);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.65;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: white;
+  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes shimmer {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(0.85); }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+@utility eyebrow-dark {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: oklch(0.78 0.15 263);
+}
+
+@utility hero-gradient {
+  background:
+    radial-gradient(800px 500px at 15% 10%, oklch(0.55 0.22 263 / 0.10), transparent 60%),
+    radial-gradient(700px 500px at 90% 20%, oklch(0.51 0.25 295 / 0.10), transparent 60%),
+    linear-gradient(180deg, oklch(0.99 0 0) 0%, oklch(0.97 0.003 260) 100%);
+}
+
+/* Cinematic full-bleed hero — used on every section landing */
+@utility hero-cosmic {
+  position: relative;
+  background-color: var(--color-cosmic);
+  color: oklch(0.97 0 0);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+@utility cosmic-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(70% 60% at 20% 15%, rgba(77, 130, 255, 0.55), transparent 65%),
+    radial-gradient(60% 55% at 85% 80%, rgba(122, 43, 245, 0.40), transparent 70%),
+    radial-gradient(50% 45% at 60% 45%, rgba(120, 180, 255, 0.30), transparent 70%),
+    linear-gradient(180deg, rgba(15, 30, 70, 0.30) 0%, rgba(15, 25, 60, 0.55) 70%, rgba(10, 20, 50, 0.75) 100%);
+  pointer-events: none;
+}
+
+@utility cosmic-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  pointer-events: none;
+}
+
+/* Twinkling stars + drifting nebula particles (CSS-only) */
+@utility cosmic-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, #ffffff 50%, transparent 100%),
+    radial-gradient(1px 1px at 28% 62%, rgba(122,43,245,0.9) 50%, transparent 100%),
+    radial-gradient(2px 2px at 44% 30%, #ffffff 50%, transparent 100%),
+    radial-gradient(1px 1px at 60% 78%, rgba(77,130,255,0.9) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 72% 22%, #ffffff 50%, transparent 100%),
+    radial-gradient(1px 1px at 85% 55%, rgba(30,91,255,0.9) 50%, transparent 100%),
+    radial-gradient(2px 2px at 92% 88%, #ffffff 50%, transparent 100%),
+    radial-gradient(1px 1px at 18% 88%, rgba(122,43,245,0.9) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 38% 92%, #ffffff 50%, transparent 100%),
+    radial-gradient(1px 1px at 55% 12%, rgba(77,130,255,0.9) 50%, transparent 100%);
+  background-repeat: no-repeat;
+  animation: twinkle 5s ease-in-out infinite;
+}
+
+@utility cosmic-drift {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  background:
+    radial-gradient(40% 30% at 30% 40%, rgba(30, 91, 255, 0.35), transparent 70%),
+    radial-gradient(35% 28% at 70% 60%, rgba(122, 43, 245, 0.32), transparent 70%);
+  filter: blur(40px);
+  animation: drift 22s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.85; }
+  50%      { opacity: 0.45; }
+}
+@keyframes drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(3%, -2%, 0) scale(1.08); }
+  100% { transform: translate3d(-2%, 3%, 0) scale(1.04); }
+}
+
+@utility chip-cosmic {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid oklch(1 0 0 / 0.12);
+  background: oklch(1 0 0 / 0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: oklch(0.92 0 0);
+}
+
+@utility pulse-dot {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 9999px;
+  background: var(--color-brand-2);
+  box-shadow: 0 0 12px oklch(0.72 0.18 263 / 0.8);
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+@utility text-gradient-cosmic {
+  background: linear-gradient(110deg, oklch(0.95 0 0) 0%, oklch(0.72 0.18 263) 45%, oklch(0.65 0.25 295) 75%, oklch(0.95 0 0) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 10s linear infinite;
+}
+
+@utility text-gradient-brand {
+  background: linear-gradient(90deg, var(--color-brand) 0%, var(--color-brand-purple) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Card surfaces on dark — used by image-led product/platform tiles */
+@utility card-cosmic {
+  position: relative;
+  background:
+    linear-gradient(180deg, oklch(0.18 0.045 270 / 0.65) 0%, oklch(0.13 0.035 270 / 0.85) 100%);
+  border: 1px solid oklch(1 0 0 / 0.08);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 300ms ease,
+              box-shadow 500ms ease;
+}
+
+@utility card-cosmic-hover {
+  &:hover {
+    transform: translateY(-6px);
+    border-color: oklch(0.72 0.18 263 / 0.45);
+    box-shadow:
+      0 30px 60px -20px oklch(0.09 0.025 270 / 0.8),
+      0 0 0 1px oklch(0.72 0.18 263 / 0.25),
+      0 0 40px -8px oklch(0.55 0.22 263 / 0.35);
+  }
+}
+
+/* Premium sliding card animation inspired by Orion Innovation */
+@utility card-slide-hover {
+  position: relative;
+  overflow: hidden;
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 300ms ease,
+              box-shadow 400ms ease;
+  
+  & .slide-content {
+    transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  & .slide-reveal {
+    opacity: 0.7;
+    transform: translateY(12px);
+    transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+                color 200ms ease;
+  }
+  
+  &:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-brand);
+    box-shadow: 
+      0 20px 40px -15px oklch(0.55 0.22 263 / 0.25),
+      0 0 0 1px oklch(0.55 0.22 263 / 0.15);
+    
+    & .slide-content {
+      transform: translateY(-8px);
+    }
+    
+    & .slide-reveal {
+      opacity: 1;
+      transform: translateY(0);
+      color: var(--color-brand);
+    }
+  }
+}
+
+/* Glowing button used on dark surfaces */
+@utility btn-glow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.65rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-purple) 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  box-shadow:
+    0 10px 30px -8px oklch(0.55 0.22 263 / 0.55),
+    inset 0 1px 0 oklch(1 0 0 / 0.2);
+  transition: transform 300ms ease, box-shadow 300ms ease, filter 300ms ease;
+}
+@utility btn-glow-hover {
+  &:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow:
+      0 18px 40px -10px oklch(0.55 0.22 263 / 0.7),
+      0 0 30px -5px oklch(0.55 0.25 295 / 0.5),
+      inset 0 1px 0 oklch(1 0 0 / 0.25);
+  }
+}
+
+@utility btn-ghost-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.92rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid oklch(1 0 0 / 0.18);
+  background: oklch(1 0 0 / 0.04);
+  backdrop-filter: blur(8px);
+  color: white;
+  font-weight: 500;
+  font-size: 0.92rem;
+  transition: background 250ms ease, border-color 250ms ease, transform 250ms ease;
+}
+@utility btn-ghost-dark-hover {
+  &:hover {
+    background: oklch(1 0 0 / 0.10);
+    border-color: oklch(1 0 0 / 0.3);
+    transform: translateY(-1px);
+  }
+}
+
+/* Reveal-on-scroll: opacity 0 -> 1 + slight lift. Activated by IntersectionObserver
+   adding the `is-visible` class. */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+@utility reveal-left {
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+@utility reveal-right {
+  opacity: 0;
+  transform: translateX(35px);
+  transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+@utility is-visible {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* Underline grow for text links */
+@utility link-underline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+@utility link-underline-hover {
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* Image-led tile media: Ken-Burns zoom + brand gradient veil on hover */
+@utility tile-media {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, transparent 45%, oklch(0.12 0.04 270 / 0.55) 100%);
+    transition: opacity 600ms ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  & > img {
+    transition: transform 1200ms cubic-bezier(0.16, 1, 0.3, 1), filter 600ms ease;
+    will-change: transform;
+    filter: saturate(1.2) brightness(1.05);
+  }
+}
+@utility tile-media-hover {
+  &:hover .tile-media > img,
+  &:hover > .tile-media > img {
+    transform: scale(1.08);
+    filter: saturate(1.15) brightness(1.05);
+  }
+}
+
+/* Spotlight that follows hover (pure CSS via radial gradient) */
+@utility card-spotlight {
+  position: relative;
+  isolation: isolate;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: radial-gradient(360px 180px at var(--mx, 50%) var(--my, 0%), oklch(0.55 0.22 263 / 0.18), transparent 60%);
+    opacity: 0;
+    transition: opacity 400ms ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+  &:hover::before { opacity: 1; }
+}
+
+/* Floating orbs decoration used inside cosmic heroes */
+@utility cosmic-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.55;
+  pointer-events: none;
+  animation: float 9s ease-in-out infinite;
+}
+
+/* Marquee row for trust/coverage strips */
+@utility marquee-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Reduced-motion: respect OS preference or user toggle.
+   Disables animations, transitions, and scroll-triggered reveals so the
+   site stays readable and performant without motion. */
+@media (prefers-reduced-motion: reduce) {
+  html:not(.motion-ok) *,
+  html:not(.motion-ok) *::before,
+  html:not(.motion-ok) *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  html:not(.motion-ok) .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+html.reduce-motion .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+/* Animated background waves and glow effects for platforms section */
+@keyframes wave-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glow-pulse {
+  0% { opacity: 0.6; filter: blur(45px); }
+  50% { opacity: 0.95; filter: blur(65px); }
+  100% { opacity: 0.6; filter: blur(45px); }
+}
+
+@utility platform-glow-blue {
+  background: radial-gradient(circle, rgba(0, 132, 255, 0.45) 0%, rgba(0, 230, 118, 0.2) 50%, transparent 70%);
+  animation: glow-pulse 8s ease-in-out infinite;
+}
+
+@utility platform-glow-orange {
+  background: radial-gradient(circle, rgba(255, 126, 0, 0.45) 0%, rgba(255, 60, 0, 0.15) 55%, transparent 70%);
+  animation: glow-pulse 8s ease-in-out infinite alternate;
+}
+
+@utility animated-gradient-bg {
+  background: linear-gradient(-45deg, #0b112c, #060b24, #131b3d, #0b112c);
+  background-size: 400% 400%;
+  animation: wave-bg 15s ease infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slow-zoom {
+  from { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
+
+@keyframes ken-burns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+@utility animate-ken-burns {
+  animation: ken-burns 6s ease-out forwards;
+}
+
+/* Premium FinTech Visual Styles */
+@utility premium-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(11, 17, 44, 0.04),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 1.5rem;
+}
+@utility premium-card-hover {
+  &:hover {
+    transform: translateY(-5px) scale(1.005);
+    background: rgba(255, 255, 255, 0.6);
+    border-color: var(--color-brand);
+    box-shadow: 0 20px 40px -15px rgba(11, 17, 44, 0.08),
+                0 0 20px -2px rgba(0, 230, 118, 0.25);
+  }
+}
+@utility premium-card-dark {
+  position: relative;
+  background: rgba(19, 27, 61, 0.45);
+  backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2),
+              inset 0 1px 0.5px 0 rgba(255, 255, 255, 0.05);
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 1.5rem;
+}
+@utility premium-card-dark-hover {
+  &:hover {
+    transform: translateY(-5px) scale(1.005);
+    background: rgba(19, 27, 61, 0.65);
+    border-color: var(--color-brand);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4),
+                0 0 20px -2px rgba(0, 230, 118, 0.3);
+  }
+}
+@utility premium-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.92rem 2rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-2) 100%);
+  color: var(--color-ink);
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 230, 118, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+@utility premium-btn-hover {
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 230, 118, 0.4);
+    filter: brightness(1.05);
+  }
+}
+
+header { background: var(--brand-dark-blue); padding: 0 5%; }
+.menu-wrap > a { color: var(--main-menu-color); font-size: 15px; }
+.menu-wrap > a svg { color: var(--main-menu-color); transition: all ease 0.5s; }
+.sub-main-menu a { color: var(--full-black); text-transform: uppercase; }
+.sub-main-menu a:hover { background: var(--brand-dark-blue); color: var(--main-menu-color); }
+.hero-cosmic-content { margin-left: 2%; margin-top: 20%; }
+.max-w-7xl { max-width: 90%; }
+
+
+
