@@ -82,6 +82,7 @@ import aboutInnovation from "@/assets/about-innovation.jpg";
 import aboutCommitment from "@/assets/about-commitment.jpg";
 import aboutJoin from "@/assets/about-join.jpg";
 
+
 const ABOUT_SLUG_IMAGES: Record<string, string> = {
   "who-we-are": aboutWhoWeAre,
   "vision": aboutVision,

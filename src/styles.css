@@ -704,8 +704,8 @@ header { background: var(--brand-dark-blue); padding: 0 5%; }
 .menu-wrap > a svg { color: var(--main-menu-color); transition: all ease 0.5s; }
 .sub-main-menu a { color: var(--full-black); text-transform: uppercase; }
 .sub-main-menu a:hover { background: var(--brand-dark-blue); color: var(--main-menu-color); }
-.hero-cosmic-content { margin-left: 2%; margin-top: 20%; }
+.hero-cosmic-content { margin-left: 2%; margin-top: 15%; }
 .max-w-7xl { max-width: 90%; }
-
+html, body { overflow-x: hidden; }
 
 

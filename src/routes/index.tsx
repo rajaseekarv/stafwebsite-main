@@ -6,6 +6,7 @@ import { LogoBox } from "@/components/site/LogoBox";
 import { SITE_IMAGES, sectionImage } from "@/lib/section-images";
 import { Reveal } from "@/components/site/Reveal";
 import { cn } from "@/lib/utils";
+import HeroVideoCarousel from "@/components/site/HeroVideoCarousel";
 import aboutWhoWeAre from "@/assets/about-who-we-are.jpg";
 import platformShowcase from "@/assets/platform-showcase.png";
 import heroSlide1 from "@/assets/hero-slide-1.png";
@@ -20,6 +21,14 @@ import { PRODUCT_IMAGES } from "@/lib/product-images";
 import ImageViewer from "@/components/site/ImageViewer";
 import consultingApproach from "@/assets/doc_extracted/Consulting-approach.png";
 import digitalTransformation from "@/assets/doc_extracted/Digital-Transformation-Consulting.png";
+
+/* Video Slider */
+import heroVideo1 from "@/assets/Videos/hero1.mp4";
+import heroVideo2 from "@/assets/Videos/hero2.mp4";
+import heroVideo3 from "@/assets/Videos/hero3.mp4";
+import heroVideo4 from "@/assets/Videos/hero4.mp4";
+import heroVideo5 from "@/assets/Videos/hero5.mp4";
+import heroVideo6 from "@/assets/Videos/hero6.mp4";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -139,6 +148,8 @@ function Home() {
   const join = findPage("about", "join");
 
   const [activeSlide, setActiveSlide] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
+  const [activeVideo, setActiveVideo] = useState(0);
   const slides = [
     {
       image: heroSlide1,
@@ -161,13 +172,25 @@ function Home() {
       subtitle: "Empowering Financial Institutions with\nIntelligent Platforms for the Future of Banking"
     }
   ];
+  const videos = [
+        heroVideo1,
+        heroVideo2,
+        heroVideo3,
+        heroVideo4,
+        heroVideo5,
+        heroVideo6,
+    ];
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % slides.length);
-    }, 30000);
-    return () => clearInterval(timer);
-  }, []);
+  // Don't rotate images while video is playing
+  if (showVideo) return;
+
+  const timer = setInterval(() => {
+    setActiveSlide((prev) => (prev + 1) % slides.length);
+  }, 30000);
+
+  return () => clearInterval(timer);
+}, [showVideo, slides.length]);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -306,20 +329,36 @@ function Home() {
       <section className="hero-cosmic min-h-[92vh] pt-32 pb-24 flex items-center relative">
         {/* Dynamic Image Carousel Background */}
         <div className="absolute inset-0 size-full overflow-hidden bg-cosmic">
-          {slides.map((slide, idx) => (
-            <img
-              key={slide.image}
-              src={slide.image}
-              alt=""
-              aria-hidden
-              className={cn(
-                "absolute inset-0 size-full object-cover transition-all duration-1000 ease-in-out bg-cosmic",
-                activeSlide === idx ? "opacity-100 scale-100" : "opacity-0 scale-95"
-              )}
+
+          {!showVideo ? (
+
+            <>
+              {slides.map((slide, idx) => (
+                <img
+                  key={slide.image}
+                  src={slide.image}
+                  alt=""
+                  aria-hidden
+                  className={cn(
+                    "absolute inset-0 size-full object-cover transition-all duration-1000 ease-in-out bg-cosmic",
+                    activeSlide === idx
+                      ? "opacity-100 scale-100"
+                      : "opacity-0 scale-95"
+                  )}
+                />
+              ))}
+            </>
+
+          ) : (
+
+            <HeroVideoCarousel
+                videos={videos}
+                onClose={() => setShowVideo(false)}
             />
-          ))}
-          {/* Subtle dark gradient overlay to make text highly readable */}
+          )}
+
           <div className="absolute inset-0 bg-gradient-to-r from-cosmic/90 via-cosmic/40 to-transparent z-10" />
+
         </div>
 
         {/* Slide Content Overlay */}
@@ -335,6 +374,12 @@ function Home() {
               <p className="mt-6 text-base leading-relaxed text-white/90 sm:text-lg transition-all duration-700 max-w-2xl whitespace-pre-line font-sans">
                 {slides[activeSlide]?.subtitle}
               </p>
+              <button
+              onClick={() => setShowVideo(true)}
+              className="pointer-events-auto mt-8 rounded-full bg-white/20 px-6 py-3 text-white backdrop-blur transition hover:bg-white/30"
+            >
+              ▶ Play Video
+            </button>
             </div>
           </div>
         </div>
@@ -357,7 +402,7 @@ function Home() {
 
       {/* === WHO WE ARE === */}
       {aboutParas.length > 0 && (
-        <section className="py-24 sm:py-32 bg-gradient-to-b from-[#020b2d] via-[#040e3d] to-[#020b2d] text-white border-t border-b border-white/5 relative overflow-hidden">
+        <section className="py-24 sm:py-32 bg-white border-t border-b border-white/5 relative overflow-hidden">
           {/* Cyber AI Network Lines & Particle Effects */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,194,255,0.08),_transparent_60%)] pointer-events-none" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,194,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,194,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
@@ -365,26 +410,26 @@ function Home() {
           <div className="absolute bottom-10 right-10 w-80 h-80 bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
           <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-16 items-center relative z-10">
             <Reveal className="lg:col-span-7">
-              <h2 className="font-display text-4xl font-bold text-white sm:text-6xl tracking-tight leading-tight">
+              <h2 className="font-display text-4xl font-bold sm:text-6xl tracking-tight leading-tight">
                 {whoWeAre?.title}
               </h2>
-              <div className="mt-6 space-y-6 text-lg leading-relaxed text-white/80 text-justify">
+              <div className="mt-6 space-y-6 text-lg leading-relaxed text-black/95 text-justify">
                 <p>
-                  <span className="font-semibold text-white">Stafróf Intelligence Corporation</span> is a next-generation enterprise technology company empowering the Banking, Financial and Capital Markets industry with AI, enterprise data, and intelligent automation. Our enterprise-grade platforms help financial institutions modernize operations, optimize revenue, unlock data intelligence, and accelerate digital transformation.
+                  <span className="font-semibold">Stafróf Intelligence Corporation</span> is a next-generation enterprise technology company empowering the Banking, Financial and Capital Markets industry with AI, enterprise data, and intelligent automation. Our enterprise-grade platforms help financial institutions modernize operations, optimize revenue, unlock data intelligence, and accelerate digital transformation.
                 </p>
                 
                 <div className="text-base text-white/85 text-left">
                   <p className="font-semibold text-white mb-4 text-lg">Our flagship platforms include:</p>
                   <div className="space-y-4">
-                    <div className="bg-white/[0.03] backdrop-blur-md border border-white/10 p-5 rounded-xl hover:border-brand/40 transition-all shadow-md group">
+                    <div className="bg-gradient-to-b from-[#020b2d] via-[#040e3d] to-[#020b2d] backdrop-blur-md border border-white/10 p-5 rounded-xl hover:border-brand/40 transition-all shadow-md group">
                       <span className="font-bold text-lg block mb-1 bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-200 bg-clip-text text-transparent group-hover:brightness-110 transition-all">RevNexure 360° Suite</span>
                       <span className="text-sm text-white/70">AI-powered Revenue Assurance Platform that helps identify, prevent, and recover revenue leakages across banking operations.</span>
                     </div>
-                    <div className="bg-white/[0.03] backdrop-blur-md border border-white/10 p-5 rounded-xl hover:border-[#00C2FF]/40 transition-all shadow-md group">
+                    <div className="bg-gradient-to-b from-[#020b2d] via-[#040e3d] to-[#020b2d] backdrop-blur-md border border-white/10 p-5 rounded-xl hover:border-[#00C2FF]/40 transition-all shadow-md group">
                       <span className="font-bold text-lg block mb-1 bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-200 bg-clip-text text-transparent group-hover:brightness-110 transition-all">DataXentra</span>
                       <span className="text-sm text-white/70">Enterprise Data Platform that unifies, governs, and transforms enterprise data into trusted business intelligence.</span>
                     </div>
-                    <div className="bg-white/[0.03] backdrop-blur-md border border-white/10 p-5 rounded-xl hover:border-[#8644ff]/40 transition-all shadow-md group">
+                    <div className="bg-gradient-to-b from-[#020b2d] via-[#040e3d] to-[#020b2d] backdrop-blur-md border border-white/10 p-5 rounded-xl hover:border-[#8644ff]/40 transition-all shadow-md group">
                       <span className="font-bold text-lg block mb-1 bg-gradient-to-r from-purple-400 via-pink-300 to-indigo-200 bg-clip-text text-transparent group-hover:brightness-110 transition-all">AgenNova</span>
                       <span className="text-sm text-white/70">AI Intelligence Platform that enables intelligent automation, AI agents, and decision intelligence.</span>
                     </div>
@@ -395,7 +440,7 @@ function Home() {
                 <Link
                   to="/about/$slug"
                   params={{ slug: "who-we-are" }}
-                  className="inline-flex items-center gap-1.5 text-brand hover:text-brand-2 font-medium transition-colors"
+                  className="inline-flex items-center gap-1.5 font-medium transition-colors border border-black/10 py-2 px-3 bg-[#00e676] text-black hover:!text-[#333] rounded-xl"
                 >
                   Read more <ArrowRight className="size-4" />
                 </Link>
@@ -463,7 +508,7 @@ function Home() {
       {/* === PLATFORMS (image-led dark band) === */}
       <section className="animated-gradient-bg relative overflow-hidden py-24 sm:py-32">
         {/* Animated grid pattern & Cyber Banking effects */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,194,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,194,255,0.03)_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none" />
+        <div className="absolute inset-0 bg-white pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#02061e]/80 via-[#0a1b4d]/40 to-[#02061e]/80 pointer-events-none" />
         
         {/* Custom Glows */}
@@ -494,12 +539,12 @@ function Home() {
           <ImageViewer
             src={item.img}
             alt={item.title}
-            className="w-full aspect-[4/3] object-cover cursor-zoom-in"
+            className="w-full aspect-[4/3] object-cover cursor-zoom-in rounded-2xl"
           />
 
           <div className="pt-2 pb-4">
 
-            <h3 className="font-display text-lg font-semibold text-white group-hover:text-brand transition-colors">
+            <h3 className="font-display text-lg font-semibold text-white group-hover:text-brand transition-colors text-center">
               {item.title}
             </h3>
 
@@ -547,35 +592,71 @@ function Home() {
                   <Link
                     to="/solutions/$slug"
                     params={{ slug: p.slug }}
-                    className="group relative block overflow-hidden p-7 h-full bg-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-transparent transition-all duration-500 rounded-2xl shadow-2xl hover:shadow-[0_20px_50px_rgba(0,194,255,0.15)]"
+                    className="group relative isolate block h-full overflow-hidden rounded-2xl
+                              border border-white/10
+                              bg-[#020a23]
+                              p-7
+                              backdrop-blur-xl
+                              transition-all duration-500
+                              hover:border-cyan-400/60
+                              hover:ring-2
+                              hover:ring-cyan-400/30
+                              hover:shadow-[0_20px_50px_rgba(0,194,255,0.18)]"
                   >
-                    {/* Glowing border gradient on hover */}
-                    <div className="absolute inset-0 p-[1px] bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                    <div className="absolute inset-[1px] bg-[#020a23] rounded-[15px] opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
-                    {/* Top colored indicator glow border */}
+                    {/* Top Accent Line */}
                     <div
-                      className="absolute inset-x-0 top-0 h-1 opacity-0 transition-all duration-300 group-hover:opacity-100"
+                      className="absolute left-0 top-0 h-1 w-0 rounded-t-2xl transition-all duration-500 group-hover:w-full"
                       style={{ backgroundColor: styles.accent }}
                     />
 
-                    <div className="slide-content h-full flex flex-col justify-between">
+                    {/* Content */}
+                    <div className="relative z-10 flex h-full flex-col justify-between">
+
                       <div>
+
                         <div className="flex items-center justify-between">
-                          <div className="flex size-12 items-center justify-center rounded-xl bg-white/10 text-brand shadow-sm transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+
+                          <div
+                            className="flex size-12 items-center justify-center rounded-xl
+                                      bg-white/10 text-brand shadow-sm
+                                      transition-all duration-500
+                                      group-hover:scale-110
+                                      group-hover:rotate-3"
+                          >
                             <IconComp className="size-6 stroke-[2]" />
                           </div>
-                          <ArrowRight className="size-4 text-white/40 transition-all group-hover:translate-x-1 group-hover:text-white" />
+
+                          <ArrowRight
+                            className="size-4 text-white/40 transition-all duration-500
+                                      group-hover:translate-x-1
+                                      group-hover:text-white"
+                          />
+
                         </div>
 
-                        <h3 className="mt-6 font-display text-lg font-bold transition-colors text-white group-hover:text-brand">
+                        <h3
+                          className="mt-6 font-display text-lg font-bold
+                                    text-white transition-colors
+                                    group-hover:text-brand"
+                        >
                           {p.title}
                         </h3>
-                        <p className="mt-2.5 line-clamp-3 text-sm leading-relaxed text-white/70">{p.tagline}</p>
+
+                        <p className="mt-2.5 line-clamp-3 text-sm leading-relaxed text-white/70">
+                          {p.tagline}
+                        </p>
+
                       </div>
 
-                      <span className="slide-reveal mt-6 inline-flex items-center gap-1 text-xs font-semibold tracking-wider uppercase transition-colors text-brand/80 group-hover:text-brand">
-                        Learn more
+                      <span
+                        className="mt-6 inline-flex items-center gap-1
+                                  text-xs font-semibold uppercase tracking-wider
+                                  text-brand/80 transition-colors
+                                  group-hover:text-brand"
+                      >
+                        Learn More
                       </span>
+
                     </div>
                   </Link>
                 </Reveal>
@@ -614,7 +695,7 @@ function Home() {
               AI-Powered Revenue Assurance Platform for Banking, Financial Services &amp; Capital Markets.
             </p>
             <Reveal delay={180} direction="right" className="mt-8 flex justify-center">
-              <div className="w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-2 shadow-lg">
+              <div className="w-full max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-2 shadow-lg">
                 <ImageViewer
                   src={DOC_IMAGES.image6}
                   alt="Banking Product Suites Illustration"
@@ -944,6 +1025,16 @@ function Home() {
             </div>
 
           </div>
+          <Reveal delay={180} direction="right" className="mt-12 flex justify-center">
+              <div className="w-full max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-2 shadow-lg">
+                <ImageViewer
+                  src={DOC_IMAGES.image18}
+                  alt="Join Our Journey"
+                  className="w-full h-auto object-contain rounded-xl"
+                  style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
+                />
+              </div>
+            </Reveal>
         </div>
       </section>
     </>

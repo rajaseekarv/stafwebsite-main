@@ -38,9 +38,6 @@ export function SiteFooter() {
                 className="w-[180px] lg:w-[300px] h-auto object-contain shrink-0 block"
               />
             </div>
-            <p className="max-w-md text-[14px] leading-relaxed text-white/60">
-              Powering Banking, Financial Services & Capital Markets with AI, data, and intelligent innovation.
-            </p>
           </div>
         </div>
 

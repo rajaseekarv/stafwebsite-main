@@ -1,17 +1,19 @@
-import { useEffect } from "react";
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import { CSSProperties, useEffect } from "react";
 
 type Props = {
   src: string;
   alt?: string;
   className?: string;
+  style?: CSSProperties;
 };
 
 export default function ImageViewer({
   src,
   alt = "",
   className = "",
+  style,
 }: Props) {
   useEffect(() => {
     Fancybox.bind("[data-fancybox]");
@@ -29,16 +31,17 @@ export default function ImageViewer({
       data-caption={alt}
     >
       <img
-        src={src}
-        alt={alt}
-        className={`${className} cursor-zoom-in`}
-        loading="lazy"
-        style={{
-          maxWidth: "100%",
-          height: "auto",
-          objectFit: "contain",
-        }}
-      />
+  src={src}
+  alt={alt}
+  className={`${className} cursor-zoom-in`}
+  loading="lazy"
+  style={{
+    maxWidth: "100%",
+    height: "auto",
+    objectFit: "contain",
+    ...style,
+  }}
+/>
     </a>
   );
 }

@@ -48,7 +48,7 @@ export const SLUG_DOC_IMAGES: Record<string, string[]> = {
   "design-thinking": [image12],
   "what-we-do": [image13],
   "industries": [image14],
-  "why-stafróf": [image15],
+  "why-Stafróf": [image15],
   "why-stafrof": [image15],
   "innovation": [image16],
   "commitment": [],
