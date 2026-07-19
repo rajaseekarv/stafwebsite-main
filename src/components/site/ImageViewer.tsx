@@ -1,4 +1,4 @@
-import { Fancybox } from "@fancyapps/ui";
+import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { CSSProperties, useEffect } from "react";
 

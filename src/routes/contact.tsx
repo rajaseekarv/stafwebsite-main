@@ -38,7 +38,7 @@ function Contact() {
 
         <div className="relative mx-auto max-w-5xl px-6 text-center">
           <Reveal delay={100}>
-            <p className="eyebrow-dark">GET IN TOUCH</p>
+            <p className="eyebrow-dark text-center">GET IN TOUCH</p>
           </Reveal>
           <Reveal delay={180}>
             <h1 className="mt-4 font-display text-4xl font-semibold text-white sm:text-5xl md:text-6xl tracking-tight leading-[1.1]">
@@ -58,12 +58,12 @@ function Contact() {
       </section>
 
       {/* Redesigned Form & Details section */}
-      <section className="py-20 bg-[#020718] relative">
+      <section className="py-20 bg-white/95 relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand/5 via-transparent to-transparent pointer-events-none" />
         
         <div className="relative mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1fr_2fr]">
           <Reveal delay={150} className="space-y-6">
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-xl p-6 hover:border-brand/35 transition-all group">
+            <div className="rounded-2xl border border-white/5 bg-[#011c49] backdrop-blur-xl p-6 hover:border-brand/35 transition-all group">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand/10 text-brand-2 group-hover:scale-110 transition-transform">
                 <Mail className="size-5" />
               </div>
@@ -73,17 +73,17 @@ function Contact() {
               </a>
             </div>
             
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-xl p-6 hover:border-brand/35 transition-all group">
+            <div className="rounded-2xl border border-white/5 bg-[#011c49] backdrop-blur-xl p-6 hover:border-brand/35 transition-all group">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand/10 text-brand-2 group-hover:scale-110 transition-transform">
                 <Globe2 className="size-5" />
               </div>
               <h3 className="mt-4 font-display text-base font-semibold text-white">Global Reach</h3>
-              <p className="mt-1 text-sm text-white/60 leading-relaxed">
+              <p className="mt-1 text-sm text-white/60 leading-relaxed text-left">
                 Serving Banking, Financial Services & Capital Markets worldwide.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-xl p-6 hover:border-brand/35 transition-all group">
+            <div className="rounded-2xl border border-white/5 bg-[#011c49] backdrop-blur-xl p-6 hover:border-brand/35 transition-all group">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand/10 text-brand-2 group-hover:scale-110 transition-transform">
                 <MapPin className="size-5" />
               </div>
@@ -93,7 +93,7 @@ function Contact() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-xl p-6 hover:border-brand/35 transition-all group">
+            <div className="rounded-2xl border border-white/5 bg-[#011c49] backdrop-blur-xl p-6 hover:border-brand/35 transition-all group">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand/10 text-brand-2 group-hover:scale-110 transition-transform">
                 <Globe2 className="size-5" />
               </div>

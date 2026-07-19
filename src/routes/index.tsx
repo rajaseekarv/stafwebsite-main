@@ -51,89 +51,104 @@ export const Route = createFileRoute("/")({
   }),
   component: Home,
 });
-
 function getSolutionStyles(slug: string) {
   if (slug.includes("core-banking") || slug.includes("revenue")) {
     return {
       Icon: Coins,
       color: "text-blue-500 dark:text-blue-400",
       bg: "bg-gradient-to-br from-blue-500/[0.08] to-blue-500/[0.02] border-blue-500/20",
-      border: "group-hover:border-blue-500/50 group-hover:shadow-[0_8px_30px_rgba(59,130,246,0.12)]",
-      accent: "#3b82f6"
+      border:
+        "group-hover:border-blue-500/50 group-hover:shadow-[0_8px_30px_rgba(59,130,246,0.12)]",
+      accent: "#3b82f6",
     };
   }
+
   if (slug.includes("data-engineering") || slug.includes("analytics")) {
     return {
       Icon: Database,
       color: "text-cyan-500 dark:text-cyan-400",
       bg: "bg-gradient-to-br from-cyan-500/[0.08] to-cyan-500/[0.02] border-cyan-500/20",
-      border: "group-hover:border-cyan-500/50 group-hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)]",
-      accent: "#06b6d4"
+      border:
+        "group-hover:border-cyan-500/50 group-hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)]",
+      accent: "#06b6d4",
     };
   }
+
   if (slug.includes("ai-intelligence") || slug.includes("ai")) {
     return {
       Icon: Brain,
       color: "text-purple-500 dark:text-purple-400",
       bg: "bg-gradient-to-br from-purple-500/[0.08] to-purple-500/[0.02] border-purple-500/20",
-      border: "group-hover:border-purple-500/50 group-hover:shadow-[0_8px_30px_rgba(168,85,247,0.12)]",
-      accent: "#a855f7"
+      border:
+        "group-hover:border-purple-500/50 group-hover:shadow-[0_8px_30px_rgba(168,85,247,0.12)]",
+      accent: "#a855f7",
     };
   }
+
   if (slug.includes("automation") || slug.includes("rpa")) {
     return {
       Icon: Cpu,
       color: "text-violet-500 dark:text-violet-400",
       bg: "bg-gradient-to-br from-violet-500/[0.08] to-violet-500/[0.02] border-violet-500/20",
-      border: "group-hover:border-violet-500/50 group-hover:shadow-[0_8px_30px_rgba(139,92,246,0.12)]",
-      accent: "#8b5cf6"
+      border:
+        "group-hover:border-violet-500/50 group-hover:shadow-[0_8px_30px_rgba(139,92,246,0.12)]",
+      accent: "#8b5cf6",
     };
   }
+
   if (slug.includes("risk") || slug.includes("compliance")) {
     return {
       Icon: ShieldCheck,
       color: "text-emerald-500 dark:text-emerald-400",
       bg: "bg-gradient-to-br from-emerald-500/[0.08] to-emerald-500/[0.02] border-emerald-500/20",
-      border: "group-hover:border-emerald-500/50 group-hover:shadow-[0_8px_30px_rgba(16,185,129,0.12)]",
-      accent: "#10b981"
+      border:
+        "group-hover:border-emerald-500/50 group-hover:shadow-[0_8px_30px_rgba(16,185,129,0.12)]",
+      accent: "#10b981",
     };
   }
+
   if (slug.includes("customer")) {
     return {
       Icon: Users,
       color: "text-pink-500 dark:text-pink-400",
       bg: "bg-gradient-to-br from-pink-500/[0.08] to-pink-500/[0.02] border-pink-500/20",
-      border: "group-hover:border-pink-500/50 group-hover:shadow-[0_8px_30px_rgba(236,72,153,0.12)]",
-      accent: "#ec4899"
+      border:
+        "group-hover:border-pink-500/50 group-hover:shadow-[0_8px_30px_rgba(236,72,153,0.12)]",
+      accent: "#ec4899",
     };
   }
+
   if (slug.includes("business-intelligence") || slug.includes("bi")) {
     return {
       Icon: LineChart,
       color: "text-indigo-500 dark:text-indigo-400",
       bg: "bg-gradient-to-br from-indigo-500/[0.08] to-indigo-500/[0.02] border-indigo-500/20",
-      border: "group-hover:border-indigo-500/50 group-hover:shadow-[0_8px_30px_rgba(99,102,241,0.12)]",
-      accent: "#6366f1"
+      border:
+        "group-hover:border-indigo-500/50 group-hover:shadow-[0_8px_30px_rgba(99,102,241,0.12)]",
+      accent: "#6366f1",
     };
   }
+
   if (slug.includes("integration") || slug.includes("enterprise")) {
     return {
       Icon: Network,
       color: "text-amber-500 dark:text-amber-400",
       bg: "bg-gradient-to-br from-amber-500/[0.08] to-amber-500/[0.02] border-amber-500/20",
-      border: "group-hover:border-amber-500/50 group-hover:shadow-[0_8px_30px_rgba(245,158,11,0.12)]",
-      accent: "#f59e0b"
+      border:
+        "group-hover:border-amber-500/50 group-hover:shadow-[0_8px_30px_rgba(245,158,11,0.12)]",
+      accent: "#f59e0b",
     };
   }
+
   return {
     Icon: Brain,
     color: "text-brand",
     bg: "bg-gradient-to-br from-brand/10 to-brand/[0.02] border-brand/20",
-    border: "group-hover:border-brand/50 group-hover:shadow-[0_8px_30px_rgba(0,230,118,0.12)]",
-    accent: "#00e676"
+    border:
+      "group-hover:border-brand/50 group-hover:shadow-[0_8px_30px_rgba(0,230,118,0.12)]",
+    accent: "#00e676",
   };
 }
-
 
 function Home() {
   const products = SITE.sections.find((s) => s.key === "products")!;
@@ -327,716 +342,1003 @@ function Home() {
     <>
       {/* === CINEMATIC HERO === */}
       <section className="hero-cosmic min-h-[92vh] pt-32 pb-24 flex items-center relative">
-        {/* Dynamic Image Carousel Background */}
-        <div className="absolute inset-0 size-full overflow-hidden bg-cosmic">
 
-          {!showVideo ? (
+  {/* Dynamic Image Carousel Background */}
+  <div className="absolute inset-0 size-full overflow-hidden bg-cosmic">
 
-            <>
-              {slides.map((slide, idx) => (
-                <img
-                  key={slide.image}
-                  src={slide.image}
-                  alt=""
-                  aria-hidden
-                  className={cn(
-                    "absolute inset-0 size-full object-cover transition-all duration-1000 ease-in-out bg-cosmic",
-                    activeSlide === idx
-                      ? "opacity-100 scale-100"
-                      : "opacity-0 scale-95"
-                  )}
-                />
-              ))}
-            </>
+    {!showVideo ? (
+      <>
+        {slides.map((slide, idx) => (
+          <img
+            key={slide.image}
+            src={slide.image}
+            alt=""
+            aria-hidden
+            className={cn(
+              "absolute inset-0 size-full object-cover transition-all duration-1000 ease-in-out bg-cosmic",
+              activeSlide === idx
+                ? "opacity-100 scale-100"
+                : "opacity-0 scale-95"
+            )}
+          />
+        ))}
+      </>
+    ) : (
+      <HeroVideoCarousel
+        videos={videos}
+        onClose={() => setShowVideo(false)}
+      />
+    )}
 
-          ) : (
+    <div className="absolute inset-0 bg-gradient-to-r from-cosmic/90 via-cosmic/40 to-transparent z-10" />
 
-            <HeroVideoCarousel
-                videos={videos}
-                onClose={() => setShowVideo(false)}
-            />
-          )}
+  </div>
 
-          <div className="absolute inset-0 bg-gradient-to-r from-cosmic/90 via-cosmic/40 to-transparent z-10" />
+  {/* Slide Content Overlay */}
+  <div className="relative w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-16 z-10 pointer-events-none hero-cosmic-content">
 
-        </div>
+    <div className="max-w-5xl text-left flex items-stretch gap-5 sm:gap-7 pl-1 sm:pl-3">
 
-        {/* Slide Content Overlay */}
-        <div className="relative w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-16 z-10 pointer-events-none hero-cosmic-content">
-          <div className="max-w-5xl text-left flex items-stretch gap-5 sm:gap-7 pl-1 sm:pl-3">
-            {/* Elegant vertical colored line on the left */}
-            <div className="w-1.5 rounded-full bg-gradient-to-b from-[#ff7a00] via-red-500 to-[#7c3aed] shrink-0 opacity-95" />
-            
-            <div>
-              <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl transition-all duration-700 animate-fade-in whitespace-pre-line leading-[1.2]">
-                {slides[activeSlide]?.title}
-              </h1>
-              <p className="mt-6 text-base leading-relaxed text-white/90 sm:text-lg transition-all duration-700 max-w-2xl whitespace-pre-line font-sans">
-                {slides[activeSlide]?.subtitle}
-              </p>
-              <button
-              onClick={() => setShowVideo(true)}
-              className="pointer-events-auto mt-8 rounded-full bg-white/20 px-6 py-3 text-white backdrop-blur transition hover:bg-white/30"
-            >
-              ▶ Play Video
-            </button>
-            </div>
-          </div>
-        </div>
+      {/* Elegant vertical colored line */}
+      <div className="w-1.5 rounded-full bg-gradient-to-b from-[#ff7a00] via-red-500 to-[#7c3aed] shrink-0 opacity-95" />
 
-        {/* Carousel Indicators */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveSlide(idx)}
-              className={cn(
-                "size-2.5 rounded-full transition-all duration-300 cursor-pointer",
-                activeSlide === idx ? "bg-brand w-6" : "bg-white/40 hover:bg-white/70"
-              )}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
-        </div>
-      </section>
+      <div>
+
+        <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl transition-all duration-700 animate-fade-in whitespace-pre-line leading-[1.2]">
+          {slides[activeSlide]?.title}
+        </h1>
+
+        <p className="mt-6 max-w-2xl whitespace-pre-line font-sans text-base leading-relaxed text-white/90 transition-all duration-700 sm:text-lg">
+          {slides[activeSlide]?.subtitle}
+        </p>
+
+        <button
+          onClick={() => setShowVideo(true)}
+          className="pointer-events-auto mt-8 rounded-full bg-white/20 px-6 py-3 text-white backdrop-blur transition hover:bg-white/30"
+        >
+          ▶ Play Video
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {/* Carousel Indicators */}
+  <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+
+    {slides.map((_, idx) => (
+      <button
+        key={idx}
+        onClick={() => setActiveSlide(idx)}
+        className={cn(
+          "size-2.5 rounded-full transition-all duration-300 cursor-pointer",
+          activeSlide === idx
+            ? "bg-brand w-6"
+            : "bg-white/40 hover:bg-white/70"
+        )}
+        aria-label={`Go to slide ${idx + 1}`}
+      />
+    ))}
+
+  </div>
+
+</section>
 
       {/* === WHO WE ARE === */}
       {aboutParas.length > 0 && (
-        <section className="py-24 sm:py-32 bg-white border-t border-b border-white/5 relative overflow-hidden">
-          {/* Cyber AI Network Lines & Particle Effects */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,194,255,0.08),_transparent_60%)] pointer-events-none" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,194,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,194,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
-          <div className="absolute top-1/4 left-10 w-96 h-96 platform-glow-blue opacity-40 blur-[120px] pointer-events-none animate-pulse duration-[6000ms]" />
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
-          <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-16 items-center relative z-10">
-            <Reveal className="lg:col-span-7">
-              <h2 className="font-display text-4xl font-bold sm:text-6xl tracking-tight leading-tight">
-                {whoWeAre?.title}
-              </h2>
-              <div className="mt-6 space-y-6 text-lg leading-relaxed text-black/95 text-justify">
-                <p>
-                  <span className="font-semibold">Stafróf Intelligence Corporation</span> is a next-generation enterprise technology company empowering the Banking, Financial and Capital Markets industry with AI, enterprise data, and intelligent automation. Our enterprise-grade platforms help financial institutions modernize operations, optimize revenue, unlock data intelligence, and accelerate digital transformation.
-                </p>
-                
-                <div className="text-base text-white/85 text-left">
-                  <p className="font-semibold text-black mb-4 text-lg">Our flagship platforms include:</p>
-                  <div className="space-y-4">
-                    <div className="bg-gradient-to-b from-[#020b2d] via-[#040e3d] to-[#020b2d] backdrop-blur-md border border-white/10 p-5 rounded-xl hover:border-brand/40 transition-all shadow-md group">
-                      <span className="font-bold text-lg block mb-1 bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-200 bg-clip-text text-transparent group-hover:brightness-110 transition-all">RevNexure 360° Suite</span>
-                      <span className="text-sm text-white/70">AI-powered Revenue Assurance Platform that helps identify, prevent, and recover revenue leakages across banking operations.</span>
-                    </div>
-                    <div className="bg-gradient-to-b from-[#020b2d] via-[#040e3d] to-[#020b2d] backdrop-blur-md border border-white/10 p-5 rounded-xl hover:border-[#00C2FF]/40 transition-all shadow-md group">
-                      <span className="font-bold text-lg block mb-1 bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-200 bg-clip-text text-transparent group-hover:brightness-110 transition-all">DataXentra</span>
-                      <span className="text-sm text-white/70">Enterprise Data Platform that unifies, governs, and transforms enterprise data into trusted business intelligence.</span>
-                    </div>
-                    <div className="bg-gradient-to-b from-[#020b2d] via-[#040e3d] to-[#020b2d] backdrop-blur-md border border-white/10 p-5 rounded-xl hover:border-[#8644ff]/40 transition-all shadow-md group">
-                      <span className="font-bold text-lg block mb-1 bg-gradient-to-r from-purple-400 via-pink-300 to-indigo-200 bg-clip-text text-transparent group-hover:brightness-110 transition-all">AgenNova</span>
-                      <span className="text-sm text-white/70">AI Intelligence Platform that enables intelligent automation, AI agents, and decision intelligence.</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8">
-                <Link
-                  to="/about/$slug"
-                  params={{ slug: "who-we-are" }}
-                  className="inline-flex items-center gap-1.5 font-medium transition-colors border border-black/10 py-2 px-3 bg-[#00e676] text-black hover:!text-[#333] rounded-xl"
-                >
-                  Read more <ArrowRight className="size-4" />
-                </Link>
-              </div>
-            </Reveal>
-            <Reveal delay={150} direction="right" className="lg:col-span-5 w-full flex justify-center items-center">
-              <div className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-2 shadow-[0_24px_50px_-15px_rgba(0,0,0,0.5)] ring-1 ring-white/10 group">
-                <div className="absolute inset-0 bg-gradient-to-tr from-brand/20 via-transparent to-[#00C2FF]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl" />
-                <ImageViewer
-                    src={DOC_IMAGES.image1}
-                    alt="Who We Are"
-                    className="w-full rounded-2xl"
-                />
-                </div>
-            </Reveal>
+        <section className="relative overflow-hidden border-y border-white/5 bg-white py-24 lg:py-32">
+  {/* Background Effects */}
+  <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,_rgba(0,194,255,0.08),_transparent_60%)]" />
+  <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,rgba(0,194,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,194,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+  <div className="absolute top-1/4 left-10 h-96 w-96 platform-glow-blue opacity-40 blur-[120px] animate-pulse duration-[6000ms]" />
+  <div className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-blue-600/10 blur-[100px]" />
+
+  <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-12">
+
+    {/* Left Content */}
+    <Reveal className="lg:col-span-7">
+
+      <h2 className="font-display text-4xl font-bold tracking-tight leading-tight text-ink sm:text-5xl lg:text-6xl">
+        {whoWeAre?.title}
+      </h2>
+
+      <div className="mt-8 space-y-6 text-lg leading-8 text-ink-2 text-justify">
+        <p>
+          <span className="font-semibold text-ink">
+            Stafróf Intelligence Corporation
+          </span>{" "}
+          is a next-generation enterprise technology company empowering the
+          Banking, Financial Services and Capital Markets industry with AI,
+          enterprise data and intelligent automation. Our enterprise-grade
+          platforms help financial institutions modernize operations, optimize
+          revenue, unlock data intelligence and accelerate digital
+          transformation.
+        </p>
+
+        <div>
+
+          <h3 className="mb-6 font-display text-2xl font-semibold text-ink">
+            Our Flagship Platforms
+          </h3>
+
+          <div className="space-y-5">
+
+            {/* RevNexure */}
+            <div className="group rounded-2xl border border-white/10 bg-gradient-to-b from-[#020b2d] via-[#040e3d] to-[#020b2d] p-6 shadow-lg transition-all duration-300 hover:border-brand/40">
+
+              <h4 className="font-display text-2xl font-bold bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-200 bg-clip-text text-transparent">
+                RevNexure 360° Suite
+              </h4>
+
+              <p className="mt-3 text-base leading-7 text-white/75">
+                AI-powered Revenue Assurance Platform that helps identify,
+                prevent and recover revenue leakages across banking operations.
+              </p>
+
+            </div>
+
+            {/* DataXentra */}
+            <div className="group rounded-2xl border border-white/10 bg-gradient-to-b from-[#020b2d] via-[#040e3d] to-[#020b2d] p-6 shadow-lg transition-all duration-300 hover:border-cyan-400/40">
+
+              <h4 className="font-display text-2xl font-bold bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-200 bg-clip-text text-transparent">
+                DataXentra
+              </h4>
+
+              <p className="mt-3 text-base leading-7 text-white/75">
+                Enterprise Data Platform that unifies, governs and transforms
+                enterprise data into trusted business intelligence.
+              </p>
+
+            </div>
+
+            {/* AgenNova */}
+            <div className="group rounded-2xl border border-white/10 bg-gradient-to-b from-[#020b2d] via-[#040e3d] to-[#020b2d] p-6 shadow-lg transition-all duration-300 hover:border-purple-400/40">
+
+              <h4 className="font-display text-2xl font-bold bg-gradient-to-r from-purple-400 via-pink-300 to-indigo-200 bg-clip-text text-transparent">
+                AgenNova
+              </h4>
+
+              <p className="mt-3 text-base leading-7 text-white/75">
+                AI Intelligence Platform enabling intelligent automation,
+                AI agents and enterprise decision intelligence.
+              </p>
+
+            </div>
+
           </div>
-        </section>
+        </div>
+      </div>
+
+      <div className="mt-10">
+
+        <Link
+          to="/about/$slug"
+          params={{ slug: "who-we-are" }}
+          className="inline-flex h-12 items-center justify-center rounded-full bg-brand px-8 text-sm font-semibold uppercase tracking-wide text-black transition-all duration-300 hover:scale-105 hover:bg-brand/90"
+        >
+          Read More
+          <ArrowRight className="ml-2 size-4" />
+        </Link>
+
+      </div>
+
+    </Reveal>
+
+    {/* Right Image */}
+    <Reveal
+      delay={150}
+      direction="right"
+      className="flex items-center justify-center lg:col-span-5"
+    >
+
+      <div className="group relative w-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-3 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.45)]">
+
+        <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-brand/20 via-transparent to-cyan-400/20 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+
+        <ImageViewer
+          src={DOC_IMAGES.image1}
+          alt="Who We Are"
+          className="w-full rounded-2xl"
+        />
+
+      </div>
+
+    </Reveal>
+
+  </div>
+</section>
       )}
 
       {/* === OUR PURPOSE === */}
-      <section className="py-24 bg-gradient-to-br from-[#020b2d] via-[#091e5c] to-[#0091ff] text-white border-b border-blue-900/30 relative">
-        {/* Floating Light Effects & Particle overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,_rgba(0,194,255,0.12),_transparent_50%)] pointer-events-none" />
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-400/20 rounded-full blur-[150px] pointer-events-none" />
-        
-        <div className="mx-auto max-w-7xl px-6 relative z-10">
-          <div className="max-w-3xl mx-auto text-center space-y-4 mb-12 relative z-10">
-            <p className="eyebrow text-cyan-300">Our Purpose</p>
-            <h2 className="font-display text-4xl font-bold text-white sm:text-6xl tracking-tight">
-              Nex Gen Platforms
-            </h2>
-            <div className="bg-white/[0.04] backdrop-blur-xl border border-white/10 p-6 rounded-2xl shadow-xl">
-              <p className="text-lg leading-relaxed text-white/90 text-center">
-                To empower financial institutions with intelligent technologies that simplify complexity, accelerate innovation, and create lasting business value.
-              </p>
-            </div>
+      <section className="relative overflow-hidden border-b border-blue-900/30 bg-gradient-to-br from-[#020b2d] via-[#091e5c] to-[#0091ff] py-24 lg:py-32 text-white">
+
+  {/* Background Effects */}
+  <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_70%_20%,_rgba(0,194,255,0.12),_transparent_50%)]" />
+  <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-cyan-500/10 blur-[120px]" />
+  <div className="absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-blue-400/20 blur-[150px]" />
+
+  <div className="relative z-10 mx-auto max-w-7xl px-6">
+
+    {/* Section Heading */}
+    <div className="mx-auto mb-16 max-w-4xl text-center">
+
+      <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300 text-center">
+        OUR PURPOSE
+      </p>
+
+      <h2 className="font-display text-4xl font-bold tracking-tight leading-tight text-white sm:text-5xl lg:text-6xl">
+        Next Generation Platforms
+      </h2>
+
+      <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl shadow-xl">
+
+        <p className="mx-auto max-w-3xl text-lg leading-8 text-white/90 lg:text-xl">
+          To empower financial institutions with intelligent technologies that
+          simplify complexity, accelerate innovation and create lasting
+          business value.
+        </p>
+
+      </div>
+
+    </div>
+
+    {/* Platform Cards */}
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+      {[
+        {
+          img: DOC_IMAGES.image3,
+          name: "RevNexure",
+          desc:
+            "AI-powered Revenue Assurance Platform helping identify, prevent and recover revenue leakages.",
+        },
+        {
+          img: DOC_IMAGES.image4,
+          name: "DataXentra",
+          desc:
+            "Enterprise Data Platform unifying and governing enterprise data into trusted business intelligence.",
+        },
+        {
+          img: DOC_IMAGES.image5,
+          name: "AgenNova",
+          desc:
+            "AI Intelligence Platform enabling intelligent automation, AI agents and enterprise decision systems.",
+        },
+      ].map((item, i) => (
+        <Reveal
+          key={i}
+          delay={i * 120}
+          className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl shadow-[0_24px_60px_-20px_rgba(0,0,0,.45)] transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-[0_30px_70px_-20px_rgba(0,194,255,.25)]"
+        >
+
+          <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+          <div className="relative z-10">
+
+            <h3 className="font-display text-2xl font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-cyan-300">
+              {item.name}
+            </h3>
+
+            <p className="mt-4 text-base leading-7 text-white/75">
+              {item.desc}
+            </p>
+
           </div>
-          
-          <div className="grid gap-8 sm:grid-cols-3">
-            {[
-              { img: DOC_IMAGES.image3, name: "RevNexure", desc: "AI-powered Revenue Assurance Platform helping identify, prevent, and recover revenue leakages." },
-              { img: DOC_IMAGES.image4, name: "DataXentra", desc: "Enterprise Data Platform unifying and governing enterprise data into trusted business intelligence." },
-              { img: DOC_IMAGES.image5, name: "AgenNova", desc: "AI Intelligence Platform enabling intelligent automation, AI agents, and decision systems." }
-            ].map((item, i) => (
-              <Reveal key={i} delay={i * 120} className="group relative flex flex-col justify-between overflow-hidden p-6 bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_50px_-12px_rgba(0,194,255,0.25)] hover:border-blue-400/60 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                <div className="text-left mb-4 relative z-10">
-                  <h3 className="font-display text-xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300">{item.name}</h3>
-                  <p className="mt-2 text-sm text-white/70 leading-relaxed">{item.desc}</p>
-                </div>
-                <div className="overflow-hidden rounded-2xl bg-black/20 p-4 flex justify-center items-center h-full min-h-[220px] border border-white/5 relative z-10">
-                  <ImageViewer
-                    src={item.img}
-                    alt={item.name}
-                    className="max-w-full h-auto object-contain rounded-xl transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-              </Reveal>
-            ))}
+
+          <div className="relative z-10 mt-8 flex min-h-[240px] items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black/20 p-6">
+
+            <ImageViewer
+              src={item.img}
+              alt={item.name}
+              className="h-auto max-w-full rounded-xl object-contain transition-transform duration-500 group-hover:scale-105"
+            />
+
           </div>
-        </div>
-      </section>
+
+        </Reveal>
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
 
       {/* === PLATFORMS (image-led dark band) === */}
-      <section className="animated-gradient-bg relative overflow-hidden py-24 sm:py-32">
-        {/* Animated grid pattern & Cyber Banking effects */}
-        <div className="absolute inset-0 bg-white pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#02061e]/80 via-[#0a1b4d]/40 to-[#02061e]/80 pointer-events-none" />
-        
-        {/* Custom Glows */}
-        <div className="absolute top-1/4 left-10 w-96 h-96 platform-glow-blue opacity-60 pointer-events-none" />
-        <div className="absolute bottom-1/4 right-10 w-96 h-96 platform-glow-orange opacity-30 pointer-events-none" />
+      <section className="animated-gradient-bg relative overflow-hidden py-24 lg:py-32">
+  {/* Background */}
+  <div className="absolute inset-0 bg-white pointer-events-none" />
+  <div className="absolute inset-0 bg-gradient-to-b from-[#02061e]/80 via-[#0a1b4d]/40 to-[#02061e]/80 pointer-events-none" />
 
-        <div className="relative mx-auto max-w-7xl px-6">
+  {/* Glow Effects */}
+  <div className="absolute top-1/4 left-10 h-96 w-96 platform-glow-blue opacity-60 pointer-events-none" />
+  <div className="absolute bottom-1/4 right-10 h-96 w-96 platform-glow-orange opacity-30 pointer-events-none" />
 
-  <Reveal className="text-center mb-14">
-    <h2 className="font-display text-4xl font-bold text-white sm:text-5xl">
-      Our Flagship Platform Capabilities
-    </h2>
+  <div className="relative mx-auto max-w-7xl px-6">
 
-    <p className="mt-4 text-white/70 max-w-3xl mx-auto">
-      Explore the core business capabilities delivered by the Stafróf
-      RevNexure Platform. Click any module to view it in detail.
-    </p>
-  </Reveal>
+    {/* Section Heading */}
+    <Reveal className="mx-auto mb-16 max-w-4xl text-center">
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-brand text-center">
+        ENTERPRISE PLATFORM
+      </p>
 
-    {PRODUCT_IMAGES.map((item, index) => (
+      <h2 className="font-display text-4xl font-bold tracking-tight leading-tight text-white sm:text-5xl lg:text-6xl">
+        Our Flagship Platform Capabilities
+      </h2>
 
-      <Reveal key={index} delay={index * 50}>
+      <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/75 lg:text-xl text-center">
+        Explore the core business capabilities delivered by the Stafróf
+        RevNexure Platform. Click any module to view detailed capabilities,
+        architecture and business value.
+      </p>
 
-        <div className="px-3 group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] hover:border-brand hover:bg-white/[0.05] transition-all duration-300 shadow-lg">
+    </Reveal>
 
-          <ImageViewer
-            src={item.img}
-            alt={item.title}
-            className="w-full aspect-[4/3] object-cover cursor-zoom-in rounded-2xl"
-          />
+    {/* Capability Cards */}
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
 
-          <div className="pt-2 pb-4">
+      {PRODUCT_IMAGES.map((item, index) => (
 
-            <h3 className="font-display text-lg font-semibold text-white group-hover:text-brand transition-colors text-center">
-              {item.title}
+        <Reveal key={index} delay={index * 70}>
+
+          <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl shadow-[0_24px_60px_-20px_rgba(0,0,0,.45)] transition-all duration-500 hover:-translate-y-2 hover:border-brand/50 hover:bg-white/10 hover:shadow-[0_30px_70px_-20px_rgba(0,230,118,.25)]">
+
+            {/* Image */}
+            <div className="overflow-hidden rounded-2xl">
+
+              <ImageViewer
+                src={item.img}
+                alt={item.title}
+                className="aspect-[4/3] w-full rounded-2xl object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+
+            </div>
+
+            {/* Title */}
+            <div className="pt-6">
+
+              <h3 className="font-display text-2xl font-bold tracking-tight text-center text-white transition-colors duration-300 group-hover:text-brand">
+                {item.title}
+              </h3>
+
+            </div>
+
+          </div>
+
+        </Reveal>
+
+      ))}
+
+    </div>
+
+  </div>
+</section>
+
+      {/* === SOLUTIONS === */}
+      <section className="relative overflow-hidden border-t border-white/5 bg-gradient-to-b from-[#010414] via-[#05113d] to-[#010414] py-24 lg:py-32 text-white">
+
+  {/* Background Glow */}
+  <div className="absolute top-1/3 right-1/4 h-96 w-96 platform-glow-blue opacity-25 pointer-events-none" />
+
+  <div className="relative z-10 mx-auto max-w-7xl px-6">
+
+    {/* Section Header */}
+    <div className="mb-16 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+
+      <Reveal>
+
+        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-brand">
+          SOLUTIONS
+        </p>
+
+        <h2 className="max-w-4xl font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+          Building the Future of Banking with Intelligent Solutions
+        </h2>
+
+      </Reveal>
+
+      <Reveal delay={120}>
+
+        <Link
+          to="/solutions"
+          className="inline-flex items-center gap-2 text-base font-semibold text-brand transition-all duration-300 hover:text-brand-2"
+        >
+          View All Solutions
+          <ArrowRight className="size-5" />
+        </Link>
+
+      </Reveal>
+
+    </div>
+
+    {/* Solution Cards */}
+    <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+
+      {solutions.pages.map((p, i) => {
+
+        const styles = getSolutionStyles(p.slug);
+        const IconComp = styles.Icon;
+
+        return (
+
+          <Reveal key={p.slug} delay={(i % 4) * 80}>
+
+            <Link
+              to="/solutions/$slug"
+              params={{ slug: p.slug }}
+              className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#020a23] p-8 backdrop-blur-xl shadow-[0_24px_60px_-20px_rgba(0,0,0,.45)] transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/60 hover:shadow-[0_30px_70px_-20px_rgba(0,194,255,.20)]"
+            >
+
+              {/* Accent Line */}
+              <div
+                className="absolute left-0 top-0 h-1 w-0 rounded-t-3xl transition-all duration-500 group-hover:w-full"
+                style={{ backgroundColor: styles.accent }}
+              />
+
+              <div className="flex h-full flex-col">
+
+                {/* Top */}
+                <div className="flex items-center justify-between">
+
+                  <div
+                    className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 shadow-md transition-all duration-500 group-hover:scale-110 group-hover:rotate-3"
+                  >
+                    <IconComp
+                      className={`size-7 ${styles.color}`}
+                      strokeWidth={2.2}
+                    />
+                  </div>
+
+                  <ArrowRight className="size-5 text-white/40 transition-all duration-300 group-hover:translate-x-1 group-hover:text-white" />
+
+                </div>
+
+                {/* Title */}
+                <h3 className="mt-8 font-display text-2xl font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-brand">
+                  {p.title}
+                </h3>
+
+                {/* Description */}
+                <p className="mt-5 flex-1 text-base leading-7 text-white/75">
+                  {p.tagline}
+                </p>
+
+                {/* Footer */}
+                <div className="mt-8 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-brand transition-all duration-300 group-hover:gap-3">
+
+                  Learn More
+
+                  <ArrowRight className="size-4" />
+
+                </div>
+
+              </div>
+
+            </Link>
+
+          </Reveal>
+
+        );
+
+      })}
+
+    </div>
+
+  </div>
+
+</section>
+
+      {/* === BANKING PRODUCTS (image band) === */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#010414] via-[#041440] to-[#08225e] py-24 lg:py-32">
+
+  {/* Background */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,240,255,0.08),transparent_70%)] pointer-events-none" />
+
+  <div className="absolute top-10 left-10 h-96 w-96 rounded-full bg-cyan-400/5 blur-[120px] pointer-events-none" />
+
+  <img
+    src={sectionImage("products")}
+    alt=""
+    aria-hidden
+    loading="lazy"
+    width={1920}
+    height={1080}
+    className="absolute inset-0 h-full w-full object-cover opacity-30"
+  />
+
+  <div className="cosmic-overlay" />
+  <div className="cosmic-particles" />
+
+  <div className="relative z-10 mx-auto max-w-7xl px-6">
+
+    {/* Heading */}
+
+    <Reveal>
+
+      <p className="mb-4 text-center text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">
+        BANKING PRODUCT SUITES
+      </p>
+
+      <h2 className="mx-auto max-w-5xl text-center font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+        Our Banking Product Suites
+      </h2>
+
+      <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-8 text-white/75">
+        AI-powered enterprise platforms that modernize banking operations,
+        optimize revenue, strengthen governance, and accelerate digital
+        transformation.
+      </p>
+
+    </Reveal>
+
+    {/* Illustration */}
+
+    <Reveal delay={180} direction="right">
+
+      <div className="mx-auto mt-14 max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-3 shadow-[0_25px_70px_-20px_rgba(0,0,0,.45)]">
+
+        <ImageViewer
+          src={DOC_IMAGES.image6}
+          alt="Banking Product Suites"
+          className="w-full rounded-2xl"
+        />
+
+      </div>
+
+    </Reveal>
+
+    {/* Product Grid */}
+
+    <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+      {products.pages.slice(0, 9).map((p, i) => (
+
+        <Reveal key={p.slug} delay={(i % 3) * 80}>
+
+          <Link
+            to="/products/$slug"
+            params={{ slug: p.slug }}
+            className="group relative flex items-center justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] px-7 py-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_20px_50px_-15px_rgba(0,194,255,.18)]"
+          >
+
+            {/* Accent line */}
+
+            <div className="absolute left-0 top-0 h-1 w-0 bg-cyan-400 transition-all duration-500 group-hover:w-full" />
+
+            <div>
+
+              <h3 className="font-display text-xl font-semibold text-white transition-colors group-hover:text-cyan-300">
+                {p.title}
+              </h3>
+
+            </div>
+
+            <ArrowRight className="size-5 text-white/40 transition-all duration-300 group-hover:translate-x-1 group-hover:text-cyan-300" />
+
+          </Link>
+
+        </Reveal>
+
+      ))}
+
+    </div>
+
+    {/* CTA */}
+
+    <div className="mt-16 text-center">
+
+      <Link
+        to="/products"
+        className="inline-flex items-center gap-2 rounded-xl bg-brand px-7 py-4 font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-[0_15px_40px_-10px_rgba(0,230,118,.35)]"
+      >
+        View All Banking Products
+        <ArrowRight className="size-5" />
+      </Link>
+
+    </div>
+
+  </div>
+
+</section>
+
+      {/* === SERVICES, CONSULTING & SEGMENTS === */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#030926] via-[#0e2778] to-[#030926] py-24 lg:py-32 text-white">
+
+  {/* Background Effects */}
+
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_35%,rgba(0,0,0,.45)_100%)] pointer-events-none" />
+
+  <div className="absolute top-10 right-10 h-96 w-96 rounded-full bg-cyan-400/10 blur-[140px]" />
+
+  <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-indigo-500/10 blur-[140px]" />
+
+  <div className="relative z-10 mx-auto max-w-7xl px-6">
+
+    {/* Header */}
+
+    <Reveal>
+
+      <p className="mb-4 text-center text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">
+        Expertise & Capabilities
+      </p>
+
+      <h2 className="mx-auto max-w-5xl text-center font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+        Services, Consulting & Industry Segments
+      </h2>
+
+      <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-8 text-white/70">
+        Helping financial institutions modernize operations through consulting,
+        AI, enterprise data, digital transformation, and industry-focused
+        solutions.
+      </p>
+
+    </Reveal>
+
+    {/* Consulting Images */}
+
+    <div className="mt-20 grid gap-8 lg:grid-cols-2">
+
+      <Reveal delay={100}>
+
+        <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-[0_25px_70px_-20px_rgba(0,0,0,.45)] transition-all duration-500 hover:-translate-y-1 hover:border-cyan-400/50 hover:shadow-[0_30px_80px_-20px_rgba(0,194,255,.25)]">
+
+          <div className="border-b border-white/10 p-6">
+
+            <h3 className="font-display text-2xl font-semibold text-white">
+              Our Consulting Approach
             </h3>
 
           </div>
+
+          <ImageViewer
+            src={consultingApproach}
+            alt="Our Consulting Approach"
+            className="w-full cursor-zoom-in"
+          />
 
         </div>
 
       </Reveal>
 
-    ))}
+      <Reveal delay={220}>
 
-  </div>
+        <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-[0_25px_70px_-20px_rgba(0,0,0,.45)] transition-all duration-500 hover:-translate-y-1 hover:border-cyan-400/50 hover:shadow-[0_30px_80px_-20px_rgba(0,194,255,.25)]">
 
-</div>
-      </section>
+          <div className="border-b border-white/10 p-6">
 
-      {/* === SOLUTIONS === */}
-      <section className="py-24 sm:py-32 bg-gradient-to-b from-[#010414] via-[#05113d] to-[#010414] text-white border-t border-white/5 relative overflow-hidden">
-        {/* Glow */}
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 platform-glow-blue opacity-25 pointer-events-none" />
-        <div className="mx-auto max-w-7xl px-6 relative z-10">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <Reveal>
-              <p className="eyebrow-dark">Solutions</p>
-              <h2 className="mt-3 max-w-3xl font-display text-4xl font-bold text-white sm:text-6xl tracking-tight">
-                Building the Future of Banking with Intelligent Solutions
-              </h2>
-            </Reveal>
-            <Reveal delay={120}>
-              <Link
-                to="/solutions"
-                className="inline-flex items-center gap-1.5 text-brand hover:text-brand-2 font-medium transition-colors"
-              >
-                All solutions <ArrowRight className="size-4" />
-              </Link>
-            </Reveal>
+            <h3 className="font-display text-2xl font-semibold text-white">
+              Digital Transformation Framework
+            </h3>
+
           </div>
-          <div className="mt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            {solutions.pages.map((p, i) => {
-              const styles = getSolutionStyles(p.slug);
-              const IconComp = styles.Icon;
 
-              return (
-                <Reveal key={p.slug} delay={(i % 3) * 100}>
-                  <Link
-                    to="/solutions/$slug"
-                    params={{ slug: p.slug }}
-                    className="group relative isolate block h-full overflow-hidden rounded-2xl
-                              border border-white/10
-                              bg-[#020a23]
-                              p-7
-                              backdrop-blur-xl
-                              transition-all duration-500
-                              hover:border-cyan-400/60
-                              hover:ring-2
-                              hover:ring-cyan-400/30
-                              hover:shadow-[0_20px_50px_rgba(0,194,255,0.18)]"
-                  >
-                    {/* Top Accent Line */}
-                    <div
-                      className="absolute left-0 top-0 h-1 w-0 rounded-t-2xl transition-all duration-500 group-hover:w-full"
-                      style={{ backgroundColor: styles.accent }}
-                    />
+          <ImageViewer
+            src={digitalTransformation}
+            alt="Digital Transformation"
+            className="w-full cursor-zoom-in"
+          />
 
-                    {/* Content */}
-                    <div className="relative z-10 flex h-full flex-col justify-between">
-
-                      <div>
-
-                        <div className="flex items-center justify-between">
-
-                          <div
-                            className="flex size-12 items-center justify-center rounded-xl
-                                      bg-white/10 text-brand shadow-sm
-                                      transition-all duration-500
-                                      group-hover:scale-110
-                                      group-hover:rotate-3"
-                          >
-                            <IconComp className="size-6 stroke-[2]" />
-                          </div>
-
-                          <ArrowRight
-                            className="size-4 text-white/40 transition-all duration-500
-                                      group-hover:translate-x-1
-                                      group-hover:text-white"
-                          />
-
-                        </div>
-
-                        <h3
-                          className="mt-6 font-display text-lg font-bold
-                                    text-white transition-colors
-                                    group-hover:text-brand"
-                        >
-                          {p.title}
-                        </h3>
-
-                        <p className="mt-2.5 line-clamp-3 text-sm leading-relaxed text-white/70">
-                          {p.tagline}
-                        </p>
-
-                      </div>
-
-                      <span
-                        className="mt-6 inline-flex items-center gap-1
-                                  text-xs font-semibold uppercase tracking-wider
-                                  text-brand/80 transition-colors
-                                  group-hover:text-brand"
-                      >
-                        Learn More
-                      </span>
-
-                    </div>
-                  </Link>
-                </Reveal>
-              );
-            })}
-          </div>
         </div>
-      </section>
 
-      {/* === BANKING PRODUCTS (image band) === */}
-      <section className="relative py-24 sm:py-32 bg-gradient-to-br from-[#010414] via-[#041440] to-[#08225e] overflow-hidden">
-        {/* Cyan lighting overlay for dashboard feeling */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,240,255,0.1)_0%,_transparent_70%)] pointer-events-none" />
-        <div className="absolute top-10 left-10 w-96 h-96 bg-cyan-400/5 rounded-full blur-[120px] pointer-events-none animate-pulse" />
-        <img
-          src={sectionImage("products")}
-          alt=""
-          aria-hidden
-          loading="lazy"
-          width={1920}
-          height={1080}
-          className="absolute inset-0 size-full object-cover opacity-35"
-        />
-        <div className="cosmic-overlay" />
-        <div className="cosmic-particles" />
-        <div className="relative mx-auto max-w-6xl px-6">
-          <Reveal>
-            <p className="eyebrow-dark">Banking Product Suites</p>
-            <h2 className="mt-3 max-w-3xl font-display text-4xl font-bold text-white sm:text-6xl tracking-tight">
-              Our Banking Product Suites
-            </h2>
-            <div className="mt-7 flex justify-center">
-              <LogoBox logo={PRODUCT_LOGOS.revnexure} size="xl" />
+      </Reveal>
+
+    </div>
+
+    {/* Capability Cards */}
+
+    <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
+      {[services, consulting, segments].map((s, idx) => (
+
+        <Reveal key={s.key} delay={idx * 120}>
+
+          <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-8 transition-all duration-500 hover:-translate-y-2 hover:border-brand/50 hover:shadow-[0_25px_70px_-20px_rgba(0,230,118,.18)]">
+
+            {/* Accent */}
+
+            <div className="absolute left-0 top-0 h-1 w-0 bg-brand transition-all duration-500 group-hover:w-full" />
+
+            <div>
+
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">
+                {s.label}
+              </p>
+
+              <h3 className="font-display text-3xl font-bold text-white">
+                {s.headline}
+              </h3>
+
+              <p className="mt-5 leading-7 text-white/70">
+                {s.summary}
+              </p>
+
             </div>
-            <p className="mt-5 max-w-3xl text-lg text-white/75">
-              AI-Powered Revenue Assurance Platform for Banking, Financial Services &amp; Capital Markets.
-            </p>
-            <Reveal delay={180} direction="right" className="mt-8 flex justify-center">
-              <div className="w-full max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-2 shadow-lg">
-                <ImageViewer
-                  src={DOC_IMAGES.image6}
-                  alt="Banking Product Suites Illustration"
-                  className="w-full h-auto object-contain rounded-xl"
-                  style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
-                />
+
+            <div className="mt-8 flex-1">
+
+              <div className="space-y-3">
+
+                {s.pages.slice(0, 5).map((p) => (
+
+                  <Link
+                    key={p.slug}
+                    to={`${s.basePath}/$slug` as never}
+                    params={{ slug: p.slug } as never}
+                    className="group/item flex items-center gap-3 rounded-xl px-3 py-2 transition-all hover:bg-white/5"
+                  >
+
+                    <span className="h-2 w-2 rounded-full bg-brand transition-transform group-hover/item:scale-125" />
+
+                    <span className="text-white/80 transition-colors group-hover/item:text-white">
+                      {p.title}
+                    </span>
+
+                  </Link>
+
+                ))}
+
               </div>
-            </Reveal>
-          </Reveal>
 
-          <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {products.pages.slice(0, 9).map((p, i) => (
-              <Reveal key={p.slug} delay={(i % 3) * 80}>
-                <Link
-                  to="/products/$slug"
-                  params={{ slug: p.slug }}
-                  className="group flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 backdrop-blur transition-all hover:border-white/30 hover:bg-white/[0.08]"
-                >
-                  <span className="font-medium text-white/90 group-hover:text-white">{p.title}</span>
-                  <ArrowRight className="size-4 text-white/50 transition-all group-hover:translate-x-1 group-hover:text-white" />
-                </Link>
-              </Reveal>
-            ))}
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-white/10">
+
+              <Link
+                to={s.basePath as never}
+                className="inline-flex items-center gap-2 font-semibold text-brand transition-all hover:gap-3"
+              >
+                Explore {s.label}
+                <ArrowRight className="size-4" />
+              </Link>
+
+            </div>
+
           </div>
 
-          <div className="mt-10 text-center">
-            <Link to="/products" className="btn-ghost-dark btn-ghost-dark-hover">
-              See all banking products <ArrowRight className="size-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+        </Reveal>
 
-      {/* === SERVICES, CONSULTING & SEGMENTS === */}
-      <section className="py-24 sm:py-32 bg-gradient-to-b from-[#030926] via-[#0e2778] to-[#030926] text-white border-t border-white/5 relative overflow-hidden">
-        {/* Depth shadow vignette & floating shapes */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_40%,_rgba(0,0,0,0.4)_100%)] pointer-events-none" />
-        <div className="absolute top-10 right-20 w-72 h-72 bg-blue-400/10 rounded-full blur-[90px] pointer-events-none animate-bounce duration-[10000ms]" />
-        <div className="absolute bottom-10 left-20 w-80 h-80 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none animate-pulse" />
-        
-        <div className="mx-auto max-w-6xl px-6 mb-16 relative z-10 text-center">
-  <p className="eyebrow-dark">Expertise & Capabilities</p>
+      ))}
 
-  <h2 className="mt-3 font-display text-4xl font-bold text-white sm:text-6xl tracking-tight">
-    Services, Consulting & Industry Segments
-  </h2>
-</div>
-
-{/* Consulting Images */}
-
-<div className="mx-auto max-w-6xl px-6 mb-20 relative z-10">
-
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-    <Reveal delay={100}>
-      <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-xl hover:border-brand transition-all duration-300">
-
-        <div className="p-5 border-b border-white/10">
-          <h3 className="font-display text-2xl font-semibold text-white">
-            Our Consulting Approach
-          </h3>
-        </div>
-
-        <ImageViewer
-          src={consultingApproach}
-          alt="Our Consulting Approach"
-          className="w-full h-auto object-contain cursor-zoom-in"
-        />
-
-      </div>
-    </Reveal>
-
-    <Reveal delay={250}>
-      <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-xl hover:border-brand transition-all duration-300">
-
-        <div className="p-5 border-b border-white/10">
-          <h3 className="font-display text-2xl font-semibold text-white">
-            Our Digital Transformation Approach
-          </h3>
-        </div>
-
-        <ImageViewer
-          src={digitalTransformation}
-          alt="Our Digital Transformation Approach"
-          className="w-full h-auto object-contain cursor-zoom-in"
-        />
-
-      </div>
-    </Reveal>
+    </div>
 
   </div>
 
-</div>
-
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 relative z-10">
-          {[services, consulting, segments].map((s, idx) => (
-            <Reveal key={s.key} delay={idx * 150}>
-              <div className="group relative h-full flex flex-col justify-between overflow-hidden p-8 premium-card-dark premium-card-dark-hover bg-white/[0.02] border border-white/10 hover:border-brand/40 shadow-lg rounded-2xl">
-                <div className="absolute -right-20 -top-20 size-64 rounded-full bg-gradient-to-br from-brand/10 to-brand-purple/10 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                <div>
-                  <p className="eyebrow-dark">{s.label}</p>
-                  <h3 className="mt-3 font-display text-2xl font-semibold text-white sm:text-3xl">{s.headline}</h3>
-                  <p className="mt-3 text-white/70">{s.summary}</p>
-                  <ul className="mt-6 space-y-2 text-sm text-white/70">
-                    {s.pages.slice(0, 5).map((p) => (
-                      <li key={p.slug}>
-                        <Link
-                          to={`${s.basePath}/$slug` as never}
-                          params={{ slug: p.slug } as never}
-                          className="inline-flex items-center gap-2 text-white/80 hover:text-brand transition-colors"
-                        >
-                          <span className="size-1.5 rounded-full bg-brand" />
-                          {p.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mt-6">
-                  <Link
-                    to={s.basePath as never}
-                    className="inline-flex items-center gap-1.5 text-brand hover:text-brand-2 font-medium transition-colors"
-                  >
-                    View all {s.label.toLowerCase()} <ArrowRight className="size-4" />
-                  </Link>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+</section>
 
       {/* === FINAL CTA & CONTACT FORM === */}
-      <section className="py-24 bg-gradient-to-b from-[#020718] via-[#050e26] to-[#01040d] border-t border-white/5 relative overflow-hidden">
-        <div className="absolute top-1/4 right-10 w-96 h-96 platform-glow-blue opacity-15 pointer-events-none" />
-        <div className="mx-auto max-w-6xl px-6 relative z-10">
-          <div className="hero-cosmic relative overflow-hidden rounded-[2rem] p-8 sm:p-16">
-            <img
-              src={SITE_IMAGES.cta}
-              alt=""
-              aria-hidden
-              loading="lazy"
-              width={1920}
-              height={1080}
-              className="absolute inset-0 size-full object-cover opacity-60"
-            />
-            <div className="cosmic-overlay" />
-            <div className="cosmic-particles" />
-            
-            <div className="relative grid gap-12 lg:grid-cols-12 items-center">
-              {/* Left Column: CTA Text */}
-              <div className="lg:col-span-6 text-left space-y-6">
-                <Reveal>
-                  <span className="chip-cosmic">
-                    <span className="pulse-dot" />
-                    Join our journey
-                  </span>
-                </Reveal>
-                <Reveal delay={120}>
-                  <h2 className="font-display text-3xl font-bold text-white sm:text-5xl tracking-tight leading-tight">
-                    {join?.title ?? "Join Our Journey"}
-                  </h2>
-                </Reveal>
-                {join?.tagline && (
-                  <Reveal delay={220}>
-                    <p className="text-lg text-white/80 leading-relaxed text-justify">{join.tagline}</p>
-                  </Reveal>
-                )}
-                <Reveal delay={320}>
-                  <div className="flex flex-wrap gap-4 pt-4">
-                    <Link to="/contact" className="btn-ghost-dark btn-ghost-dark-hover">
-                      CONTACT US <ArrowRight className="size-4" />
-                    </Link>
-                    <a
-                      href="mailto:business@stafrof.com"
-                      className="premium-btn premium-btn-hover inline-flex items-center gap-2"
-                    >
-                      Book a Demo <ArrowRight className="size-4" />
-                    </a>
-                  </div>
-                </Reveal>
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#020718] via-[#04112f] to-[#01040d] py-24 lg:py-32">
+
+  {/* Background */}
+
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,194,255,.08),transparent_65%)] pointer-events-none" />
+
+  <div className="absolute top-10 right-10 h-96 w-96 rounded-full bg-cyan-500/10 blur-[150px]" />
+
+  <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-brand/10 blur-[140px]" />
+
+  <div className="relative z-10 mx-auto max-w-7xl px-6">
+
+    <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/[0.04] backdrop-blur-xl">
+
+      <img
+        src={SITE_IMAGES.cta}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover opacity-35"
+      />
+
+      <div className="cosmic-overlay" />
+      <div className="cosmic-particles" />
+
+      <div className="relative grid gap-16 p-10 lg:grid-cols-2 lg:p-16">
+
+        {/* LEFT */}
+
+        <div>
+
+          <Reveal>
+
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-brand">
+
+              <span className="h-2 w-2 rounded-full bg-brand animate-pulse" />
+
+              Join Our Journey
+
+            </span>
+
+          </Reveal>
+
+          <Reveal delay={120}>
+
+            <h2 className="mt-8 font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+
+              Let's Build the Future of Banking Together
+
+            </h2>
+
+          </Reveal>
+
+          <Reveal delay={220}>
+
+            <p className="mt-8 max-w-xl text-lg leading-8 text-white/80">
+
+              Partner with <strong>Stafróf Intelligence Corporation</strong> to
+              accelerate enterprise innovation across Banking, Financial
+              Services and Capital Markets.
+
+            </p>
+
+            <p className="mt-5 max-w-xl leading-8 text-white/65">
+
+              Whether you're exploring Revenue Assurance, Enterprise Data,
+              Artificial Intelligence, or Digital Transformation, our experts
+              are ready to help you build future-ready financial platforms.
+
+            </p>
+
+          </Reveal>
+
+          <Reveal delay={320}>
+
+            <div className="mt-10 flex flex-wrap gap-3">
+
+              {[
+                "Enterprise Banking",
+                "AI Intelligence",
+                "Digital Transformation",
+                "Global Consulting",
+              ].map((item) => (
+
+                <span
+                  key={item}
+                  className="rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm text-white/80 backdrop-blur"
+                >
+                  {item}
+                </span>
+
+              ))}
+
+            </div>
+
+          </Reveal>
+
+          <Reveal delay={420}>
+
+            <div className="mt-12">
+
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-3 rounded-xl bg-brand px-8 py-4 font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-[0_18px_50px_-12px_rgba(0,230,118,.35)]"
+              >
+                Schedule a Consultation
+
+                <ArrowRight className="size-5" />
+
+              </Link>
+
+              <p className="mt-5 text-sm text-white/50">
+
+                Our specialists typically respond within 1–2 business days.
+
+              </p>
+
+            </div>
+
+          </Reveal>
+
+        </div>
+
+        {/* RIGHT */}
+
+        <Reveal delay={220}>
+
+          <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-8 backdrop-blur-xl shadow-[0_25px_80px_-25px_rgba(0,0,0,.55)]">
+
+            <div className="mb-6 flex items-center gap-4">
+
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/15">
+
+                <Sparkles className="size-7 text-brand" />
+
               </div>
 
-              {/* Right Column: Embedded Contact Form */}
-              <div className="lg:col-span-6">
-                <Reveal delay={240}>
-                  <div className="bg-gradient-to-b from-[#061233]/95 to-[#030a1f]/98 backdrop-blur-xl border border-blue-500/25 p-6 sm:p-8 rounded-3xl shadow-2xl text-left">
-                    <h3 className="font-display text-xl font-bold text-white mb-6">Send us a message</h3>
-                    
-                    <form
-                      onSubmit={(e) => {
-                        e.preventDefault();
+              <h3 className="font-display text-3xl font-bold text-white">
 
-                        const fd = new FormData(e.currentTarget);
-                        const name = fd.get("name") as string;
-                        const company = fd.get("company") as string;
-                        const email = fd.get("email") as string;
-                        const phone = fd.get("phone") as string;
-                        const message = fd.get("message") as string;
+                Why Connect With Us?
 
-                        if (!name || !company || !email || !phone || !message) {
-                          toast.error("Please fill all required fields");
-                          return;
-                        }
+              </h3>
 
-                        const target = e.currentTarget;
+            </div>
 
-                        fetch("https://formsubmit.co/ajax/business@stafrof.com", {
-                          method: "POST",
-                          headers: {
-                            "Content-Type": "application/json",
-                            Accept: "application/json",
-                          },
-                          body: JSON.stringify({
-                            Name: name,
-                            Company: company,
-                            Email: email,
-                            Phone: phone,
-                            Message: message,
-                            Subject: `Business Inquiry from ${company}`,
-                          }),
-                        })
-                          .then((res) => {
-                            if (!res.ok) throw new Error("Failed to submit inquiry");
+            <p className="mb-8 leading-7 text-white/70">
 
-                            toast.success(
-                              "Thank you! Your inquiry has been sent to business@stafrof.com."
-                            );
+              We partner with financial institutions worldwide to deliver
+              enterprise AI platforms, intelligent automation, and digital
+              transformation strategies that create measurable business value.
 
-                            target.reset();
-                          })
-                          .catch(() => {
-                            toast.error(
-                              "Failed to submit. Please try again or email business@stafrof.com directly."
-                            );
-                          });
-                      }}
-                      className="space-y-5"
-                    >
-                      {/* Name */}
-                      <div>
-                        <label className="block text-xs font-semibold text-white uppercase tracking-wider mb-2">
-                          Name *
-                        </label>
+            </p>
 
-                        <input
-                          name="name"
-                          type="text"
-                          required
-                          placeholder="Your name"
-                          className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none transition-all duration-200"
-                        />
-                      </div>
+            <div className="space-y-6">
 
-                      {/* Company */}
-                      <div>
-                        <label className="block text-xs font-semibold text-white uppercase tracking-wider mb-2">
-                          Company *
-                        </label>
+              {[
+                [
+                  "Enterprise Strategy Consultation",
+                  "Business-aligned transformation roadmap.",
+                ],
+                [
+                  "AI & Intelligent Automation",
+                  "Modernize operations with AI-driven platforms.",
+                ],
+                [
+                  "Revenue Assurance & Analytics",
+                  "Unlock profitability through trusted enterprise data.",
+                ],
+                [
+                  "Dedicated Business Team",
+                  "Fast engagement from experienced specialists.",
+                ],
+              ].map(([title, desc]) => (
 
-                        <input
-                          name="company"
-                          type="text"
-                          required
-                          placeholder="Company name"
-                          className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none transition-all duration-200"
-                        />
-                      </div>
+                <div
+                  key={title}
+                  className="flex gap-4 rounded-xl border border-white/5 bg-white/[0.03] p-4"
+                >
 
-                      {/* Email & Phone */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                          <label className="block text-xs font-semibold text-white uppercase tracking-wider mb-2">
-                            Email *
-                          </label>
+                  <div className="mt-2 h-3 w-3 rounded-full bg-brand shrink-0" />
 
-                          <input
-                            name="email"
-                            type="email"
-                            required
-                            placeholder="Business email"
-                            className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none transition-all duration-200"
-                          />
-                        </div>
+                  <div>
 
-                        <div>
-                          <label className="block text-xs font-semibold text-white uppercase tracking-wider mb-2">
-                            Phone *
-                          </label>
+                    <h4 className="font-semibold text-white">
 
-                          <input
-                            name="phone"
-                            type="tel"
-                            required
-                            placeholder="Phone number"
-                            className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none transition-all duration-200"
-                          />
-                        </div>
-                      </div>
+                      {title}
 
-                      {/* Message */}
-                      <div>
-                        <label className="block text-xs font-semibold text-white uppercase tracking-wider mb-2">
-                          Message *
-                        </label>
+                    </h4>
 
-                        <textarea
-                          name="message"
-                          required
-                          rows={5}
-                          placeholder="Your message..."
-                          className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none transition-all duration-200 resize-none"
-                        />
-                      </div>
+                    <p className="mt-1 text-sm leading-6 text-white/60">
 
-                      {/* Submit */}
-                      <button
-                        type="submit"
-                        className="w-full premium-btn premium-btn-hover justify-center py-4 text-sm font-semibold uppercase tracking-wider"
-                      >
-                        Submit Enquiry
-                      </button>
-                    </form>
+                      {desc}
+
+                    </p>
+
                   </div>
-                </Reveal>
-              </div>
+
+                </div>
+
+              ))}
+
             </div>
 
           </div>
-          <Reveal delay={180} direction="right" className="mt-12 flex justify-center">
-              <div className="w-full max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-2 shadow-lg">
-                <ImageViewer
-                  src={DOC_IMAGES.image18}
-                  alt="Join Our Journey"
-                  className="w-full h-auto object-contain rounded-xl"
-                  style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
-                />
-              </div>
-            </Reveal>
-        </div>
-      </section>
+
+        </Reveal>
+
+      </div>
+
+    </div>
+
+    {/* Bottom Illustration */}
+
+    <Reveal delay={180} direction="right">
+
+      <div className="mx-auto mt-16 max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,.45)]">
+
+        <ImageViewer
+          src={DOC_IMAGES.image18}
+          alt="Join Our Journey"
+          className="w-full rounded-2xl"
+        />
+
+      </div>
+
+    </Reveal>
+
+  </div>
+
+</section>
     </>
   );
 }

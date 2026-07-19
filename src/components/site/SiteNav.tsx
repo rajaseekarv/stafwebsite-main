@@ -20,17 +20,17 @@ export function SiteNav() {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 w-full bg-[#020A23] transition-all border-b border-white/10 h-16 lg:h-20 flex items-center",
-        scrolled && "shadow-[0_10px_40px_rgba(0,0,0,.35)]",
+        "fixed inset-x-0 top-0 z-50 flex h-[72px] lg:h-[84px] w-full items-center border-b border-white/10 bg-[#020A23] transition-all duration-300",
+        scrolled && "shadow-[0_8px_28px_rgba(0,0,0,.25)]",
       )}
     >
-      <div className="w-full h-full flex items-center justify-between pl-0.5 pr-2 lg:pl-1 lg:pr-4">
+      <div className="flex h-full w-full items-center justify-between px-4 lg:px-8">
         <Link to="/" className="h-full shrink-0 flex items-center brand-logo">
           <Logo />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden xl:flex flex-1 items-center justify-center gap-[clamp(4px,0.5vw,10px)] whitespace-nowrap min-w-0">
+        <nav className="hidden xl:flex flex-1 items-center justify-center gap-1 whitespace-nowrap min-w-0 px-4">
           {SITE.sections
             .filter((s) => ["about", "products", "platforms", "solutions", "services", "consulting", "segments", "partners", "insights"].includes(s.key))
             .map((section) => (
@@ -39,7 +39,7 @@ export function SiteNav() {
         </nav>
 
         <div className="hidden xl:block shrink-0 ml-2 contact-menu-btn">
-          <Button asChild size="sm" className="rounded-full px-2 lg:px-3 xl:px-4 text-xs xl:text-sm shrink-0">
+          <Button asChild size="sm" className="h-11 rounded-full px-4 text-[13px] font-semibold tracking-wide shrink-0">
             <Link to="/contact">CONTACT US</Link>
           </Button>
         </div>
@@ -47,11 +47,11 @@ export function SiteNav() {
         {/* Mobile */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="xl:hidden text-black hover:text-black hover:bg-white/10" aria-label="Open menu">
+            <Button variant="ghost" size="icon" className="bg-white/90 xl:hidden text-black hover:text-black hover:bg-white/80" aria-label="Open menu">
               <Menu className="size-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-full max-w-sm overflow-y-auto p-0 bg-[#020A23] border-l border-white/10">
+          <SheetContent side="right" className="w-full max-w-sm overflow-y-auto p-0 bg-[#011c49] border-l border-white/10">
             <SheetTitle className="sr-only">Site navigation</SheetTitle>
             <div className="flex items-center justify-between border-b px-5 py-4">
               <Logo />
@@ -62,7 +62,7 @@ export function SiteNav() {
             <div className="px-5 py-4">
               {SITE.sections.map((section) => (
                 <details key={section.key} className="group border-b py-3 last:border-none">
-                  <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-white">
+                  <summary className="flex cursor-pointer list-none items-center justify-between text-[15px] font-semibold tracking-wide text-white">
                     {section.label}
                     <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
                   </summary>
@@ -73,7 +73,7 @@ export function SiteNav() {
                           to={`${section.basePath}/$slug` as never}
                           params={{ slug: p.slug } as never}
                           onClick={() => setOpen(false)}
-                          className="block rounded-md px-2 py-1.5 text-sm text-white/70 hover:bg-white/10 hover:text-[#FF7A00]"
+                          className="block rounded-lg px-3 py-2 text-[15px] font-medium text-white/75 transition-colors hover:bg-white/10 hover:text-[#FF7A00]"
                         >
                           {cleanMenuTitle(p.title, section.key)}
                         </Link>
@@ -117,7 +117,7 @@ function NavDropdown({ sectionKey, align = "center" }: { sectionKey: SectionKey;
       <Link
         to={section.basePath as never}
         onClick={close}
-        className="flex items-center gap-[2px] rounded-full px-1 lg:px-[6px] xl:px-[8px] py-1.5 text-[11px] lg:text-[13px] xl:text-[14px] font-semibold tracking-tight text-white transition-colors hover:bg-black/5 group"
+        className="flex items-center gap-1 rounded-full px-2 py-2 text-[14px] font-semibold tracking-normal text-white transition-all duration-300 hover:bg-white/10 group"
       >
         {section.label}
         <ChevronDown className={cn("size-3 lg:size-4 opacity-90 transition-transform text-white group-hover:text-white", isOpen && "rotate-180")} />
@@ -131,14 +131,14 @@ function NavDropdown({ sectionKey, align = "center" }: { sectionKey: SectionKey;
           align === "end" && "right-0",
         )}
       >
-        <div className="flex flex-col w-max gap-1 rounded-2xl border bg-white p-3 shadow-[0_22px_54px_-12px_oklch(0.18_0.012_270/0.20)] min-w-[240px] max-h-[70vh] overflow-y-auto">
+        <div className="flex flex-col w-max gap-1 rounded-2xl border bg-white p-3 shadow-[0_22px_54px_-12px_oklch(0.18_0.012_270/0.20)] min-w-[240px] max-h-[80vh] overflow-y-auto">
           {section.pages.map((p) => (
             <Link
               key={p.slug}
               to={`${section.basePath}/$slug` as never}
               params={{ slug: p.slug } as never}
               onClick={close}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-ink-2 transition-colors hover:bg-surface hover:text-brand"
+              className="rounded-lg px-4 py-2 text-[15px] font-medium text-ink-2 transition-colors hover:bg-surface hover:text-brand"
             >
               {cleanMenuTitle(p.title, section.key)}
             </Link>
@@ -149,13 +149,13 @@ function NavDropdown({ sectionKey, align = "center" }: { sectionKey: SectionKey;
   );
 }
 
-
 function MoreDropdown() {
   const [hovering, setHovering] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
 
   const isOpen = hovering && !dismissed;
+
   const close = () => {
     setDismissed(true);
     setActiveSubMenu(null);
@@ -180,21 +180,26 @@ function MoreDropdown() {
     >
       <button
         onClick={close}
-        className="flex items-center gap-[2px] rounded-full px-1 lg:px-[4px] xl:px-[6px] py-1.5 text-xs lg:text-[15px] font-semibold tracking-tight text-white transition-colors hover:bg-black/5 group cursor-pointer"
+        className="flex items-center gap-1 rounded-full px-3 py-2 text-[15px] font-semibold tracking-wide text-white transition-all duration-300 hover:bg-white/10 group cursor-pointer"
       >
         MORE
-        <ChevronDown className={cn("size-3 lg:size-4 opacity-90 transition-transform text-white group-hover:text-black", isOpen && "rotate-180")} />
+        <ChevronDown
+          className={cn(
+            "size-4 transition-transform text-white",
+            isOpen && "rotate-180"
+          )}
+        />
       </button>
 
       <div
         className={cn(
           "absolute top-full right-0 pt-3 transition-all duration-150 z-50",
-          isOpen ? "visible opacity-100" : "invisible opacity-0",
+          isOpen ? "visible opacity-100" : "invisible opacity-0"
         )}
       >
-        <div className="flex flex-col w-max gap-1 rounded-2xl border bg-white p-3 shadow-[0_22px_54px_-12px_oklch(0.18_0.012_270/0.20)] min-w-[200px]">
+        <div className="flex flex-col gap-1 rounded-2xl border bg-white p-3 shadow-[0_22px_54px_-12px_oklch(0.18_0.012_270/0.20)] min-w-[220px]">
           {moreSections.map((section) => {
-            const hasPages = section.pages && section.pages.length > 0;
+            const hasPages = section.pages.length > 0;
             const isSubOpen = activeSubMenu === section.key;
 
             return (
@@ -207,11 +212,12 @@ function MoreDropdown() {
                 <Link
                   to={section.basePath as never}
                   onClick={close}
-                  className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-semibold text-ink-2 transition-colors hover:bg-surface hover:text-brand w-full text-left"
+                  className="flex items-center justify-between rounded-lg px-4 py-2.5 text-[15px] font-semibold text-ink-2 transition-colors hover:bg-surface hover:text-brand"
                 >
                   <span>{section.label}</span>
+
                   {hasPages && (
-                    <ChevronDown className="size-4 -rotate-90 text-ink-3 ml-2" />
+                    <ChevronDown className="ml-2 size-4 -rotate-90 text-ink-3" />
                   )}
                 </Link>
 
@@ -219,17 +225,17 @@ function MoreDropdown() {
                   <div
                     className={cn(
                       "absolute top-0 right-full pr-3 transition-all duration-150 z-50",
-                      isSubOpen ? "visible opacity-100" : "invisible opacity-0",
+                      isSubOpen ? "visible opacity-100" : "invisible opacity-0"
                     )}
                   >
-                    <div className="flex flex-col w-max gap-1 rounded-2xl border bg-white p-3 shadow-[0_22px_54px_-12px_oklch(0.18_0.012_270/0.20)] min-w-[220px] max-h-[70vh] overflow-y-auto">
+                    <div className="flex flex-col gap-1 rounded-2xl border bg-white p-3 shadow-[0_22px_54px_-12px_oklch(0.18_0.012_270/0.20)] min-w-[240px] max-h-[70vh] overflow-y-auto">
                       {section.pages.map((p) => (
                         <Link
                           key={p.slug}
                           to={`${section.basePath}/$slug` as never}
                           params={{ slug: p.slug } as never}
                           onClick={close}
-                          className="rounded-lg px-3 py-2 text-sm font-medium text-ink-2 transition-colors hover:bg-surface hover:text-brand"
+                          className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-ink-2 transition-colors hover:bg-surface hover:text-brand"
                         >
                           {cleanMenuTitle(p.title, section.key)}
                         </Link>
@@ -246,14 +252,13 @@ function MoreDropdown() {
   );
 }
 
-
 function Logo() {
   return (
-    <div className="h-full flex items-center justify-start shrink-0 pl-4 py-0">
+    <div className="h-full flex items-center justify-start shrink-0 pl-3 py-0">
       <img
         src="/stafrof-logo-header.jpg"
         alt="Stafróf Intelligence Corporation"
-        className="w-[140px] lg:w-[220px] h-auto object-contain shrink-0 block"
+        className="w-[135px] lg:w-[185px] xl:w-[195px] h-auto object-contain shrink-0 block"
       />
     </div>
   );

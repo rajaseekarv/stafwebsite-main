@@ -7,108 +7,191 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
 const schema = z.object({
-  firstName: z.string().trim().min(1, "Required").max(80),
-  lastName: z.string().trim().min(1, "Required").max(80),
-  email: z.string().trim().email("Invalid email").max(200),
-  phone: z.string().trim().min(4, "Required").max(40),
-  jobTitle: z.string().trim().min(1, "Required").max(120),
-  company: z.string().trim().min(1, "Required").max(160),
-  country: z.string().trim().min(1, "Required").max(80),
+  fullName: z.string().trim().min(2, "Please enter your full name").max(120),
+  email: z.string().trim().email("Please enter a valid business email"),
+  phone: z.string().trim().min(4, "Please enter your phone number").max(40),
+  designation: z.string().trim().min(2, "Please enter your designation").max(120),
+  company: z.string().trim().min(2, "Please enter your company name").max(160),
+  country: z.string().trim().min(2, "Please enter your country").max(80),
   project: z.string().trim().max(2000).optional(),
 });
 
-const FIELDS: Array<{ name: keyof z.infer<typeof schema>; label: string; type?: string; full?: boolean }> = [
-  { name: "firstName", label: "First Name" },
-  { name: "lastName", label: "Last Name" },
-  { name: "email", label: "Business Email", type: "email" },
-  { name: "phone", label: "Phone Number", type: "tel" },
-  { name: "jobTitle", label: "Job Title" },
-  { name: "company", label: "Company / Institution" },
-  { name: "country", label: "Country" },
+type Field = {
+  name: keyof z.infer<typeof schema>;
+  label: string;
+  placeholder: string;
+  type?: React.HTMLInputTypeAttribute;
+};
+
+const FIELDS: Field[] = [
+  {
+    name: "fullName",
+    label: "Full Name",
+    placeholder: "John Smith",
+  },
+  {
+    name: "email",
+    label: "Business Email",
+    type: "email",
+    placeholder: "john@company.com",
+  },
+  {
+    name: "phone",
+    label: "Phone Number",
+    type: "tel",
+    placeholder: "+1 234 567 890",
+  },
+  {
+    name: "designation",
+    label: "Designation",
+    placeholder: "Chief Technology Officer",
+  },
+  {
+    name: "company",
+    label: "Company / Institution",
+    placeholder: "ABC Bank Ltd.",
+  },
+  {
+    name: "country",
+    label: "Country",
+    placeholder: "United States",
+  },
 ];
 
 export function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+
+    const form = e.currentTarget;
+
+    const fd = new FormData(form);
     const data = Object.fromEntries(fd.entries());
+
     const parsed = schema.safeParse(data);
+
     if (!parsed.success) {
-      const first = parsed.error.issues[0];
-      toast.error(first?.message ?? "Please fill all required fields");
+      toast.error(parsed.error.issues[0]?.message || "Please complete all required fields.");
       return;
     }
 
     setSubmitting(true);
 
-    fetch("https://formsubmit.co/ajax/business@Stafróf.com", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({
-        "_replyto": parsed.data.email,
-        "Subject": `Contact Us Enquiry — ${parsed.data.company}`,
-        "Name": `${parsed.data.firstName} ${parsed.data.lastName}`,
-        "Email": parsed.data.email,
-        "Phone": parsed.data.phone,
-        "Job Title": parsed.data.jobTitle,
-        "Company": parsed.data.company,
-        "Country": parsed.data.country,
-        "Project Details": parsed.data.project || "(none)"
-      })
-    })
-      .then(res => {
-        if (!res.ok) throw new Error("Failed to submit contact form");
-        return res.json();
-      })
-      .then(() => {
-        setSubmitting(false);
-        toast.success("Thank you! Your enquiry has been sent successfully to business@Stafróf.com.");
-        (e.target as HTMLFormElement).reset();
-      })
-      .catch(err => {
-        setSubmitting(false);
-        toast.error("Failed to submit. Please try again or email business@Stafróf.com directly.");
-      });
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/business@stafrof.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            _subject: `New Business Enquiry - ${parsed.data.company}`,
+            _replyto: parsed.data.email,
+
+            Name: parsed.data.fullName,
+            Email: parsed.data.email,
+            Phone: parsed.data.phone,
+            Designation: parsed.data.designation,
+            Company: parsed.data.company,
+            Country: parsed.data.country,
+            "Project Details": parsed.data.project || "Not provided",
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error();
+      }
+
+      form.reset();
+
+      toast.success(
+        "Thank you for contacting Stafróf Intelligence Corporation. Our business team has received your enquiry and will respond within 1–2 business days."
+      );
+    } catch {
+      toast.error(
+        "Unable to send your enquiry at the moment. Please try again shortly or email us directly at business@stafrof.com."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-5 sm:grid-cols-2 text-left">
-      {FIELDS.map((f) => (
-        <div key={f.name} className="grid gap-1.5">
-          <Label htmlFor={f.name} className="text-slate-700 font-semibold text-sm">
-            {f.label} <span className="text-red-500">*</span>
+    <form
+      onSubmit={handleSubmit}
+      className="grid gap-5 sm:grid-cols-2 text-left"
+    >
+      {FIELDS.map((field) => (
+        <div key={field.name} className="grid gap-2">
+          <Label
+            htmlFor={field.name}
+            className="text-slate-700 font-semibold text-sm"
+          >
+            {field.label} <span className="text-red-500">*</span>
           </Label>
-          <Input 
-            id={f.name} 
-            name={f.name} 
-            type={f.type ?? "text"} 
-            required 
-            className="bg-slate-50/80 border-slate-200 text-slate-900 focus:bg-white focus:border-brand focus:ring-1 focus:ring-brand rounded-xl h-11 placeholder-slate-400 transition-all"
+
+          <Input
+            id={field.name}
+            name={field.name}
+            type={field.type || "text"}
+            placeholder={field.placeholder}
+            required
+            className="h-12 rounded-xl border-slate-200 bg-slate-50/80 text-slate-900 placeholder:text-slate-400 focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
           />
         </div>
       ))}
-      <div className="grid gap-1.5 sm:col-span-2">
-        <Label htmlFor="project" className="text-slate-700 font-semibold text-sm">Tell us about your project</Label>
-        <Textarea 
-          id="project" 
-          name="project" 
-          rows={5} 
-          placeholder="A bit of context helps us connect you with the right team faster." 
-          className="bg-slate-50/80 border-slate-200 text-slate-900 focus:bg-white focus:border-brand focus:ring-1 focus:ring-brand rounded-xl placeholder-slate-400 resize-none transition-all"
+
+      <div className="sm:col-span-2 grid gap-2">
+        <Label
+          htmlFor="project"
+          className="text-slate-700 font-semibold text-sm"
+        >
+          How can we help you?
+        </Label>
+
+        <Textarea
+          id="project"
+          name="project"
+          rows={6}
+          placeholder="Briefly describe your business goals, project requirements, or the solutions you're looking for."
+          className="rounded-xl border-slate-200 bg-slate-50/80 text-slate-900 placeholder:text-slate-400 resize-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
         />
       </div>
-      <div className="sm:col-span-2">
-        <Button type="submit" size="lg" disabled={submitting} className="w-full rounded-full sm:w-auto sm:px-10 bg-brand text-ink hover:bg-brand-2 shadow-md font-semibold transition-all">
-          {submitting ? "Sending..." : "Submit enquiry"}
+
+      <div className="sm:col-span-2 pt-2">
+
+        <Button
+          type="submit"
+          size="lg"
+          disabled={submitting}
+          className="rounded-full bg-brand hover:bg-brand-2 text-ink px-10 py-6 font-semibold shadow-lg transition-all"
+        >
+          {submitting ? "Sending Your Request..." : "Request Consultation"}
         </Button>
-        <p className="mt-3 text-xs text-slate-500">
-          Your details will be sent to <span className="font-semibold text-slate-700">business@Stafróf.com</span>.
-        </p>
+
+        <div className="mt-5 space-y-1">
+
+          <p className="text-sm text-slate-600">
+            ✓ Typical response time:
+            <span className="font-semibold">
+              {" "}
+              1–2 business days
+            </span>
+          </p>
+
+          <p className="text-sm text-slate-500 leading-6">
+            Your information will remain confidential and will only be used to
+            respond to your enquiry. For immediate assistance, contact{" "}
+            <span className="font-semibold text-slate-700">
+              business@stafrof.com
+            </span>.
+          </p>
+
+        </div>
       </div>
     </form>
   );

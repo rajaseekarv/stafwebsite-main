@@ -85,93 +85,248 @@ export function SectionPage({ sectionKey, slug }: Props) {
       </div>
     );
   }
-
 {/* -------------------- Who We Are -------------------- */}
-  if (sectionKey === "about" && slug === "who-we-are") {
-    const imgSrc = SLUG_DOC_IMAGES["who-we-are"]?.[0] || topicImageFor(sectionKey, slug);
-    return (
-      <section className="py-32 min-h-screen bg-surface/95">
-        <div className="mx-auto max-w-8xl px-6 space-y-12 text-center animate-fade-in">
-          <Reveal>
-            <h1 className="font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl tracking-tight uppercase">
-              WHO WE ARE
-            </h1>
-          </Reveal>
-          <Reveal delay={150} className="text-xl leading-relaxed text-ink-2 max-w-5xl mx-auto text-justify">
-            <p>
-              At Stafróf, we believe that data is the foundation of intelligent banking. By transforming data into actionable insights and automating complex business processes, we empower financial institutions to make faster decisions, improve operational efficiency, reduce risk, and unlock sustainable growth.
-            </p>
-            <br /><p>Powering Banking, Financial Services & Capital Markets with AI, Data & Intelligent Innovation</p>
-            <br /><p>Stafróf Intelligence Corporation is a next-generation enterprise technology company dedicated to empowering the Banking, Financial Services, and Capital Markets industry through innovative AI, enterprise data, and intelligent automation platforms.</p>
-            <br /><p>We develop enterprise-grade products that help financial institutions modernize operations, optimize revenue, improve data intelligence, automate business processes, and accelerate digital transformation. Our solutions are designed to solve complex business challenges while enabling organizations to operate more efficiently, make smarter decisions, and deliver exceptional customer experiences.</p>
-            <br /><p>With deep domain expertise in banking and financial services, combined with modern engineering and AI capabilities, we develop secure, scalable, and enterprise-grade platforms designed to address the evolving needs of today's financial ecosystem.</p>
-            <br /><p><b>Our flagship platforms include:</b></p>
-            <ul className="mt-3 list-disc pl-6">
-              <li><b>RevNexure</b> - AI-powered Revenue Assurance Platform that helps identify, prevent, and recover revenue leakages across banking operations.</li>
-              <li><b>DataXentra</b> - Enterprise Data Platform that unifies, governs, and transforms enterprise data into trusted business intelligence. </li>
-              <li><b>AgenNova</b> - AI Intelligence Platform that enables intelligent automation, AI agents, predictive insights, and decision intelligence. </li>
-            </ul>
-            <br /><p>As a product-driven organization, our commitment is to deliver innovative, secure, and scalable technology solutions that help financial institutions thrive in an increasingly digital world.</p>
-            <br /><p>At Stafróf, we embrace customer-centric innovation and design thinking to solve complex business challenges. By combining advanced analytics, responsible AI, and enterprise technology, we help organizations improve operational efficiency, strengthen compliance, enhance customer experiences, and drive sustainable growth.</p>
-            <br /><p>Our commitment is to empower banks, financial institutions, and capital market organizations with intelligent technologies that enable them to innovate with confidence, operate with agility, and compete successfully in an increasingly digital world.</p>
-            <br /><p><b>Our Purpose</b></p>
-            <p>To empower financial institutions with intelligent technologies that simplify complexity, accelerate innovation, and create lasting business value.</p>              
-          </Reveal>
-          <Reveal delay={250} direction="right" className="flex justify-center">
-            <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg max-w-5xl">
-              <ImageViewer
-                src={imgSrc}
-                alt="Who We Are - Stafróf"
-                className="w-full h-auto object-contain rounded-xl"
-                style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-    );
-  }
+if (sectionKey === "about" && slug === "who-we-are") {
+  const imgSrc =
+    SLUG_DOC_IMAGES["who-we-are"]?.[0] || topicImageFor(sectionKey, slug);
 
-  {/* -------------------- Our Vision -------------------- */}
-  if (sectionKey === "about" && slug === "vision") {
-    const imgSrc = SLUG_DOC_IMAGES["vision"]?.[0] || topicImageFor(sectionKey, slug);
-    return (
-      <section className="py-32 min-h-screen bg-surface/95">
-        <div className="mx-auto max-w-8xl px-6 space-y-12 text-center animate-fade-in">
-          <Reveal>
-            <h1 className="font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl tracking-tight uppercase">
-              Our Vision
-            </h1>
-          </Reveal>
-          <Reveal delay={150} className="text-xl leading-relaxed text-ink-2 max-w-5xl mx-auto text-justify">
-            <p>To become a globally trusted enterprise technology company, empowering the future of Banking, Financial Services, and Capital Markets through AI, data, and intelligent innovation.</p>
-            <br /><p><b>Mission</b></p>
-            <p>To help financial institutions accelerate digital transformation by delivering innovative, secure, and scalable AI-powered platforms that unlock the value of data, optimize business performance, automate operations, and enable intelligent decision-making.</p>
-            <br /><br /><p className="text-2xl font-semibold mb-3">Our Core Values: </p>
-            <p><b>Customer First</b></p>
-            <p>We put our customers at the center of everything we do, creating solutions that address real business challenges and deliver measurable outcomes.</p>
-            <br /><p><b>Innovation</b></p>
-            <p>We embrace curiosity, creativity, and continuous improvement to develop technologies that shape the future of financial services.</p>
-            <br /><p><b>Excellence</b></p>
-            <p>We strive for the highest standards in engineering, product quality, service delivery, and customer experience.</p>
-            <br /><p><b>Security & Trust</b></p>
-            <p>We design our platforms with security, privacy, and reliability at the core, helping customers operate with confidence.</p>
+  return (
+    <section className="min-h-screen bg-surface/95 py-28 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 animate-fade-in">
 
-          </Reveal>
-          <Reveal delay={250} direction="right" className="flex justify-center">
-            <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg max-w-5xl">
-              <ImageViewer
-                src={imgSrc}
-                alt="Who We Are - Stafróf"
-                className="w-full h-auto object-contain rounded-xl"
-                style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
-              />
+        <Reveal>
+          <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-6xl text-center">
+            WHO WE ARE
+          </h1>
+        </Reveal>
+
+        <Reveal
+          delay={150}
+          className="mx-auto mt-12 max-w-5xl space-y-6 text-left text-lg leading-8 text-ink-2"
+        >
+          <p>
+            At Stafróf, we believe that data is the foundation of intelligent
+            banking. By transforming data into actionable insights and
+            automating complex business processes, we empower financial
+            institutions to make faster decisions, improve operational
+            efficiency, reduce risk, and unlock sustainable growth.
+          </p>
+
+          <p>
+            Powering Banking, Financial Services & Capital Markets with AI,
+            Data & Intelligent Innovation.
+          </p>
+
+          <p>
+            Stafróf Intelligence Corporation is a next-generation enterprise
+            technology company dedicated to empowering the Banking, Financial
+            Services, and Capital Markets industry through innovative AI,
+            enterprise data, and intelligent automation platforms.
+          </p>
+
+          <p>
+            We develop enterprise-grade products that help financial
+            institutions modernize operations, optimize revenue, improve data
+            intelligence, automate business processes, and accelerate digital
+            transformation. Our solutions are designed to solve complex
+            business challenges while enabling organizations to operate more
+            efficiently, make smarter decisions, and deliver exceptional
+            customer experiences.
+          </p>
+
+          <p>
+            With deep domain expertise in banking and financial services,
+            combined with modern engineering and AI capabilities, we develop
+            secure, scalable, and enterprise-grade platforms designed to
+            address the evolving needs of today's financial ecosystem.
+          </p>
+
+          <h2 className="pt-4 font-display text-2xl font-semibold text-ink">
+            Our Flagship Platforms
+          </h2>
+
+          <ul className="list-disc space-y-4 pl-6 text-lg leading-8">
+            <li>
+              <strong>RevNexure</strong> — AI-powered Revenue Assurance Platform
+              that helps identify, prevent, and recover revenue leakages across
+              banking operations.
+            </li>
+
+            <li>
+              <strong>DataXentra</strong> — Enterprise Data Platform that
+              unifies, governs, and transforms enterprise data into trusted
+              business intelligence.
+            </li>
+
+            <li>
+              <strong>AgenNova</strong> — AI Intelligence Platform enabling
+              intelligent automation, AI agents, predictive insights, and
+              decision intelligence.
+            </li>
+          </ul>
+
+          <p>
+            As a product-driven organization, our commitment is to deliver
+            innovative, secure, and scalable technology solutions that help
+            financial institutions thrive in an increasingly digital world.
+          </p>
+
+          <p>
+            At Stafróf, we embrace customer-centric innovation and design
+            thinking to solve complex business challenges. By combining advanced
+            analytics, responsible AI, and enterprise technology, we help
+            organizations improve operational efficiency, strengthen
+            compliance, enhance customer experiences, and drive sustainable
+            growth.
+          </p>
+
+          <p>
+            Our commitment is to empower banks, financial institutions, and
+            capital market organizations with intelligent technologies that
+            enable them to innovate with confidence, operate with agility, and
+            compete successfully in an increasingly digital world.
+          </p>
+
+          <h2 className="pt-4 font-display text-2xl font-semibold text-ink">
+            Our Purpose
+          </h2>
+
+          <p>
+            To empower financial institutions with intelligent technologies
+            that simplify complexity, accelerate innovation, and create lasting
+            business value.
+          </p>
+        </Reveal>
+
+        <Reveal delay={250} direction="right" className="mt-14 flex justify-center">
+          <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
+            <ImageViewer
+              src={imgSrc}
+              alt="Who We Are - Stafróf"
+              className="h-auto w-full rounded-xl object-contain"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "contain",
+              }}
+            />
+          </div>
+        </Reveal>
+
+      </div>
+    </section>
+  );
+}
+ {/* -------------------- Our Vision -------------------- */}
+if (sectionKey === "about" && slug === "vision") {
+  const imgSrc =
+    SLUG_DOC_IMAGES["vision"]?.[0] || topicImageFor(sectionKey, slug);
+
+  return (
+    <section className="min-h-screen bg-surface/95 py-28 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 animate-fade-in">
+
+        <Reveal>
+          <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-6xl text-center">
+            Our Vision
+          </h1>
+        </Reveal>
+
+        <Reveal
+          delay={150}
+          className="mx-auto mt-12 max-w-5xl space-y-6 text-left text-lg leading-8 text-ink-2"
+        >
+          <p>
+            To become a globally trusted enterprise technology company,
+            empowering the future of Banking, Financial Services, and Capital
+            Markets through AI, data, and intelligent innovation.
+          </p>
+
+          <h2 className="pt-4 font-display text-2xl font-semibold text-ink">
+            Our Mission
+          </h2>
+
+          <p>
+            To help financial institutions accelerate digital transformation by
+            delivering innovative, secure, and scalable AI-powered platforms
+            that unlock the value of data, optimize business performance,
+            automate operations, and enable intelligent decision-making.
+          </p>
+
+          <h2 className="pt-6 font-display text-2xl font-semibold text-ink">
+            Our Core Values
+          </h2>
+
+          <div className="space-y-6">
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Customer First
+              </h3>
+              <p className="mt-2">
+                We put our customers at the center of everything we do,
+                creating solutions that address real business challenges and
+                deliver measurable outcomes.
+              </p>
             </div>
-          </Reveal>
-        </div>
-      </section>
-    );
-  }
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Innovation
+              </h3>
+              <p className="mt-2">
+                We embrace curiosity, creativity, and continuous improvement
+                to develop technologies that shape the future of financial
+                services.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Excellence
+              </h3>
+              <p className="mt-2">
+                We strive for the highest standards in engineering, product
+                quality, service delivery, and customer experience.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Security & Trust
+              </h3>
+              <p className="mt-2">
+                We design our platforms with security, privacy, and reliability
+                at the core, helping customers operate with confidence.
+              </p>
+            </div>
+
+          </div>
+        </Reveal>
+
+        <Reveal
+          delay={250}
+          direction="right"
+          className="mt-14 flex justify-center"
+        >
+          <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
+            <ImageViewer
+              src={imgSrc}
+              alt="Our Vision - Stafróf"
+              className="h-auto w-full rounded-xl object-contain"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "contain",
+              }}
+            />
+          </div>
+        </Reveal>
+
+      </div>
+    </section>
+  );
+}
 
 {/* -------------------- Our Story -------------------- */}
 if (sectionKey === "about" && slug === "our-story") {
@@ -181,7 +336,7 @@ if (sectionKey === "about" && slug === "our-story") {
   return (
     <>
       {/* Hero Banner */}
-      <section className="hero-cosmic pt-32 pb-20 relative overflow-hidden">
+      <section className="hero-cosmic relative overflow-hidden pt-28 pb-20 lg:pt-32 lg:pb-24">
         <img
           src={sectionImage(sectionKey)}
           alt=""
@@ -194,242 +349,458 @@ if (sectionKey === "about" && slug === "our-story") {
         <div className="cosmic-overlay" />
         <div className="cosmic-grid-overlay" />
 
-        <div className="relative mx-auto max-w-5xl px-6">
+        <div className="relative mx-auto max-w-6xl px-6 text-center">
 
           <Reveal delay={150}>
-            <p className="eyebrow-dark mt-7">
+            <p className="eyebrow-dark mt-4 text-center">
               {section.eyebrow}
             </p>
           </Reveal>
 
           <Reveal delay={220}>
-            <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold text-white sm:text-6xl md:text-7xl lg:text-8xl tracking-tight">
+            <h1 className="mt-5 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               {page.title}
             </h1>
           </Reveal>
 
           {page.tagline && (
             <Reveal delay={320}>
-              <p className="mt-6 max-w-3xl text-xl leading-relaxed text-white/75">
+              <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/80 text-center">
                 {page.tagline}
               </p>
             </Reveal>
           )}
 
           <Reveal delay={420}>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
                 to="/contact"
                 className="premium-btn premium-btn-hover"
               >
-                CONTACT US
+                CONTACT OUR TEAM
                 <ArrowRight className="size-4" />
               </Link>
             </div>
           </Reveal>
+
         </div>
       </section>
-
       {/* Content */}
-      <section className="pt-19 pb-32 min-h-screen bg-surface/95">
-        <div className="mx-auto max-w-6xl text-left px-6 space-y-12 text-center animate-fade-in">
+<section className="min-h-screen bg-surface/95 py-24 lg:py-28">
+  <div className="mx-auto max-w-7xl px-6 animate-fade-in">
 
-          <Reveal className="max-w-5xl mx-auto">
-            <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl tracking-tight uppercase">
-              Reimagining Banking Intelligence 
-            </h2>
-          </Reveal>
+    <Reveal className="mx-auto max-w-5xl text-center">
+      <h2 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+        Reimagining Banking Intelligence
+      </h2>
+    </Reveal>
 
-          <Reveal delay={150} className="text-xl leading-relaxed text-ink-2 max-w-5xl mx-auto text-justify">
-            <p>Stafrof Intelligence Corporation was founded with a simple belief:</p>
-            <br /><p>Financial institutions should spend their time serving customers—not searching for revenue leakages, fragmented data, and operational inefficiencies.</p>
-            <br /><p>After decades of leading large-scale banking transformation programs across global financial institutions, we witnessed the same challenges repeated everywhere—disconnected systems, inconsistent data, manual reconciliations, compliance pressures, and millions of dollars lost through unnoticed revenue leakages.</p>
-            <br /><p>Banks were investing heavily in digital transformation, yet critical business decisions were still constrained by fragmented data and reactive operations.</p>
-            <br /><p>We believed there had to be a better way.</p>
-            <br /><p>That vision became Stafrof Intelligence Corporation.</p>
-            <br /><br /><p className="text-2xl font-semibold mb-3">Why We Exist</p>
-            <p>Our mission is to help banks transform their data into intelligence and their intelligence into measurable business value.</p>
-            <br /><p>We combine Artificial Intelligence, enterprise data engineering, advanced analytics, and intelligent automation into a unified platform that continuously protects revenue, improves operational efficiency, strengthens compliance, and empowers faster decision-making.</p>
-            <br /><p>Instead of solving isolated problems, we build connected platforms that work across the entire banking ecosystem.</p>
-            <br /><br /><p className="text-2xl font-semibold mb-3">What We Build</p>
-            <p>Our flagship platform, RevNexure 360° Suite, delivers AI-powered Revenue Assurance across twelve major banking business lines, including:</p>
-            <ul className="mt-3 list-disc pl-6">
-              <li>Lending </li>
-              <li>Cards & Payments </li>
-              <li>ATM & Self-Service Banking </li>
-              <li>Corporate Banking </li>
-              <li>Trade Finance </li>
-              <li>Foreign Exchange </li>
-              <li>Securities </li>
-              <li>Settlement </li>
-              <li>Wealth Management </li>
-              <li>Derivatives </li>
-              <li>Custody Services </li>
-              <li>Merchant Payments</li>
-            </ul>
-            <br /><br /><p className="text-2xl font-semibold mb-3">Supporting RevNexure are two enterprise platforms:</p>
-            <p><b>DataXentra</b> — Our Enterprise Data Platform that unifies, governs, and delivers trusted banking data.</p>
-            <br /><p><b>AgenNova</b> — Our AI Intelligence Platform that provides intelligent agents, predictive analytics, automation, and real-time decision intelligence.</p>
-            <br /><p>Together, these platforms create a modern banking intelligence ecosystem.</p>
+    <Reveal
+      delay={150}
+      className="mx-auto mt-12 max-w-5xl space-y-6 text-left text-lg leading-8 text-ink-2"
+    >
+      <p>
+        Stafróf Intelligence Corporation was founded with a simple belief:
+      </p>
 
-          </Reveal>
+      <p>
+        Financial institutions should spend their time serving customers—not
+        searching for revenue leakages, fragmented data, and operational
+        inefficiencies.
+      </p>
 
-          {/* <Reveal
-            delay={250}
-            direction="right"
-            className="flex justify-center"
-          >
-            <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg max-w-5xl">
-              <ImageViewer
-                src={imgSrc}
-                alt="Our Vision - Stafróf"
-                className="w-full h-auto object-contain rounded-xl"
-              />
-            </div>
-          </Reveal> */}
+      <p>
+        After decades of leading large-scale banking transformation programs
+        across global financial institutions, we witnessed the same challenges
+        repeated everywhere—disconnected systems, inconsistent data, manual
+        reconciliations, compliance pressures, and millions of dollars lost
+        through unnoticed revenue leakages.
+      </p>
 
-        </div>
-      </section>
+      <p>
+        Banks were investing heavily in digital transformation, yet critical
+        business decisions were still constrained by fragmented data and
+        reactive operations.
+      </p>
+
+      <p>
+        We believed there had to be a better way.
+      </p>
+
+      <p>
+        That vision became Stafróf Intelligence Corporation.
+      </p>
+
+      <h3 className="pt-6 font-display text-2xl font-semibold text-ink">
+        Why We Exist
+      </h3>
+
+      <p>
+        Our mission is to help banks transform their data into intelligence
+        and their intelligence into measurable business value.
+      </p>
+
+      <p>
+        We combine Artificial Intelligence, enterprise data engineering,
+        advanced analytics, and intelligent automation into a unified platform
+        that continuously protects revenue, improves operational efficiency,
+        strengthens compliance, and empowers faster decision-making.
+      </p>
+
+      <p>
+        Instead of solving isolated problems, we build connected platforms
+        that work across the entire banking ecosystem.
+      </p>
+
+      <h3 className="pt-6 font-display text-2xl font-semibold text-ink">
+        What We Build
+      </h3>
+
+      <p>
+        Our flagship platform, RevNexure 360° Suite, delivers AI-powered
+        Revenue Assurance across twelve major banking business lines,
+        including:
+      </p>
+
+      <ul className="list-disc space-y-3 pl-6 text-lg leading-8">
+        <li>Lending</li>
+        <li>Cards & Payments</li>
+        <li>ATM & Self-Service Banking</li>
+        <li>Corporate Banking</li>
+        <li>Trade Finance</li>
+        <li>Foreign Exchange</li>
+        <li>Securities</li>
+        <li>Settlement</li>
+        <li>Wealth Management</li>
+        <li>Derivatives</li>
+        <li>Custody Services</li>
+        <li>Merchant Payments</li>
+      </ul>
+
+      <h3 className="pt-6 font-display text-2xl font-semibold text-ink">
+        Supporting RevNexure
+      </h3>
+
+      <p>
+        <strong>DataXentra</strong> — Our Enterprise Data Platform that
+        unifies, governs, and delivers trusted banking data.
+      </p>
+
+      <p>
+        <strong>AgenNova</strong> — Our AI Intelligence Platform that provides
+        intelligent agents, predictive analytics, automation, and real-time
+        decision intelligence.
+      </p>
+
+      <p>
+        Together, these platforms create a modern banking intelligence
+        ecosystem.
+      </p>
+    </Reveal>
+
+    {/*
+    <Reveal
+      delay={250}
+      direction="right"
+      className="mt-14 flex justify-center"
+    >
+      <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
+        <ImageViewer
+          src={imgSrc}
+          alt="Our Story"
+          className="w-full h-auto rounded-xl object-contain"
+        />
+      </div>
+    </Reveal>
+    */}
+
+  </div>
+</section>
     </>
   );
 }
 
 
   {/* -------------------- Our DNA -------------------- */}
-  if (sectionKey === "about" && slug === "our-dna") {
-    const imgSrc = SLUG_DOC_IMAGES["our-dna"]?.[0] || topicImageFor(sectionKey, slug);
-    return (
-      <section className="py-32 min-h-screen bg-surface/95">
-        <div className="mx-auto max-w-8xl px-6 space-y-12 text-center animate-fade-in">
-          <Reveal>
-            <h1 className="font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl tracking-tight uppercase">
-              Our DNA
-            </h1>
-          </Reveal>
-          
-          <Reveal delay={250} direction="right" className="flex justify-center">
-            <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg max-w-5xl">
-              <ImageViewer
-                src={imgSrc}
-                alt="Who We Are - Stafróf"
-                className="w-full h-auto object-contain rounded-xl"
-                style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-    );
-  }
+if (sectionKey === "about" && slug === "our-dna") {
+  const imgSrc =
+    SLUG_DOC_IMAGES["our-dna"]?.[0] || topicImageFor(sectionKey, slug);
+
+  return (
+    <section className="min-h-screen bg-surface/95 py-28 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 animate-fade-in">
+
+        <Reveal>
+          <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-6xl text-center">
+            Our DNA
+          </h1>
+        </Reveal>
+
+        <Reveal
+          delay={250}
+          direction="right"
+          className="mt-14 flex justify-center"
+        >
+          <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
+            <ImageViewer
+              src={imgSrc}
+              alt="Our DNA - Stafróf"
+              className="w-full h-auto rounded-xl object-contain"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "contain",
+              }}
+            />
+          </div>
+        </Reveal>
+
+      </div>
+    </section>
+  );
+}
 
   {/* -------------------- Board of Directors  -------------------- */}
   if (sectionKey === "about" && slug === "board-of-directors") {
     const imgSrc = SLUG_DOC_IMAGES["board-of-directors"]?.[0] || topicImageFor(sectionKey, slug);
     return (
-      <section className="py-32 min-h-screen bg-surface/95">
-        <div className="mx-auto max-w-8xl px-6 space-y-12 text-center animate-fade-in">
-          <Reveal>
-            <h1 className="font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl tracking-tight uppercase">
-              Board of Directors
-            </h1>
-          </Reveal>
-          <Reveal delay={150} className="text-xl leading-relaxed text-ink-2 max-w-5xl mx-auto text-justify">
-            <p>Stafróf Intelligence Corporation is governed by a distinguished board of directors with deep expertise in banking, finance, technology, and corporate governance.</p>
-            <br /><p>Details of our Board of Directors will be published soon. Our board members play a pivotal role in guiding our long-term strategy, ensuring regulatory compliance, and driving sustainable business value for our stakeholders.</p>
+      <section className="min-h-screen bg-surface/95 py-28 lg:py-32">
+  <div className="mx-auto max-w-7xl px-6 animate-fade-in">
 
-          </Reveal>
-          <Reveal delay={250} direction="right" className="flex justify-center">
-            <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg max-w-5xl">
-              <ImageViewer
-                src={imgSrc}
-                alt="Who We Are - Stafróf"
-                className="w-full h-auto object-contain rounded-xl"
-                style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
+    <Reveal>
+      <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-6xl text-center">
+        Board of Directors
+      </h1>
+    </Reveal>
+
+    <Reveal
+      delay={150}
+      className="mx-auto mt-12 max-w-5xl space-y-6 text-left text-lg leading-8 text-ink-2"
+    >
+      <p>
+        Stafróf Intelligence Corporation is governed by a distinguished Board
+        of Directors with deep expertise in banking, finance, technology, and
+        corporate governance.
+      </p>
+
+      <p>
+        Details of our Board of Directors will be published soon. Our Board
+        members play a pivotal role in guiding our long-term strategy,
+        ensuring regulatory compliance, strengthening governance, and
+        driving sustainable business value for our customers,
+        shareholders, and stakeholders.
+      </p>
+    </Reveal>
+
+    <Reveal
+      delay={250}
+      direction="right"
+      className="mt-14 flex justify-center"
+    >
+      <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
+        <ImageViewer
+          src={imgSrc}
+          alt="Board of Directors - Stafróf"
+          className="w-full h-auto rounded-xl object-contain"
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+            objectFit: "contain",
+          }}
+        />
+      </div>
+    </Reveal>
+
+  </div>
+</section>
     );
   }
 
-  {/* -------------------- Leadership Team  -------------------- */}
-  if (sectionKey === "about" && slug === "leadership-team") {
-    const imgSrc = SLUG_DOC_IMAGES["leadership-team"]?.[0] || topicImageFor(sectionKey, slug);
-    return (
-      <section className="py-32 min-h-screen bg-surface/95">
-        <div className="mx-auto max-w-8xl px-6 space-y-12 text-center animate-fade-in">
-          <Reveal>
-            <h1 className="font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl tracking-tight uppercase">
-              Leadership Team
-            </h1>
-          </Reveal>
-          <Reveal delay={150} className="text-xl leading-relaxed text-ink-2 max-w-5xl mx-auto text-justify">
-            <p>Our leadership team brings together decades of experience in financial technology, enterprise software, and artificial intelligence.</p>
-            <br /><p>Details of our Leadership Team will be published soon. Under their guidance, Stafróf continues to build next-generation platforms that help financial institutions automate operations, optimize revenue, and accelerate digital transformation.</p>
+  /* -------------------- Leadership Team -------------------- */
+if (sectionKey === "about" && slug === "leadership-team") {
+  const imgSrc =
+    SLUG_DOC_IMAGES["leadership-team"]?.[0] ||
+    topicImageFor(sectionKey, slug);
 
-          </Reveal>
-          <Reveal delay={250} direction="right" className="flex justify-center">
-            <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg max-w-5xl">
-              <ImageViewer
-                src={imgSrc}
-                alt="Who We Are - Stafróf"
-                className="w-full h-auto object-contain rounded-xl"
-                style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-    );
-  }
+  return (
+    <section className="min-h-screen bg-surface/95 py-28 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 animate-fade-in">
+
+        <Reveal>
+          <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-6xl text-center">
+            Leadership Team
+          </h1>
+        </Reveal>
+
+        <Reveal
+          delay={150}
+          className="mx-auto mt-12 max-w-5xl space-y-6 text-left text-lg leading-8 text-ink-2"
+        >
+          <p>
+            Our leadership team brings together decades of experience in
+            financial technology, enterprise software, artificial intelligence,
+            banking transformation, and enterprise innovation.
+          </p>
+
+          <p>
+            Details of our Leadership Team will be published soon. Under their
+            guidance, Stafróf continues to build next-generation platforms that
+            help financial institutions automate operations, optimize revenue,
+            strengthen data intelligence, and accelerate digital transformation.
+          </p>
+        </Reveal>
+
+        <Reveal
+          delay={250}
+          direction="right"
+          className="mt-14 flex justify-center"
+        >
+          <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
+            <ImageViewer
+              src={imgSrc}
+              alt="Leadership Team - Stafróf"
+              className="w-full h-auto rounded-xl object-contain"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "contain",
+              }}
+            />
+          </div>
+        </Reveal>
+
+      </div>
+    </section>
+  );
+}
 
   {/* -------------------- Our Design Thinking Principles -------------------- */}
-  if (sectionKey === "about" && slug === "design-thinking") {
-    const imgSrc = SLUG_DOC_IMAGES["design-thinking"]?.[0] || topicImageFor(sectionKey, slug);
-    return (
-      <section className="py-32 min-h-screen bg-surface/95">
-        <div className="mx-auto max-w-8xl px-6 space-y-12 text-center animate-fade-in">
-          <Reveal>
-            <h1 className="font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl tracking-tight uppercase">
-              Our Design Thinking Principles
-            </h1>
-          </Reveal>
-          <Reveal delay={150} className="text-xl leading-relaxed text-ink-2 max-w-5xl mx-auto text-justify">
-            <p>At Stafróf, we place people, business value, and innovation at the center of every solution we create. Our design thinking approach helps us solve complex challenges through collaboration, creativity, and continuous improvement.</p>
-            <br /><p><b>Empathize</b></p>
-            <p>Understand customer needs, challenges, and business goals.</p>
-            <br /><p><b>Define</b></p>
-            <p>Identify the right problems before designing solutions.</p>
-            <br /><p><b>Ideate</b></p>
-            <p>Generate innovative ideas that create measurable business value.</p>
-            <br /><p><b>Prototype</b></p>
-            <p>Design and validate solutions quickly through iterative development.</p>
-            <br /><p><b>Test</b></p>
-            <p>Continuously evaluate, refine, and improve based on real-world feedback.</p>
-            <br /><p><b>Deliver Value</b></p>
-            <p>Transform ideas into scalable, secure, and intelligent solutions that drive business outcomes.</p>
-            <br /><br /><p className="text-2xl font-semibold mb-3">Our Design Philosophy</p>
-            <br /><p><b>Human-Centered. Data-Driven. AI-Powered.</b></p>
-            <p>We combine deep industry expertise, design thinking, advanced analytics, and artificial intelligence to deliver innovative solutions that help financial institutions innovate with confidence and achieve sustainable growth.</p>
+if (sectionKey === "about" && slug === "design-thinking") {
+  const imgSrc =
+    SLUG_DOC_IMAGES["design-thinking"]?.[0] ||
+    topicImageFor(sectionKey, slug);
 
-          </Reveal>
-          <Reveal delay={250} direction="right" className="flex justify-center">
-            <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg max-w-5xl">
-              <ImageViewer
-                src={imgSrc}
-                alt="Who We Are - Stafróf"
-                className="w-full h-auto object-contain rounded-xl"
-                style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-    );
-  }
+  return (
+    <section className="min-h-screen bg-surface/95 py-28 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 animate-fade-in">
 
-  {/* -------------------- Our AI Intelligence Principles -------------------- */}
+        <Reveal>
+          <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-6xl text-center">
+            Our Design Thinking Principles
+          </h1>
+        </Reveal>
+
+        <Reveal
+          delay={150}
+          className="mx-auto mt-12 max-w-5xl space-y-6 text-left text-lg leading-8 text-ink-2"
+        >
+          <p>
+            At Stafróf, we place people, business value, and innovation at the
+            center of every solution we create. Our Design Thinking approach
+            helps us solve complex challenges through collaboration,
+            creativity, and continuous improvement.
+          </p>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Empathize
+            </h3>
+            <p className="mt-2">
+              Understand customer needs, challenges, and business goals.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Define
+            </h3>
+            <p className="mt-2">
+              Identify the right problems before designing solutions.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Ideate
+            </h3>
+            <p className="mt-2">
+              Generate innovative ideas that create measurable business value.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Prototype
+            </h3>
+            <p className="mt-2">
+              Design and validate solutions quickly through iterative
+              development.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Test
+            </h3>
+            <p className="mt-2">
+              Continuously evaluate, refine, and improve based on real-world
+              feedback.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Deliver Value
+            </h3>
+            <p className="mt-2">
+              Transform ideas into scalable, secure, and intelligent solutions
+              that drive measurable business outcomes.
+            </p>
+          </div>
+
+          <h2 className="pt-6 font-display text-2xl font-semibold text-ink">
+            Our Design Philosophy
+          </h2>
+
+          <p className="font-semibold text-ink">
+            Human-Centered. Data-Driven. AI-Powered.
+          </p>
+
+          <p>
+            We combine deep industry expertise, Design Thinking, advanced
+            analytics, and Artificial Intelligence to deliver innovative
+            enterprise solutions that help financial institutions innovate with
+            confidence, improve operational efficiency, and achieve sustainable
+            growth.
+          </p>
+
+        </Reveal>
+
+        <Reveal
+          delay={250}
+          direction="right"
+          className="mt-14 flex justify-center"
+        >
+          <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
+            <ImageViewer
+              src={imgSrc}
+              alt="Design Thinking Principles - Stafróf"
+              className="w-full h-auto rounded-xl object-contain"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "contain",
+              }}
+            />
+          </div>
+        </Reveal>
+
+      </div>
+    </section>
+  );
+}
+
+{/* -------------------- Our AI Intelligence Principles -------------------- */}
 if (sectionKey === "about" && slug === "ai-principles") {
   const imgSrc =
     SLUG_DOC_IMAGES["ai-principles"]?.[0] || topicImageFor(sectionKey, slug);
@@ -437,7 +808,7 @@ if (sectionKey === "about" && slug === "ai-principles") {
   return (
     <>
       {/* Hero Banner */}
-      <section className="hero-cosmic pt-32 pb-20 relative overflow-hidden">
+      <section className="hero-cosmic relative overflow-hidden pt-28 pb-20 lg:pt-32 lg:pb-24">
         <img
           src={sectionImage(sectionKey)}
           alt=""
@@ -450,42 +821,43 @@ if (sectionKey === "about" && slug === "ai-principles") {
         <div className="cosmic-overlay" />
         <div className="cosmic-grid-overlay" />
 
-        <div className="relative mx-auto max-w-5xl px-6">
+        <div className="relative mx-auto max-w-6xl px-6 text-center">
 
           <Reveal delay={150}>
-            <p className="eyebrow-dark mt-7">
+            <p className="eyebrow-dark mt-4 text-center">
               {section.eyebrow}
             </p>
           </Reveal>
 
           <Reveal delay={220}>
-            <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold text-white sm:text-6xl md:text-7xl lg:text-8xl tracking-tight">
+            <h1 className="mt-5 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               {page.title}
             </h1>
           </Reveal>
 
           {page.tagline && (
             <Reveal delay={320}>
-              <p className="mt-6 max-w-3xl text-xl leading-relaxed text-white/75">
+              <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/80 text-center">
                 {page.tagline}
               </p>
             </Reveal>
           )}
 
           <Reveal delay={420}>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
                 to="/contact"
                 className="premium-btn premium-btn-hover"
               >
-                CONTACT US
+                CONTACT OUR TEAM
                 <ArrowRight className="size-4" />
               </Link>
             </div>
           </Reveal>
+
         </div>
       </section>
-
+      
       {/* Content */}
       <section className="pt-19 pb-32 min-h-screen bg-surface/95">
         <div className="mx-auto max-w-6xl text-left px-6 space-y-12 text-center animate-fade-in">
@@ -551,30 +923,30 @@ if (sectionKey === "about" && slug === "data-strategy") {
         <div className="cosmic-overlay" />
         <div className="cosmic-grid-overlay" />
 
-        <div className="relative mx-auto max-w-5xl px-6">
+        <div className="relative mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
 
           <Reveal delay={150}>
-            <p className="eyebrow-dark mt-7">
+            <p className="eyebrow-dark mt-7 text-center">
               {section.eyebrow}
             </p>
           </Reveal>
 
           <Reveal delay={220}>
-            <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold text-white sm:text-6xl md:text-7xl lg:text-8xl tracking-tight">
+            <h1 className="mt-4 max-w-4xl text-center font-display text-5xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
               {page.title}
             </h1>
           </Reveal>
 
           {page.tagline && (
             <Reveal delay={320}>
-              <p className="mt-6 max-w-3xl text-xl leading-relaxed text-white/75">
+              <p className="mt-6 max-w-3xl text-center text-xl leading-relaxed text-white/75">
                 {page.tagline}
               </p>
             </Reveal>
           )}
 
           <Reveal delay={420}>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 flex justify-center">
               <Link
                 to="/contact"
                 className="premium-btn premium-btn-hover"
@@ -616,15 +988,16 @@ if (sectionKey === "about" && slug === "data-strategy") {
     </>
   );
 }
-
-  {/* -------------------- What We Do -------------------- */}
+{/* -------------------- What We Do -------------------- */}
 if (sectionKey === "about" && slug === "what-we-do") {
-  const imgSrc = SLUG_DOC_IMAGES["what-we-do"]?.[0] || topicImageFor(sectionKey, slug);
+  const imgSrc =
+    SLUG_DOC_IMAGES["what-we-do"]?.[0] ||
+    topicImageFor(sectionKey, slug);
 
   return (
     <>
       {/* Hero Banner */}
-      <section className="hero-cosmic pt-32 pb-20 relative overflow-hidden">
+      <section className="hero-cosmic relative overflow-hidden pt-28 pb-20 lg:pt-32 lg:pb-24">
         <img
           src={sectionImage(sectionKey)}
           alt=""
@@ -637,81 +1010,164 @@ if (sectionKey === "about" && slug === "what-we-do") {
         <div className="cosmic-overlay" />
         <div className="cosmic-grid-overlay" />
 
-        <div className="relative mx-auto max-w-5xl px-6">
+        <div className="relative mx-auto max-w-6xl px-6 text-center">
 
           <Reveal delay={150}>
-            <p className="eyebrow-dark mt-7">
+            <p className="eyebrow-dark mt-4 text-center">
               {section.eyebrow}
             </p>
           </Reveal>
 
           <Reveal delay={220}>
-            <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold text-white sm:text-6xl md:text-7xl lg:text-8xl tracking-tight">
+            <h1 className="mt-5 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               {page.title}
             </h1>
           </Reveal>
 
           {page.tagline && (
             <Reveal delay={320}>
-              <p className="mt-6 max-w-3xl text-xl leading-relaxed text-white/75">
+              <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/80 text-center">
                 {page.tagline}
               </p>
             </Reveal>
           )}
 
           <Reveal delay={420}>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
                 to="/contact"
                 className="premium-btn premium-btn-hover"
               >
-                CONTACT US
+                CONTACT OUR TEAM
                 <ArrowRight className="size-4" />
               </Link>
             </div>
           </Reveal>
+
         </div>
       </section>
 
       {/* Content */}
-      <section className="pt-19 pb-32 min-h-screen bg-surface/95">
-        <div className="mx-auto max-w-6xl text-left px-6 space-y-12 text-center animate-fade-in">
+      <section className="min-h-screen bg-surface/95 py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 animate-fade-in">
 
-          <Reveal delay={150} className="text-xl text-ink-2 max-w-5xl mx-auto text-justify">
-            <p>We help Banking, Financial Services, and Capital Markets organizations accelerate digital transformation through enterprise AI, data, analytics, and intelligent automation. Our solutions enable financial institutions to modernize operations, optimize revenue, improve decision-making, and deliver exceptional customer experiences.</p>
-            <br /><p>AI Revenue Assurance</p>
-            <p>Identify, prevent, and recover revenue leakages across banking products, services, and channels.</p>
-            <br /><p>Enterprise Data Platform</p>
-            <p>Integrate, govern, and transform enterprise data into trusted, AI-ready intelligence.</p>
-            <br /><p>AI Intelligence & Automation</p>
-            <p>Deploy intelligent AI agents, predictive analytics, and workflow automation to improve business performance.</p>
-            <br /><p>Data Engineering & Analytics</p>
-            <p>Build scalable data foundations, real-time data pipelines, and advanced analytics solutions.</p>
-            <br /><p>Intelligent Decision Support</p>
-            <p>Empower business leaders with actionable insights, executive dashboards, and AI-driven recommendations.</p>
-            <br /><p>Digital Transformation</p>
-            <p>Modernize legacy systems, streamline operations, and accelerate innovation with cloud-native technologies.</p>
-            <br /><p className="text-2xl font-semibold mb-3">Our Product Platforms</p>
-            <ul className="mt-3 list-disc pl-6">
-              <li>RevNexure - AI Revenue Assurance Platform </li>
-              <li>DataXentra - Enterprise Data Platform </li>
-              <li>AgenNova - AI Intelligence Platform</li>
+          <Reveal
+            delay={150}
+            className="mx-auto mt-12 max-w-5xl space-y-6 text-left text-lg leading-8 text-ink-2"
+          >
+            <p>
+              We help Banking, Financial Services, and Capital Markets
+              organizations accelerate digital transformation through
+              enterprise AI, data, analytics, and intelligent automation.
+              Our solutions enable financial institutions to modernize
+              operations, optimize revenue, improve decision-making, and
+              deliver exceptional customer experiences.
+            </p>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                AI Revenue Assurance
+              </h3>
+              <p className="mt-2">
+                Identify, prevent, and recover revenue leakages across
+                banking products, services, and channels.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Enterprise Data Platform
+              </h3>
+              <p className="mt-2">
+                Integrate, govern, and transform enterprise data into
+                trusted, AI-ready intelligence.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                AI Intelligence & Automation
+              </h3>
+              <p className="mt-2">
+                Deploy intelligent AI agents, predictive analytics, and
+                workflow automation to improve business performance.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Data Engineering & Analytics
+              </h3>
+              <p className="mt-2">
+                Build scalable data foundations, real-time data pipelines,
+                and advanced analytics solutions.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Intelligent Decision Support
+              </h3>
+              <p className="mt-2">
+                Empower business leaders with actionable insights,
+                executive dashboards, and AI-driven recommendations.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Digital Transformation
+              </h3>
+              <p className="mt-2">
+                Modernize legacy systems, streamline operations, and
+                accelerate innovation with cloud-native technologies.
+              </p>
+            </div>
+
+            <h2 className="pt-6 font-display text-2xl font-semibold text-ink">
+              Our Product Platforms
+            </h2>
+
+            <ul className="list-disc space-y-3 pl-6">
+              <li>
+                <strong>RevNexure</strong> — AI Revenue Assurance Platform
+              </li>
+              <li>
+                <strong>DataXentra</strong> — Enterprise Data Platform
+              </li>
+              <li>
+                <strong>AgenNova</strong> — AI Intelligence Platform
+              </li>
             </ul>
-            <br /><p>Delivering Intelligent Solutions for Financial Services</p>
-            <br /><p>From data to decisions, and from automation to innovation, we build secure, scalable, and enterprise-grade platforms that help financial institutions operate smarter, innovate faster, and create lasting business value.</p>
+
+            <h2 className="pt-6 font-display text-2xl font-semibold text-ink">
+              Delivering Intelligent Solutions for Financial Services
+            </h2>
+
+            <p>
+              From data to decisions, and from automation to innovation,
+              we build secure, scalable, and enterprise-grade platforms
+              that help financial institutions operate smarter, innovate
+              faster, and create lasting business value.
+            </p>
 
           </Reveal>
 
           <Reveal
             delay={250}
             direction="right"
-            className="flex justify-center"
+            className="mt-14 flex justify-center"
           >
-            <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg max-w-5xl">
+            <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
               <ImageViewer
                 src={imgSrc}
-                alt="Our Vision - Stafróf"
-                className="w-full h-auto object-contain rounded-xl"
+                alt="What We Do - Stafróf"
+                className="w-full h-auto rounded-xl object-contain"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
               />
             </div>
           </Reveal>
@@ -721,156 +1177,411 @@ if (sectionKey === "about" && slug === "what-we-do") {
     </>
   );
 }
+{/* -------------------- Industries We Serve -------------------- */}
+if (sectionKey === "about" && slug === "industries") {
+  const imgSrc =
+    SLUG_DOC_IMAGES["industries"]?.[0] ||
+    topicImageFor(sectionKey, slug);
 
-  {/* -------------------- Industries We Serve -------------------- */}
-  if (sectionKey === "about" && slug === "industries") {
-    const imgSrc = SLUG_DOC_IMAGES["industries"]?.[0] || topicImageFor(sectionKey, slug);
-    return (
-      <section className="py-32 min-h-screen bg-surface/95">
-        <div className="mx-auto max-w-8xl px-6 space-y-12 text-center animate-fade-in">
-          <Reveal>
-            <h1 className="font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl tracking-tight uppercase">
-              Industries We Serve
-            </h1>
-          </Reveal>
-          <Reveal delay={150} className="text-xl leading-relaxed text-ink-2 max-w-5xl mx-auto text-justify">
-            <p>Stafróf Intelligence Corporation delivers AI, data, and intelligent automation solutions that help organizations modernize operations, improve decision-making, and accelerate digital transformation across the financial services ecosystem.</p>
-            <br /><p><b>Banking</b></p>
-            <p>Empowering retail, commercial, corporate, and digital banks with AI-driven platforms for revenue assurance, data intelligence, and operational excellence.</p>
-            <br /><p><b>Financial Services</b></p>
-            <p>Helping financial institutions optimize operations, strengthen governance, automate processes, and unlock greater business value through intelligent technologies.</p>
-            <br /><p><b>Capital Markets</b></p>
-            <p>Supporting capital market firms with advanced data, analytics, AI, and automation to improve operational efficiency, compliance, and business performance.</p>
-            <br /><p><b>Fintech</b></p>
-            <p>Enabling fintech companies to build scalable, intelligent, and data-driven digital financial solutions that accelerate innovation and growth.</p>
-            <br /><p><b>Our Industry Focus</b></p>
-            <p>We combine deep domain expertise with AI, enterprise data, and intelligent automation to help organizations innovate with confidence, operate efficiently, and create sustainable business value.</p>
-            <br /><p><b>Primary Focus:</b></p>
-            <ul className="mt-3 list-disc pl-6">
-              <li>Banking</li>
-              <li>Financial Services</li>
-              <li>Capital Markets</li>
-              <li>Fintech</li>
-            </ul>
-          </Reveal>
-          <Reveal delay={250} direction="right" className="flex justify-center">
-            <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg max-w-5xl">
-              <ImageViewer
-                src={imgSrc}
-                alt="Who We Are - Stafróf"
-                className="w-full h-auto object-contain rounded-xl"
-                style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-    );
-  }
+  return (
+    <section className="min-h-screen bg-surface/95 py-28 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 animate-fade-in">
 
-    {/* --------------------  Why Stafróf -------------------- */}
-  if (sectionKey === "about" && slug === "why-Stafróf") {
-    const imgSrc = SLUG_DOC_IMAGES["why-Stafróf"]?.[0] || topicImageFor(sectionKey, slug);
-    return (
-      <section className="py-32 min-h-screen bg-surface/95">
-        <div className="mx-auto max-w-8xl px-6 space-y-12 text-center animate-fade-in">
-          <Reveal>
-            <h1 className="font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl tracking-tight uppercase">
-              Why Stafróf
-            </h1>
-          </Reveal>
-          <Reveal delay={150} className="text-xl leading-relaxed text-ink-2 max-w-5xl mx-auto text-justify">
-            <p>At Stafróf Intelligence Corporation, we combine deep industry expertise with AI, enterprise data, and modern engineering to help financial institutions solve complex business challenges and accelerate digital transformation. Our focus is on delivering intelligent, secure, and scalable solutions that create measurable business value.</p>
-            <br /><p><b>Banking Domain Expertise</b></p>
-            <p>Purpose-built solutions for Banking, Financial Services, Capital Markets, and Fintech.</p>
-            <br /><p><b>AI-Powered Innovation</b></p>
-            <p>Leverage Artificial Intelligence, Machine Learning, and Intelligent Automation to drive smarter business outcomes.</p>
-            <br /><p><b>Enterprise Data Intelligence</b></p>
-            <p>Transform enterprise data into trusted, AI-ready insights for better decision-making.</p>
-            <br /><p><b>Product-Led Innovation</b></p>
-            <p>Enterprise-grade platforms designed for scalability, flexibility, and future growth.</p>
-            <br /><p><b>Secure by Design</b></p>
-            <p>Built with security, privacy, governance, and compliance at the core.</p>
-            <br /><p><b>Scalable Architecture</b></p>
-            <p>Cloud-ready, API-first, and designed to integrate seamlessly with existing enterprise systems.</p>
-            <br /><p><b>Customer-Centric Approach</b></p>
-            <p>We work closely with our customers to understand their challenges and deliver practical, value-driven solutions.</p>
-            <br /><p><b>Engineering Excellence</b></p>
-            <p>Driven by quality, innovation, and continuous improvement in every product we build.</p>
-            <br /><br /><p><b>Our Commitment</b></p>
-            <p>We are committed to helping financial institutions innovate with confidence, unlock the full value of their data, and build a smarter, more resilient digital future.</p>
-            <br /><p>Better Data. Smarter AI. Stronger Tomorrow.</p>
+        <Reveal>
+          <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-6xl text-center">
+            Industries We Serve
+          </h1>
+        </Reveal>
 
-          </Reveal>
-          <Reveal delay={250} direction="right" className="flex justify-center">
-            <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg max-w-5xl">
-              <ImageViewer
-                src={imgSrc}
-                alt="Who We Are - Stafróf"
-                className="w-full h-auto object-contain rounded-xl"
-                style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-    );
-  }
+        <Reveal
+          delay={150}
+          className="mx-auto mt-12 max-w-5xl space-y-6 text-left text-lg leading-8 text-ink-2"
+        >
+          <p>
+            Stafróf Intelligence Corporation delivers AI, enterprise data,
+            and intelligent automation solutions that help organizations
+            modernize operations, improve decision-making, and accelerate
+            digital transformation across the financial services ecosystem.
+          </p>
 
-    {/* -------------------- Innovation & R&D -------------------- */}
-  if (sectionKey === "about" && slug === "innovation") {
-    const imgSrc = SLUG_DOC_IMAGES["innovation"]?.[0] || topicImageFor(sectionKey, slug);
-    return (
-      <section className="py-32 min-h-screen bg-surface/95">
-        <div className="mx-auto max-w-8xl px-6 space-y-12 text-center animate-fade-in">
-          <Reveal>
-            <h1 className="font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl tracking-tight uppercase">
-              Innovation and R&D
-            </h1>
-          </Reveal>
-          <Reveal delay={150} className="text-xl leading-relaxed text-ink-2 max-w-5xl mx-auto text-justify">
-            <p>Innovation is at the heart of everything we do. At Stafróf Intelligence Corporation, we continuously invest in research, emerging technologies, and product innovation to help financial institutions stay ahead in a rapidly evolving digital world.</p>
-            <br /><p><b>Artificial Intelligence</b></p>
-            <p>Advancing AI solutions that enable intelligent decision-making, automation, and business optimization.</p>
-            <br /><p><b>Enterprise Data</b></p>
-            <p>Building modern data platforms that transform enterprise data into trusted, AI-ready intelligence.</p>
-            <br /><p><b>Intelligent Automation</b></p>
-            <p>Developing AI-powered automation to streamline operations, improve productivity, and reduce complexity.</p>
-            <br /><p><b>Advanced Analytics</b></p>
-            <p>Delivering predictive insights and data-driven intelligence that empower better business decisions.</p>
-            <br /><p><b>Cloud & Modern Architecture</b></p>
-            <p>Designing cloud-native, API-first, and scalable platforms for enterprise agility and future growth.</p>
-            <br /><p><b>Continuous Innovation</b></p>
-            <p>Embracing emerging technologies, industry trends, and customer feedback to continuously enhance our products and solutions.</p>
-            <br /><br /><p><b>Our Innovation Commitment</b></p>
-            <p>We are committed to creating intelligent, secure, and future-ready technologies that empower Banking, Financial Services, and Capital Markets organizations to innovate faster, operate smarter, and achieve sustainable growth.</p>
-            <br /><p>Innovating Today. Empowering Tomorrow.</p>
+          <div>
+            <h3 className="text-xl font-semibold text-ink">Banking</h3>
+            <p className="mt-2">
+              Empowering retail, commercial, corporate, and digital banks
+              with AI-driven platforms for revenue assurance, data
+              intelligence, and operational excellence.
+            </p>
+          </div>
 
-          </Reveal>
-          <Reveal delay={250} direction="right" className="flex justify-center">
-            <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg max-w-5xl">
-              <ImageViewer
-                src={imgSrc}
-                alt="Who We Are - Stafróf"
-                className="w-full h-auto object-contain rounded-xl"
-                style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-    );
-  }
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Financial Services
+            </h3>
+            <p className="mt-2">
+              Helping financial institutions optimize operations,
+              strengthen governance, automate processes, and unlock
+              greater business value through intelligent technologies.
+            </p>
+          </div>
 
-  {/* -------------------- Our Commitment -------------------- */}
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Capital Markets
+            </h3>
+            <p className="mt-2">
+              Supporting capital market firms with advanced data,
+              analytics, AI, and automation to improve operational
+              efficiency, compliance, and business performance.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">Fintech</h3>
+            <p className="mt-2">
+              Enabling fintech companies to build scalable,
+              intelligent, and data-driven digital financial
+              solutions that accelerate innovation and growth.
+            </p>
+          </div>
+
+          <h2 className="pt-6 font-display text-2xl font-semibold text-ink">
+            Our Industry Focus
+          </h2>
+
+          <p>
+            We combine deep domain expertise with AI, enterprise data,
+            and intelligent automation to help organizations innovate
+            with confidence, operate efficiently, and create sustainable
+            business value.
+          </p>
+
+          <h3 className="text-xl font-semibold text-ink">
+            Primary Focus
+          </h3>
+
+          <ul className="list-disc space-y-3 pl-6">
+            <li>Banking</li>
+            <li>Financial Services</li>
+            <li>Capital Markets</li>
+            <li>Fintech</li>
+          </ul>
+
+        </Reveal>
+
+        <Reveal
+          delay={250}
+          direction="right"
+          className="mt-14 flex justify-center"
+        >
+          <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
+            <ImageViewer
+              src={imgSrc}
+              alt="Industries We Serve - Stafróf"
+              className="w-full h-auto rounded-xl object-contain"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "contain",
+              }}
+            />
+          </div>
+        </Reveal>
+
+      </div>
+    </section>
+  );
+}
+
+
+/* -------------------- Why Stafróf -------------------- */
+if (sectionKey === "about" && slug === "why-Stafróf") {
+  const imgSrc =
+    SLUG_DOC_IMAGES["why-Stafróf"]?.[0] ||
+    topicImageFor(sectionKey, slug);
+
+  return (
+    <section className="min-h-screen bg-surface/95 py-28 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 animate-fade-in">
+
+        <Reveal>
+          <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-6xl text-center">
+            Why Stafróf
+          </h1>
+        </Reveal>
+
+        <Reveal
+          delay={150}
+          className="mx-auto mt-12 max-w-5xl space-y-6 text-left text-lg leading-8 text-ink-2"
+        >
+          <p>
+            At Stafróf Intelligence Corporation, we combine deep industry
+            expertise with AI, enterprise data, and modern engineering to
+            help financial institutions solve complex business challenges
+            and accelerate digital transformation. Our focus is on
+            delivering intelligent, secure, and scalable solutions that
+            create measurable business value.
+          </p>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Banking Domain Expertise
+            </h3>
+            <p className="mt-2">
+              Purpose-built solutions for Banking, Financial Services,
+              Capital Markets, and Fintech.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              AI-Powered Innovation
+            </h3>
+            <p className="mt-2">
+              Leverage Artificial Intelligence, Machine Learning,
+              and Intelligent Automation to drive smarter business
+              outcomes.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Enterprise Data Intelligence
+            </h3>
+            <p className="mt-2">
+              Transform enterprise data into trusted, AI-ready insights
+              for better decision-making.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Product-Led Innovation
+            </h3>
+            <p className="mt-2">
+              Enterprise-grade platforms designed for scalability,
+              flexibility, and future growth.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Secure by Design
+            </h3>
+            <p className="mt-2">
+              Built with security, privacy, governance, and compliance
+              at the core.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Scalable Architecture
+            </h3>
+            <p className="mt-2">
+              Cloud-ready, API-first, and designed to integrate
+              seamlessly with existing enterprise systems.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Customer-Centric Approach
+            </h3>
+            <p className="mt-2">
+              We work closely with our customers to understand their
+              challenges and deliver practical, value-driven solutions.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Engineering Excellence
+            </h3>
+            <p className="mt-2">
+              Driven by quality, innovation, and continuous improvement
+              in every product we build.
+            </p>
+          </div>
+
+          <h2 className="pt-6 font-display text-2xl font-semibold text-ink">
+            Our Commitment
+          </h2>
+
+          <p>
+            We are committed to helping financial institutions innovate
+            with confidence, unlock the full value of their data, and
+            build a smarter, more resilient digital future.
+          </p>
+
+          <p className="font-semibold text-ink">
+            Better Data. Smarter AI. Stronger Tomorrow.
+          </p>
+
+        </Reveal>
+
+        <Reveal
+          delay={250}
+          direction="right"
+          className="mt-14 flex justify-center"
+        >
+          <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
+            <ImageViewer
+              src={imgSrc}
+              alt="Why Stafróf"
+              className="w-full h-auto rounded-xl object-contain"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "contain",
+              }}
+            />
+          </div>
+        </Reveal>
+
+      </div>
+    </section>
+  );
+}
+
+{/* -------------------- Innovation & R&D -------------------- */}
+if (sectionKey === "about" && slug === "innovation") {
+  const imgSrc =
+    SLUG_DOC_IMAGES["innovation"]?.[0] ||
+    topicImageFor(sectionKey, slug);
+
+  return (
+    <section className="min-h-screen bg-surface/95 py-28 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 animate-fade-in">
+
+        <Reveal>
+          <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-6xl text-center">
+            Innovation & R&D
+          </h1>
+        </Reveal>
+
+        <Reveal
+          delay={150}
+          className="mx-auto mt-12 max-w-5xl space-y-6 text-left text-lg leading-8 text-ink-2"
+        >
+          <p>
+            Innovation is at the heart of everything we do. At Stafróf
+            Intelligence Corporation, we continuously invest in research,
+            emerging technologies, and product innovation to help financial
+            institutions stay ahead in a rapidly evolving digital world.
+          </p>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Artificial Intelligence
+            </h3>
+            <p className="mt-2">
+              Advancing AI solutions that enable intelligent
+              decision-making, automation, and business optimization.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Enterprise Data
+            </h3>
+            <p className="mt-2">
+              Building modern data platforms that transform enterprise
+              data into trusted, AI-ready intelligence.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Intelligent Automation
+            </h3>
+            <p className="mt-2">
+              Developing AI-powered automation to streamline operations,
+              improve productivity, and reduce complexity.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Advanced Analytics
+            </h3>
+            <p className="mt-2">
+              Delivering predictive insights and data-driven intelligence
+              that empower better business decisions.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Cloud & Modern Architecture
+            </h3>
+            <p className="mt-2">
+              Designing cloud-native, API-first, and scalable platforms
+              for enterprise agility and future growth.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-ink">
+              Continuous Innovation
+            </h3>
+            <p className="mt-2">
+              Embracing emerging technologies, industry trends, and
+              customer feedback to continuously enhance our products and
+              solutions.
+            </p>
+          </div>
+
+          <h2 className="pt-6 font-display text-2xl font-semibold text-ink">
+            Our Innovation Commitment
+          </h2>
+
+          <p>
+            We are committed to creating intelligent, secure, and
+            future-ready technologies that empower Banking, Financial
+            Services, and Capital Markets organizations to innovate
+            faster, operate smarter, and achieve sustainable growth.
+          </p>
+
+          <p className="font-semibold text-ink">
+            Innovating Today. Empowering Tomorrow.
+          </p>
+
+        </Reveal>
+
+        <Reveal
+          delay={250}
+          direction="right"
+          className="mt-14 flex justify-center"
+        >
+          <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
+            <ImageViewer
+              src={imgSrc}
+              alt="Innovation & R&D - Stafróf"
+              className="w-full h-auto rounded-xl object-contain"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "contain",
+              }}
+            />
+          </div>
+        </Reveal>
+
+      </div>
+    </section>
+  );
+}
+  
+{/* -------------------- Our Commitment -------------------- */}
 if (sectionKey === "about" && slug === "commitment") {
   const imgSrc =
-    SLUG_DOC_IMAGES["commitment"]?.[0] || topicImageFor(sectionKey, slug);
+    SLUG_DOC_IMAGES["commitment"]?.[0] ||
+    topicImageFor(sectionKey, slug);
 
   return (
     <>
       {/* Hero Banner */}
-      <section className="hero-cosmic pt-32 pb-20 relative overflow-hidden">
+      <section className="hero-cosmic relative overflow-hidden pt-28 pb-20 lg:pt-32 lg:pb-24">
         <img
           src={sectionImage(sectionKey)}
           alt=""
@@ -883,63 +1594,149 @@ if (sectionKey === "about" && slug === "commitment") {
         <div className="cosmic-overlay" />
         <div className="cosmic-grid-overlay" />
 
-        <div className="relative mx-auto max-w-5xl px-6">
+        <div className="relative mx-auto max-w-6xl px-6 text-center">
 
           <Reveal delay={150}>
-            <p className="eyebrow-dark mt-7">
+            <p className="eyebrow-dark mt-4 text-center">
               {section.eyebrow}
             </p>
           </Reveal>
 
           <Reveal delay={220}>
-            <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold text-white sm:text-6xl md:text-7xl lg:text-8xl tracking-tight">
+            <h1 className="mt-5 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               {page.title}
             </h1>
           </Reveal>
 
           {page.tagline && (
             <Reveal delay={320}>
-              <p className="mt-6 max-w-3xl text-xl leading-relaxed text-white/75">
+              <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/80 text-center">
                 {page.tagline}
               </p>
             </Reveal>
           )}
 
           <Reveal delay={420}>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
                 to="/contact"
                 className="premium-btn premium-btn-hover"
               >
-                CONTACT US
+                CONTACT OUR TEAM
                 <ArrowRight className="size-4" />
               </Link>
             </div>
           </Reveal>
+
         </div>
       </section>
 
       {/* Content */}
-      <section className="pt-19 pb-32 min-h-screen bg-surface/95">
-        <div className="mx-auto max-w-6xl text-left px-6 space-y-12 text-center animate-fade-in">
+      <section className="min-h-screen bg-surface/95 py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 animate-fade-in">
 
-          <Reveal delay={150} className="text-xl text-ink-2 max-w-5xl mx-auto text-justify">
-            <p>At Stafróf Intelligence Corporation, we are committed to delivering innovative, secure, and enterprise-grade solutions that help Banking, Financial Services, and Capital Markets organizations achieve sustainable business success.</p>
-            <br /><p><b>Customer Success</b></p>
-            <p>We focus on delivering measurable business value and building long-term customer relationships.</p>
-            <br /><p><b>Innovation</b></p>
-            <p>We continuously innovate to solve complex business challenges with AI, data, and intelligent automation.</p>
-            <br /><p><b>Quality</b></p>
-            <p>We are committed to engineering excellence, reliability, and delivering high-quality products.</p>
-            <br /><p><b>Trust & Integrity</b></p>
-            <p>We conduct our business with honesty, transparency, and accountability.</p>
-            <br /><p><b>Security & Privacy</b></p>
-            <p>We design our platforms with security, privacy, and compliance at the core.</p>
-            <br /><p><b>Continuous Improvement</b></p>
-            <p>We embrace learning, feedback, and innovation to continuously enhance our products and services.</p>
-            <br /><br /><p><b>Our Promise</b></p>
-            <p>To be a trusted technology partner, delivering intelligent solutions that enable organizations to innovate with confidence, operate efficiently, and create lasting business value.</p>
+          <Reveal
+            delay={150}
+            className="mx-auto mt-12 max-w-5xl space-y-6 text-left text-lg leading-8 text-ink-2"
+          >
+            <p>
+              At Stafróf Intelligence Corporation, we are committed to
+              delivering innovative, secure, and enterprise-grade
+              solutions that help Banking, Financial Services, and
+              Capital Markets organizations achieve sustainable
+              business success.
+            </p>
 
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Customer Success
+              </h3>
+              <p className="mt-2">
+                We focus on delivering measurable business value and
+                building long-term customer relationships.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Innovation
+              </h3>
+              <p className="mt-2">
+                We continuously innovate to solve complex business
+                challenges with AI, data, and intelligent automation.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Quality
+              </h3>
+              <p className="mt-2">
+                We are committed to engineering excellence,
+                reliability, and delivering high-quality products.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Trust & Integrity
+              </h3>
+              <p className="mt-2">
+                We conduct our business with honesty, transparency,
+                and accountability.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Security & Privacy
+              </h3>
+              <p className="mt-2">
+                We design our platforms with security, privacy,
+                and compliance at the core.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Continuous Improvement
+              </h3>
+              <p className="mt-2">
+                We embrace learning, feedback, and innovation to
+                continuously enhance our products and services.
+              </p>
+            </div>
+
+            <h2 className="pt-6 font-display text-2xl font-semibold text-ink">
+              Our Promise
+            </h2>
+
+            <p>
+              To be a trusted technology partner, delivering
+              intelligent solutions that enable organizations to
+              innovate with confidence, operate efficiently, and
+              create lasting business value.
+            </p>
+
+          </Reveal>
+
+          <Reveal
+            delay={250}
+            direction="right"
+            className="mt-14 flex justify-center"
+          >
+            <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
+              <ImageViewer
+                src={imgSrc}
+                alt="Our Commitment - Stafróf"
+                className="w-full h-auto rounded-xl object-contain"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
+              />
+            </div>
           </Reveal>
 
         </div>
@@ -947,56 +1744,17 @@ if (sectionKey === "about" && slug === "commitment") {
     </>
   );
 }
-
-    {/* -------------------- Join Our Journey -------------------- */}
-  if (sectionKey === "about" && slug === "join") {
-    const imgSrc = SLUG_DOC_IMAGES["join"]?.[0] || topicImageFor(sectionKey, slug);
-    return (
-      <section className="py-32 min-h-screen bg-surface/95">
-        <div className="mx-auto max-w-8xl px-6 space-y-12 text-center animate-fade-in">
-          <Reveal>
-            <h1 className="font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl tracking-tight uppercase">
-              Join Our Journey
-            </h1>
-          </Reveal>
-          <Reveal delay={150} className="text-xl leading-relaxed text-ink-2 max-w-5xl mx-auto text-justify">
-            <p>Be part of the future of Banking, Financial Services, and Capital Markets. Whether you're a customer, partner, investor, or talented professional, we invite you to join us in shaping the next generation of AI-powered enterprise solutions.</p>
-            <br /><p><b>Partner with Us</b></p>
-            <p>Collaborate to deliver innovative technologies and create lasting business value.</p>
-            <br /><p><b>Explore Our Solutions</b></p>
-            <p>Discover how our AI, data, and intelligent automation platforms can accelerate your digital transformation.</p>
-            <br /><p><b>Build Your Career</b></p>
-            <p>Join our growing team and help develop enterprise technologies that power the future of financial services.</p>
-            <br /><p><b>Connect with Us</b></p>
-            <p>Let's discuss how Stafróf can help your organization innovate, transform, and grow.</p>
-
-
-          </Reveal>
-          <Reveal delay={250} direction="right" className="flex justify-center">
-            <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg max-w-5xl">
-              <ImageViewer
-                src={imgSrc}
-                alt="Who We Are - Stafróf"
-                className="w-full h-auto object-contain rounded-xl"
-                style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-    );
-  }
-
-
-  const intro = page.intro ?? page.paragraphs ?? [];
-  const related = section.pages.filter((p) => p.slug !== slug).slice(0, 6);
-  const logoKey = getLogoForPage(sectionKey, slug);
-  const logo = logoKey ? PRODUCT_LOGOS[logoKey] : null;
+ 
+{/* -------------------- Join Our Journey -------------------- */}
+if (sectionKey === "about" && slug === "join") {
+  const imgSrc =
+    SLUG_DOC_IMAGES["join"]?.[0] ||
+    topicImageFor(sectionKey, slug);
 
   return (
     <>
-      {/* === CINEMATIC HERO === */}
-      <section className="hero-cosmic pt-32 pb-20">
+      {/* Hero Banner */}
+      <section className="hero-cosmic relative overflow-hidden pt-28 pb-20 lg:pt-32 lg:pb-24">
         <img
           src={sectionImage(sectionKey)}
           alt=""
@@ -1005,187 +1763,431 @@ if (sectionKey === "about" && slug === "commitment") {
           height={1080}
           className="absolute inset-0 size-full object-cover opacity-90 saturate-125 brightness-110"
         />
+
         <div className="cosmic-overlay" />
         <div className="cosmic-grid-overlay" />
 
-        <div className="relative mx-auto max-w-5xl px-6">
-
-          {logo && (
-            <Reveal delay={100}>
-              <div className="mt-8 flex justify-center">
-                <LogoBox logo={logo} size="xl" />
-              </div>
-            </Reveal>
-          )}
+        <div className="relative mx-auto max-w-6xl px-6 text-center">
 
           <Reveal delay={150}>
-            <p className="eyebrow-dark mt-7">{section.eyebrow}</p>
+            <p className="eyebrow-dark mt-4 text-center">
+              {section.eyebrow}
+            </p>
           </Reveal>
+
           <Reveal delay={220}>
-            <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold text-white sm:text-6xl md:text-7xl lg:text-8xl tracking-tight">
+            <h1 className="mt-5 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               {page.title}
             </h1>
           </Reveal>
+
           {page.tagline && (
             <Reveal delay={320}>
-              <p className="mt-6 max-w-3xl text-xl leading-relaxed text-white/75">{page.tagline}</p>
+              <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/80 text-center">
+                {page.tagline}
+              </p>
             </Reveal>
           )}
 
           <Reveal delay={420}>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link to="/contact" className="premium-btn premium-btn-hover">
-                CONTACT US <ArrowRight className="size-4" />
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+              <Link
+                to="/contact"
+                className="premium-btn premium-btn-hover"
+              >
+                CONTACT OUR TEAM
+                <ArrowRight className="size-4" />
               </Link>
             </div>
           </Reveal>
+
         </div>
       </section>
 
-      {/* Intro + topic visual */}
-      {intro.length > 0 && (() => {
-        const isComingSoon = intro.some(p => p.toLowerCase().includes("coming soon")) || 
-                             (page.paragraphs && page.paragraphs.some(p => p.toLowerCase().includes("coming soon"))) ||
-                             sectionKey === "insights" || sectionKey === "careers";
-        return (
-          <section className="py-20 bg-surface/100">
-            {isComingSoon ? (
-              <div className="mx-auto max-w-3xl px-6">
-                <Reveal>
-                  <div className="space-y-5 text-lg leading-relaxed text-ink-2">
-                    {intro.map((p, i) => (
-                      <p key={i}>{p}</p>
-                    ))}
-                    {page.intro && page.paragraphs && page.paragraphs.map((p, i) => (
-                      <p key={i}>{p}</p>
-                    ))}
-                  </div>
-                </Reveal>
-              </div>
-            ) : (
-              <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-                <Reveal>
-                  <div className="space-y-5 text-lg leading-relaxed text-ink-2">
-                    {intro.map((p, i) => {
-                      if (sectionKey === "about" && slug === "who-we-are" && p.includes("●")) {
-                        return <BulletSplit key={i} text={p} />;
-                      }
-                      return <p key={i}>{p}</p>;
-                    })}
-                    {page.intro && page.paragraphs && page.paragraphs.map((p, i) => (
-                      <p key={i}>{p}</p>
-                    ))}
-                  </div>
-                </Reveal>
-                <Reveal delay={120} direction="right">
-                  <div className="tile-media group relative aspect-[4/3] overflow-hidden rounded-2xl border border-border shadow-[0_30px_60px_-20px_oklch(0.55_0.22_263/0.35)]">
-                    <img
-                      src={topicImageFor(sectionKey, slug)}
-                      alt=""
-                      aria-hidden
-                      loading="lazy"
-                      width={1280}
-                      height={832}
-                      className="absolute inset-0 size-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-cosmic/80 via-cosmic/20 to-transparent" />
-                    <div className="absolute bottom-5 left-5 right-5 z-10 flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-white/80">
-                      <span className="pulse-dot" /> {section.label}
-                    </div>
-                  </div>
-                </Reveal>
-              </div>
-            )}
-          </section>
-        );
-      })()}
+      {/* Content */}
+      <section className="min-h-screen bg-surface/95 py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 animate-fade-in">
 
-      {/* Document Inline Illustrations */}
-      {(() => {
-        const slugKey = slug.toLowerCase();
-        const docImages = SLUG_DOC_IMAGES[slugKey] || SLUG_DOC_IMAGES[slug] || [];
-        if (docImages.length === 0) return null;
-        return (
-          <section className="py-12 bg-[#020718]/30">
-            <div className="mx-auto max-w-5xl px-6 space-y-8 flex flex-col items-center">
-              {docImages.map((imgSrc, idx) => (
-                <Reveal key={idx} delay={idx * 100} direction="right" className="w-full">
-                  <div className="w-full overflow-hidden rounded-2xl border border-border/10 bg-white/[0.02] p-2 shadow-lg">
-                    <ImageViewer
-                      src={imgSrc}
-                      alt={`Document illustration for ${page.title}`}
-                      className="w-full h-auto object-contain rounded-xl"
-                    />
-                  </div>
-                </Reveal>
-              ))}
+          <Reveal
+            delay={150}
+            className="mx-auto mt-12 max-w-5xl space-y-6 text-left text-lg leading-8 text-ink-2"
+          >
+            <p>
+              Be part of the future of Banking, Financial Services,
+              and Capital Markets. Whether you're a customer,
+              partner, investor, or talented professional,
+              we invite you to join us in shaping the next generation
+              of AI-powered enterprise solutions.
+            </p>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Partner with Us
+              </h3>
+              <p className="mt-2">
+                Collaborate with us to deliver innovative technologies
+                and create lasting business value for financial institutions.
+              </p>
             </div>
-          </section>
-        );
-      })()}
 
-      <NamedGrid label="Key Capabilities" items={page.capabilities} accent="brand" />
-      <NamedGrid label={page.subitemsLabel ?? "Our Services"} items={page.subitems} accent="purple" />
-      <ChipList label={page.coreLabel ?? "Core Components"} items={page.core} />
-      <Coverage label={page.coverageLabel ?? "Coverage"} items={page.coverage} />
-      <Benefits items={page.benefits} />
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Explore Our Solutions
+              </h3>
+              <p className="mt-2">
+                Discover how our AI, enterprise data, and intelligent
+                automation platforms can accelerate your digital
+                transformation journey.
+              </p>
+            </div>
 
-      {page.approach && page.approach.length > 0 && (
-        <section className="bg-surface py-20">
-          <div className="mx-auto max-w-4xl px-6">
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Build Your Career
+              </h3>
+              <p className="mt-2">
+                Join our growing team and help build enterprise
+                technologies that power the future of banking and
+                financial services.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-ink">
+                Connect with Us
+              </h3>
+              <p className="mt-2">
+                Let's discuss how Stafróf can help your organization
+                innovate, transform, and achieve sustainable growth.
+              </p>
+            </div>
+
+            <h2 className="pt-6 font-display text-2xl font-semibold text-ink">
+              Together, Let's Shape the Future
+            </h2>
+
+            <p>
+              Whether you're looking to modernize your enterprise,
+              explore strategic partnerships, or build a rewarding
+              career, we're ready to collaborate and create meaningful
+              impact together.
+            </p>
+
+          </Reveal>
+
+          <Reveal
+            delay={250}
+            direction="right"
+            className="mt-14 flex justify-center"
+          >
+            <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
+              <ImageViewer
+                src={imgSrc}
+                alt="Join Our Journey - Stafróf"
+                className="w-full h-auto rounded-xl object-contain"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
+              />
+            </div>
+          </Reveal>
+
+        </div>
+      </section>
+    </>
+  );
+}
+
+  const intro = page.intro ?? page.paragraphs ?? [];
+  const related = section.pages.filter((p) => p.slug !== slug).slice(0, 6);
+  const logoKey = getLogoForPage(sectionKey, slug);
+  const logo = logoKey ? PRODUCT_LOGOS[logoKey] : null;
+return (
+  <>
+    {/* === HERO === */}
+    <section className="hero-cosmic relative overflow-hidden pt-28 pb-20 lg:pt-32 lg:pb-24">
+      <img
+        src={sectionImage(sectionKey)}
+        alt=""
+        aria-hidden
+        width={1920}
+        height={1080}
+        className="absolute inset-0 size-full object-cover opacity-90 saturate-125 brightness-110"
+      />
+
+      <div className="cosmic-overlay" />
+      <div className="cosmic-grid-overlay" />
+
+      <div className="relative mx-auto max-w-6xl px-6 text-center">
+
+        {logo && (
+          <Reveal delay={100}>
+            <div className="mt-6 flex justify-center">
+              <LogoBox logo={logo} size="xl" />
+            </div>
+          </Reveal>
+        )}
+
+        <Reveal delay={150}>
+          <p className="eyebrow-dark mt-4 text-center">
+            {section.eyebrow}
+          </p>
+        </Reveal>
+
+        <Reveal delay={220}>
+          <h1 className="mt-5 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            {page.title}
+          </h1>
+        </Reveal>
+
+        {page.tagline && (
+          <Reveal delay={320}>
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/80 text-center">
+              {page.tagline}
+            </p>
+          </Reveal>
+        )}
+
+        <Reveal delay={420}>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link
+              to="/contact"
+              className="premium-btn premium-btn-hover"
+            >
+              CONTACT OUR TEAM
+              <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </Reveal>
+
+      </div>
+    </section>
+      
+{/* Intro + Topic Visual */}
+{intro.length > 0 &&
+  (() => {
+    const isComingSoon =
+      intro.some((p) => p.toLowerCase().includes("coming soon")) ||
+      (page.paragraphs &&
+        page.paragraphs.some((p) =>
+          p.toLowerCase().includes("coming soon")
+        )) ||
+      sectionKey === "insights" ||
+      sectionKey === "careers";
+
+    return (
+      <section className="bg-surface/100 py-24 lg:py-28">
+        {isComingSoon ? (
+          <div className="mx-auto max-w-5xl px-6">
             <Reveal>
-              <h2 className="font-display text-2xl font-semibold text-ink sm:text-4xl">Our Approach</h2>
-              <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink-2">
-                {page.approach.map((p, i) => <p key={i}>{p}</p>)}
+              <div className="space-y-6 text-left text-lg leading-8 text-ink-2">
+                {intro.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+
+                {page.intro &&
+                  page.paragraphs &&
+                  page.paragraphs.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
               </div>
             </Reveal>
           </div>
-        </section>
-      )}
+        ) : (
+          <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1.25fr_1fr] lg:items-center">
 
-      <PoweredByBlock page={page} />
+            {/* Content */}
+            <Reveal>
+              <div className="space-y-6 text-left text-lg leading-8 text-ink-2">
+                {intro.map((p, i) => {
+                  if (
+                    sectionKey === "about" &&
+                    slug === "who-we-are" &&
+                    p.includes("●")
+                  ) {
+                    return <BulletSplit key={i} text={p} />;
+                  }
 
-      {page.closing && page.closing.length > 0 && (
-        <section className="py-20 bg-surface/100">
-          <div className="mx-auto max-w-4xl px-6 space-y-10">
-            {page.closing.map((c, i) => (
-              <Reveal key={i}>
-                {c.heading && (
-                  <h2 className="font-display text-2xl font-semibold text-ink sm:text-4xl">{c.heading}</h2>
-                )}
-                <div className="mt-4 space-y-4 text-lg leading-relaxed text-ink-2">
-                  {c.paragraphs.map((p, j) => <p key={j}>{p}</p>)}
-                </div>
-              </Reveal>
+                  return <p key={i}>{p}</p>;
+                })}
+
+                {page.intro &&
+                  page.paragraphs &&
+                  page.paragraphs.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+              </div>
+            </Reveal>
+
+            {/* Image */}
+            <Reveal delay={150} direction="right">
+              <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
+
+                <ImageViewer
+                  src={topicImageFor(sectionKey, slug)}
+                  alt={page.title}
+                  className="w-full h-auto rounded-xl object-contain"
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    objectFit: "contain",
+                  }}
+                />
+
+              </div>
+            </Reveal>
+
+          </div>
+        )}
+      </section>
+    );
+  })()}
+  
+  {/* Document Inline Illustrations */}
+{(() => {
+  const slugKey = slug.toLowerCase();
+  const docImages =
+    SLUG_DOC_IMAGES[slugKey] || SLUG_DOC_IMAGES[slug] || [];
+
+  if (docImages.length === 0) return null;
+
+  return (
+    <section className="bg-surface py-20 lg:py-24">
+      <div className="mx-auto max-w-6xl px-6 space-y-10">
+
+        {docImages.map((imgSrc, idx) => (
+          <Reveal
+            key={idx}
+            delay={idx * 120}
+            direction="right"
+          >
+            <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg">
+
+              <ImageViewer
+                src={imgSrc}
+                alt={`${page.title} Illustration ${idx + 1}`}
+                className="w-full h-auto rounded-xl object-contain"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
+              />
+
+            </div>
+          </Reveal>
+        ))}
+
+      </div>
+    </section>
+  );
+})()}
+
+<NamedGrid
+  label="Key Capabilities"
+  items={page.capabilities}
+  accent="brand"
+/>
+
+<NamedGrid
+  label={page.subitemsLabel ?? "Our Services"}
+  items={page.subitems}
+  accent="purple"
+/>
+
+<ChipList
+  label={page.coreLabel ?? "Core Components"}
+  items={page.core}
+/>
+
+<Coverage
+  label={page.coverageLabel ?? "Coverage"}
+  items={page.coverage}
+/>
+
+<Benefits items={page.benefits} />
+
+{page.approach && page.approach.length > 0 && (
+  <section className="bg-surface py-24 lg:py-28">
+    <div className="mx-auto max-w-5xl px-6">
+
+      <Reveal>
+        <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+          Our Approach
+        </h2>
+
+        <div className="mt-8 space-y-6 text-lg leading-8 text-ink-2">
+          {page.approach.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+      </Reveal>
+
+    </div>
+  </section>
+)}
+
+<PoweredByBlock page={page} />
+
+{page.closing && page.closing.length > 0 && (
+  <section className="bg-surface/100 py-24 lg:py-28">
+    <div className="mx-auto max-w-5xl px-6 space-y-14">
+
+      {page.closing.map((c, i) => (
+        <Reveal key={i}>
+
+          {c.heading && (
+            <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+              {c.heading}
+            </h2>
+          )}
+
+          <div className="mt-6 space-y-6 text-lg leading-8 text-ink-2">
+            {c.paragraphs.map((p, j) => (
+              <p key={j}>{p}</p>
             ))}
           </div>
-        </section>
-      )}
 
-      {page.closingTagline && (
-        <section className="hero-cosmic py-20 text-center">
-          <img
-            src={SITE_IMAGES.cta}
-            alt=""
-            aria-hidden
-            loading="lazy"
-            width={1920}
-            height={1080}
-            className="absolute inset-0 size-full object-cover opacity-95 saturate-125 brightness-110"
-          />
-          <div className="cosmic-overlay" />
-          <div className="relative mx-auto max-w-4xl px-6">
-            <p className="font-display text-2xl font-semibold text-white sm:text-4xl">
-              {page.closingTagline}
-            </p>
-          </div>
-        </section>
-      )}
+        </Reveal>
+      ))}
+
+    </div>
+  </section>
+)}
+
+{page.closingTagline && (
+  <section className="hero-cosmic relative overflow-hidden py-20 lg:py-24 text-center">
+
+    <img
+      src={SITE_IMAGES.cta}
+      alt=""
+      aria-hidden
+      loading="lazy"
+      width={1920}
+      height={1080}
+      className="absolute inset-0 size-full object-cover opacity-95 saturate-125 brightness-110"
+    />
+
+    <div className="cosmic-overlay" />
+
+    <div className="relative mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
+
+      <p className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+        {page.closingTagline}
+      </p>
+
+    </div>
+  </section>
+)}
 
       {/* Final CTA */}
-      <section className="py-20">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="hero-cosmic relative overflow-hidden rounded-[2rem] p-12 text-center sm:p-16">
+      <section className="py-24 lg:py-28">
+        <div className="mx-auto max-w-6xl px-6">
+
+          <div className="hero-cosmic relative overflow-hidden rounded-[2rem] px-8 py-16 text-center lg:px-16">
+
             <img
               src={SITE_IMAGES.cta}
               alt=""
@@ -1195,40 +2197,77 @@ if (sectionKey === "about" && slug === "commitment") {
               height={1080}
               className="absolute inset-0 size-full object-cover opacity-95 saturate-125 brightness-110"
             />
+
             <div className="cosmic-overlay" />
+            <div className="cosmic-grid-overlay" />
+
             <div className="relative">
+
               <span className="chip-cosmic">
                 <span className="pulse-dot" />
-                Ready to talk
+                Ready to Transform?
               </span>
-              <h2 className="mt-5 font-display text-3xl font-semibold text-white sm:text-5xl">
-                See {page.title} in action
+
+              <h2 className="mt-6 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+                Discover {page.title} in Action
               </h2>
-              <Link to="/contact" className="premium-btn premium-btn-hover mt-8 inline-flex">
-                CONTACT US <ArrowRight className="size-4" />
-              </Link>
+
+              <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/80 text-center">
+                Connect with our experts to explore how Stafróf can help
+                accelerate your digital transformation journey with
+                AI-powered, enterprise-grade solutions.
+              </p>
+
+              <div className="mt-10 flex flex-wrap justify-center gap-4">
+
+                <Link
+                  to="/contact"
+                  className="premium-btn premium-btn-hover"
+                >
+                  CONTACT OUR TEAM
+                  <ArrowRight className="size-4" />
+                </Link>
+
+              </div>
+
             </div>
+
           </div>
+
         </div>
       </section>
 
-      {/* Related */}
+      {/* Related Pages */}
       {related.length > 0 && (
-        <section className="py-20">
+        <section className="bg-surface py-24 lg:py-28">
+
           <div className="mx-auto max-w-7xl px-6">
+
             <Reveal>
-              <p className="eyebrow">More in {section.label}</p>
-              <h2 className="mt-2 font-display text-3xl font-semibold text-ink sm:text-4xl">Related</h2>
+              <p className="eyebrow">
+                Explore More
+              </p>
+
+              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                Related {section.label}
+              </h2>
             </Reveal>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+            <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
               {related.map((r, i) => (
-                <Reveal key={r.slug} delay={(i % 3) * 90}>
+                <Reveal
+                  key={r.slug}
+                  delay={(i % 3) * 100}
+                >
                   <Link
                     to={`${section.basePath}/$slug` as never}
                     params={{ slug: r.slug } as never}
-                    className="group tile-media-hover card-spotlight block h-full overflow-hidden rounded-2xl border border-border bg-white transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-[0_24px_60px_-20px_oklch(0.55_0.22_263/0.35)]"
+                    className="group block h-full overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-brand/40 hover:shadow-xl"
                   >
-                    <div className="tile-media aspect-[16/9]">
+
+                    <div className="overflow-hidden aspect-[16/9]">
+
                       <img
                         src={topicImageFor(sectionKey, r.slug)}
                         alt=""
@@ -1236,23 +2275,36 @@ if (sectionKey === "about" && slug === "commitment") {
                         loading="lazy"
                         width={1280}
                         height={832}
-                        className="absolute inset-0 size-full object-cover"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
+
                     </div>
-                    <div className="relative p-6">
-                      <h3 className="font-display text-lg font-semibold text-ink group-hover:text-brand transition-colors">
+
+                    <div className="p-6">
+
+                      <h3 className="font-display text-xl font-semibold text-ink transition-colors group-hover:text-brand">
                         {r.title}
                       </h3>
-                      <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{r.tagline}</p>
-                      <div className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand">
-                        Learn more <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+
+                      <p className="mt-3 line-clamp-2 text-base leading-7 text-ink-2">
+                        {r.tagline}
+                      </p>
+
+                      <div className="mt-6 inline-flex items-center gap-2 font-semibold text-brand">
+                        Learn More
+                        <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                       </div>
+
                     </div>
+
                   </Link>
                 </Reveal>
               ))}
+
             </div>
+
           </div>
+
         </section>
       )}
     </>
@@ -1269,115 +2321,207 @@ function NamedGrid({
   accent: "brand" | "purple";
 }) {
   if (!items || items.length === 0) return null;
+
   return (
-    <section className="py-20 bg-gradient-to-b from-transparent to-slate-50/50">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="bg-gradient-to-b from-transparent to-slate-50/50 py-24 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6">
+
         <Reveal>
-          <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl tracking-tight border-l-4 border-brand pl-4 mb-2 text-white">{label}</h2>
+          <div className="border-l-4 border-brand pl-5">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl text-white">
+              {label}
+            </h2>
+          </div>
         </Reveal>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
           {items.map((it, i) => {
             const IconComp = getPremiumIcon(it.name);
+
             return (
-              <Reveal key={i} delay={(i % 3) * 90}>
-                <div className="group relative h-full overflow-hidden p-8 bg-white border border-slate-100 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-15px_rgba(0,230,118,0.12)] hover:border-brand/40 transition-all duration-300">
+              <Reveal
+                key={i}
+                delay={(i % 3) * 100}
+              >
+                <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-brand/40 hover:shadow-xl">
+
                   <div
                     className={
-                      "flex size-12 items-center justify-center rounded-xl text-white shadow-md transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 " +
-                      (accent === "brand" 
-                        ? "bg-gradient-to-br from-[#ff7a00] to-orange-500 shadow-orange-500/20" 
-                        : "bg-gradient-to-br from-brand-purple to-indigo-600 shadow-purple-500/20")
+                      "flex h-14 w-14 items-center justify-center rounded-2xl text-white transition-all duration-300 group-hover:scale-110 " +
+                      (accent === "brand"
+                        ? "bg-gradient-to-br from-[#ff7a00] to-orange-500"
+                        : "bg-gradient-to-br from-brand-purple to-indigo-600")
                     }
                   >
-                    <IconComp className="size-5 stroke-[2.5]" />
+                    <IconComp className="h-6 w-6 stroke-[2.2]" />
                   </div>
-                  <h3 className="mt-6 font-display text-lg font-bold text-ink group-hover:text-brand transition-colors duration-200">{it.name}</h3>
-                  {it.desc && <p className="mt-3 text-sm leading-relaxed text-ink-2/80 text-justify">{it.desc}</p>}
+
+                  <h3 className="mt-6 font-display text-xl font-semibold text-ink transition-colors group-hover:text-brand">
+                    {it.name}
+                  </h3>
+
+                  {it.desc && (
+                    <p className="mt-4 flex-1 text-base leading-7 text-ink-2">
+                      {it.desc}
+                    </p>
+                  )}
+
                 </div>
               </Reveal>
             );
           })}
+
         </div>
+
       </div>
     </section>
   );
 }
 
-function ChipList({ label, items }: { label: string; items?: string[] }) {
+function ChipList({
+  label,
+  items,
+}: {
+  label: string;
+  items?: string[];
+}) {
   if (!items || items.length === 0) return null;
+
   return (
-    <section className="bg-surface py-20">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="bg-surface py-24 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6">
+
         <Reveal>
-          <h2 className="font-display text-2xl font-semibold text-ink sm:text-4xl">{label}</h2>
+          <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+            {label}
+          </h2>
         </Reveal>
-        <div className="mt-8 flex flex-wrap gap-2">
+
+        <div className="mt-10 flex flex-wrap gap-4">
           {items.map((it, i) => (
             <span
               key={i}
-              className="rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-ink-2 transition-colors hover:border-brand/40 hover:text-brand"
+              className="rounded-full border border-border bg-white px-5 py-3 text-sm font-medium text-ink transition-all duration-300 hover:border-brand hover:bg-brand hover:text-white"
             >
               {it}
             </span>
           ))}
         </div>
+
       </div>
     </section>
   );
 }
 
-function Coverage({ label, items }: { label: string; items?: string[] }) {
+function Coverage({
+  label,
+  items,
+}: {
+  label: string;
+  items?: string[];
+}) {
   if (!items || items.length === 0) return null;
+
   const [first, ...rest] = items;
-  const looksLikeIntro = first.includes(":") || first.split(" ").length > 4;
+  const looksLikeIntro =
+    first.includes(":") || first.split(" ").length > 4;
+
   const intro = looksLikeIntro ? first : undefined;
   const list = looksLikeIntro ? rest : items;
+
   return (
-    <section className="py-20">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="bg-surface py-24 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6">
+
         <Reveal>
-          <h2 className="font-display text-2xl font-semibold text-ink sm:text-4xl text-white">{label}</h2>
-          {intro && <p className="mt-4 text-lg text-ink-2">{intro}</p>}
+
+          <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+            {label}
+          </h2>
+
+          {intro && (
+            <p className="mt-6 max-w-4xl text-lg leading-8 text-ink-2">
+              {intro}
+            </p>
+          )}
+
         </Reveal>
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
           {list.map((it, i) => (
             <div
               key={i}
-              className="group flex items-center gap-3 rounded-xl border border-border bg-white px-4 py-3 text-sm text-ink transition-all hover:border-brand/40 hover:translate-x-1"
+              className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-lg"
             >
-              <span className="size-1.5 shrink-0 rounded-full bg-gradient-to-br from-brand to-brand-purple" />
-              {it}
+              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-br from-brand to-brand-purple" />
+
+              <span className="text-base leading-7 text-ink">
+                {it}
+              </span>
+
             </div>
           ))}
+
         </div>
+
       </div>
     </section>
   );
 }
 
-function Benefits({ items }: { items?: string[] }) {
+function Benefits({
+  items,
+}: {
+  items?: string[];
+}) {
   if (!items || items.length === 0) return null;
+
   return (
-    <section className="py-20 bg-gradient-to-br from-[#FFF8F4] to-[#FFF0E5] border-b-2 border-orange-500">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="bg-gradient-to-br from-[#FFF8F4] to-[#FFF0E5] py-24 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6">
+
         <Reveal>
-          <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl tracking-tight border-l-4 border-[#ff7a00] pl-4 mb-2">Business Benefits</h2>
+
+          <div className="border-l-4 border-[#ff7a00] pl-5">
+
+            <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+              Business Benefits
+            </h2>
+
+          </div>
+
         </Reveal>
-        <ul className="mt-10 grid gap-6 sm:grid-cols-2">
+
+        <div className="mt-14 grid gap-8 sm:grid-cols-2">
+
           {items.map((b, i) => {
             const IconComp = getPremiumIcon(b);
+
             return (
-              <Reveal as="li" key={i} delay={(i % 2) * 80}>
-                <div className="flex gap-4 p-6 bg-white border border-orange-100 rounded-2xl shadow-[0_6px_24px_-6px_rgba(234,88,12,0.06)] hover:shadow-[0_20px_40px_-12px_rgba(234,88,12,0.15)] hover:border-orange-300 transition-all duration-300 group">
-                  <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-orange-50 text-[#ff7a00] group-hover:scale-110 transition-transform">
-                    <IconComp className="size-5 stroke-[2.5]" />
+              <Reveal
+                as="div"
+                key={i}
+                delay={(i % 2) * 100}
+              >
+                <div className="group flex h-full gap-5 rounded-2xl border border-orange-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-300 hover:shadow-xl">
+
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-orange-50 text-[#ff7a00] transition-transform duration-300 group-hover:scale-110">
+                    <IconComp className="h-6 w-6 stroke-[2.2]" />
                   </div>
-                  <span className="text-base font-medium text-ink-2/90 leading-relaxed text-justify">{b}</span>
+
+                  <p className="text-base leading-7 text-ink-2">
+                    {b}
+                  </p>
+
                 </div>
               </Reveal>
             );
           })}
-        </ul>
+
+        </div>
+
       </div>
     </section>
   );
@@ -1385,23 +2529,42 @@ function Benefits({ items }: { items?: string[] }) {
 
 function PoweredByBlock({ page }: { page: SubPage }) {
   const pb = page.poweredBy;
+
   if (!pb || !pb.items || pb.items.length === 0) return null;
+
   return (
-    <section className="py-20 bg-surface/100">
-      <div className="mx-auto max-w-4xl px-6">
+    <section className="bg-surface/100 py-24 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6">
+
         <Reveal>
-          <h2 className="font-display text-2xl font-semibold text-ink sm:text-4xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
             {page.poweredByLabel ?? "Powered by Stafróf Platforms"}
           </h2>
         </Reveal>
-        <ul className="mt-6 space-y-3">
+
+        <div className="mt-12 grid gap-6">
+
           {pb.items.map((it, i) => (
-            <li key={i} className="flex gap-3 text-ink-2">
-              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-purple" />
-              <span>{it}</span>
-            </li>
+            <Reveal
+              key={i}
+              delay={i * 70}
+            >
+              <div className="group flex items-start gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-lg">
+
+                <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-purple text-white">
+                  ✓
+                </div>
+
+                <p className="text-base leading-7 text-ink-2">
+                  {it}
+                </p>
+
+              </div>
+            </Reveal>
           ))}
-        </ul>
+
+        </div>
+
       </div>
     </section>
   );
@@ -1413,120 +2576,176 @@ export function SectionOverview({ sectionKey }: { sectionKey: SectionKey }) {
 
   return (
     <>
-      <section className="hero-cosmic pt-32 pb-20">
-        <img
-          src={sectionImage(sectionKey)}
-          alt=""
-          aria-hidden
-          width={1920}
-          height={1080}
-          className="absolute inset-0 size-full object-cover opacity-90 saturate-125 brightness-110"
-        />
-        <div className="cosmic-overlay" />
-        <div className="cosmic-grid-overlay" />
-        <div className="relative mx-auto max-w-7xl px-6">
-          <Reveal>
-            <p className="eyebrow-dark">{section.eyebrow}</p>
-          </Reveal>
-          {meta?.logo && (
-            <Reveal delay={80}>
-              <div className="mt-6 flex justify-center">
-                <LogoBox logo={PRODUCT_LOGOS[meta.logo]} size="xl" />
-              </div>
-            </Reveal>
-          )}
-          <Reveal delay={160}>
-            <h1 className="mt-6 max-w-4xl font-display text-5xl font-bold text-white sm:text-6xl md:text-7xl lg:text-8xl tracking-tight">
-              {meta?.headline ?? section.headline}
-            </h1>
-          </Reveal>
-          {(meta?.tagline ?? section.summary) && (
-            <Reveal delay={260}>
-              <p className="mt-6 max-w-3xl text-xl leading-relaxed text-white/75">{meta?.tagline ?? section.summary}</p>
-            </Reveal>
-          )}
-          {meta?.intro && meta.intro.length > 0 && (
-            <Reveal delay={340}>
-              <div className="mt-8 max-w-3xl space-y-4 text-lg leading-relaxed text-white/70">
-                {meta.intro.map((p, i) => <p key={i}>{p}</p>)}
-              </div>
-            </Reveal>
-          )}
-          <Reveal delay={440}>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link to="/contact" className="btn-glow btn-glow-hover">
-                CONTACT US <ArrowRight className="size-4" />
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <section className="hero-cosmic relative overflow-hidden pt-32 pb-24 lg:pb-28">
+  <img
+    src={sectionImage(sectionKey)}
+    alt=""
+    aria-hidden
+    width={1920}
+    height={1080}
+    className="absolute inset-0 size-full object-cover opacity-90 saturate-125 brightness-110"
+  />
 
-      <section className="py-20 bg-white/95">
-        <div className="mx-auto max-w-7xl px-6">
-          {meta?.gridHeading && (
-            <Reveal>
-              <div className="mb-10">
-                <h2 className="font-display text-2xl font-semibold text-ink sm:text-4xl">{meta.gridHeading}</h2>
-                {meta.gridSubheading && (
-                  <p className="mt-3 text-ink-2">{meta.gridSubheading}</p>
-                )}
-              </div>
-            </Reveal>
-          )}
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {section.pages.map((p, i) => {
-              const logoKey = getLogoForPage(sectionKey, p.slug);
-              const logo = logoKey ? PRODUCT_LOGOS[logoKey] : null;
-              return (
-                <Reveal key={p.slug} delay={(i % 3) * 80}>
-                  <Link
-                    to={`${section.basePath}/$slug` as never}
-                    params={{ slug: p.slug } as never}
-                    className="group tile-media-hover card-spotlight relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-[0_30px_60px_-20px_oklch(0.55_0.22_263/0.35)]"
-                  >
-                    <div className="absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-brand/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                    <div className="tile-media aspect-[16/9]">
-                      <img
-                        src={topicImageFor(sectionKey, p.slug)}
-                        alt=""
-                        aria-hidden
-                        loading="lazy"
-                        width={1280}
-                        height={832}
-                        className="absolute inset-0 size-full object-cover"
-                      />
-                      {logo && (
-                        <div className="absolute bottom-3 left-3 z-10 bg-white/95 backdrop-blur-md rounded-lg p-1.5 shadow-md">
-                          <LogoBox logo={logo} size="md" />
-                        </div>
-                      )}
-                      <span className="absolute top-3 right-3 z-10 rounded-full border border-white/15 bg-white/10 px-2.5 py-1 text-[10px] font-mono uppercase tracking-widest text-white/85 backdrop-blur-md">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                    <div className="relative flex flex-1 flex-col p-7">
-                      <h3 className="font-display text-xl font-semibold text-ink group-hover:text-brand transition-colors">
-                        {p.title}
-                      </h3>
-                      <p className="mt-3 flex-1 text-1 leading-relaxed text-ink-2 text-left">
-                        {(() => {
-                          const text = p.tagline || "";
-                          const firstPeriod = text.indexOf(".");
-                          return firstPeriod === -1 ? text : text.substring(0, firstPeriod + 1);
-                        })()}
-                      </p>
-                      <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-brand">
-                        Explore <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
-                      </span>
-                    </div>
-                  </Link>
-                </Reveal>
-              );
-            })}
-          </div>
+  <div className="cosmic-overlay" />
+  <div className="cosmic-grid-overlay" />
+
+  <div className="relative mx-auto max-w-7xl px-6 text-center">
+
+    <Reveal>
+      <p className="eyebrow-dark">
+        {section.eyebrow}
+      </p>
+    </Reveal>
+
+    {meta?.logo && (
+      <Reveal delay={80}>
+        <div className="mt-8 flex justify-center">
+          <LogoBox
+            logo={PRODUCT_LOGOS[meta.logo]}
+            size="xl"
+          />
         </div>
-      </section>
+      </Reveal>
+    )}
+
+    <Reveal delay={160}>
+      <h1 className="mx-auto mt-8 max-w-5xl font-display text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
+        {meta?.headline ?? section.headline}
+      </h1>
+    </Reveal>
+
+    {(meta?.tagline ?? section.summary) && (
+      <Reveal delay={260}>
+        <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-white/80">
+          {meta?.tagline ?? section.summary}
+        </p>
+      </Reveal>
+    )}
+
+    {meta?.intro && meta.intro.length > 0 && (
+      <Reveal delay={340}>
+        <div className="mx-auto mt-8 max-w-3xl space-y-5 text-lg leading-8 text-white/75">
+          {meta.intro.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+      </Reveal>
+    )}
+
+    <Reveal delay={440}>
+      <div className="mt-12 flex flex-wrap justify-center gap-4">
+        <Link
+          to="/contact"
+          className="btn-glow btn-glow-hover"
+        >
+          CONTACT US
+          <ArrowRight className="size-4" />
+        </Link>
+      </div>
+    </Reveal>
+
+  </div>
+</section>
+
+      <section className="bg-white/95 py-24 lg:py-28">
+  <div className="mx-auto max-w-7xl px-6">
+
+    {meta?.gridHeading && (
+      <Reveal>
+        <div className="mb-14">
+
+          <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+            {meta.gridHeading}
+          </h2>
+
+          {meta.gridSubheading && (
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-ink-2">
+              {meta.gridSubheading}
+            </p>
+          )}
+
+        </div>
+      </Reveal>
+    )}
+
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+      {section.pages.map((p, i) => {
+        const logoKey = getLogoForPage(sectionKey, p.slug);
+        const logo = logoKey ? PRODUCT_LOGOS[logoKey] : null;
+
+        return (
+          <Reveal
+            key={p.slug}
+            delay={(i % 3) * 100}
+          >
+            <Link
+              to={`${section.basePath}/$slug` as never}
+              params={{ slug: p.slug } as never}
+              className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-brand/40 hover:shadow-2xl"
+            >
+
+              <div className="absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-brand/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+              <div className="tile-media relative aspect-[16/10] overflow-hidden">
+
+                <img
+                  src={topicImageFor(sectionKey, p.slug)}
+                  alt=""
+                  aria-hidden
+                  loading="lazy"
+                  width={1280}
+                  height={832}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+
+                {logo && (
+                  <div className="absolute bottom-4 left-4 z-10 rounded-xl bg-white/95 p-2 shadow-lg backdrop-blur-md">
+                    <LogoBox
+                      logo={logo}
+                      size="md"
+                    />
+                  </div>
+                )}
+
+                <span className="absolute right-4 top-4 z-10 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-semibold tracking-widest text-white backdrop-blur-md">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+              </div>
+
+              <div className="flex flex-1 flex-col p-8">
+
+                <h3 className="font-display text-2xl font-semibold leading-tight text-ink transition-colors group-hover:text-brand">
+                  {p.title}
+                </h3>
+
+                <p className="mt-4 flex-1 text-base leading-7 text-ink-2 text-left">
+                  {(() => {
+                    const text = p.tagline || "";
+                    const firstPeriod = text.indexOf(".");
+                    return firstPeriod === -1
+                      ? text
+                      : text.substring(0, firstPeriod + 1);
+                  })()}
+                </p>
+
+                <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-brand">
+                  Explore
+                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+
+              </div>
+
+            </Link>
+          </Reveal>
+        );
+      })}
+
+    </div>
+
+  </div>
+</section>
     </>
   );
 }
