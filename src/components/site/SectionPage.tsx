@@ -294,6 +294,34 @@ if (sectionKey === "about" && slug === "our-story") {
   );
 }
 
+
+  {/* -------------------- Our DNA -------------------- */}
+  if (sectionKey === "about" && slug === "our-dna") {
+    const imgSrc = SLUG_DOC_IMAGES["our-dna"]?.[0] || topicImageFor(sectionKey, slug);
+    return (
+      <section className="py-32 min-h-screen bg-surface/95">
+        <div className="mx-auto max-w-8xl px-6 space-y-12 text-center animate-fade-in">
+          <Reveal>
+            <h1 className="font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl tracking-tight uppercase">
+              Our DNA
+            </h1>
+          </Reveal>
+          
+          <Reveal delay={250} direction="right" className="flex justify-center">
+            <div className="overflow-hidden rounded-2xl border border-border/10 bg-white/40 p-2 shadow-lg max-w-5xl">
+              <ImageViewer
+                src={imgSrc}
+                alt="Who We Are - Stafróf"
+                className="w-full h-auto object-contain rounded-xl"
+                style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    );
+  }
+
   {/* -------------------- Board of Directors  -------------------- */}
   if (sectionKey === "about" && slug === "board-of-directors") {
     const imgSrc = SLUG_DOC_IMAGES["board-of-directors"]?.[0] || topicImageFor(sectionKey, slug);
@@ -1396,7 +1424,7 @@ export function SectionOverview({ sectionKey }: { sectionKey: SectionKey }) {
         />
         <div className="cosmic-overlay" />
         <div className="cosmic-grid-overlay" />
-        <div className="relative mx-auto max-w-5xl px-6">
+        <div className="relative mx-auto max-w-7xl px-6">
           <Reveal>
             <p className="eyebrow-dark">{section.eyebrow}</p>
           </Reveal>
@@ -1434,7 +1462,7 @@ export function SectionOverview({ sectionKey }: { sectionKey: SectionKey }) {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-20 bg-white/95">
         <div className="mx-auto max-w-7xl px-6">
           {meta?.gridHeading && (
             <Reveal>
@@ -1481,7 +1509,7 @@ export function SectionOverview({ sectionKey }: { sectionKey: SectionKey }) {
                       <h3 className="font-display text-xl font-semibold text-ink group-hover:text-brand transition-colors">
                         {p.title}
                       </h3>
-                      <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-2">
+                      <p className="mt-3 flex-1 text-1 leading-relaxed text-ink-2 text-left">
                         {(() => {
                           const text = p.tagline || "";
                           const firstPeriod = text.indexOf(".");

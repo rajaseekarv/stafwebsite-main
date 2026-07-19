@@ -27,7 +27,7 @@ for sec_key, slug in all_slugs:
     is_mapped = match_str in ts_content.lower() or match_str_single in ts_content.lower()
     
     # Check for about sections
-    if sec_key == "about" and slug in ["who-we-are", "vision", "board-of-directors", "leadership-team", "design-thinking", "ai-principles", "data-strategy", "what-we-do", "industries", "why-stafrof", "innovation", "commitment", "join", "our-story"]:
+    if sec_key == "about" and slug in ["who-we-are", "vision", "our-dna", "board-of-directors", "leadership-team", "design-thinking", "ai-principles", "data-strategy", "what-we-do", "industries", "why-stafrof", "innovation", "commitment", "join", "our-story"]:
         is_mapped = True
         
     if not is_mapped:

@@ -707,5 +707,11 @@ header { background: var(--brand-dark-blue); padding: 0 5%; }
 .hero-cosmic-content { margin-left: 2%; margin-top: 15%; }
 .max-w-7xl { max-width: 90%; }
 html, body { overflow-x: hidden; }
+@media screen and (max-width: 1600px) {
+  header { background: var(--brand-dark-blue); padding: 0; }
+}
+@media screen and (max-width: 1400px) {
+  .menu-wrap > a { font-size: 14px; padding-inline: 3px; }
+}
 
 

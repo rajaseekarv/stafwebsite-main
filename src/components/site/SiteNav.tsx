@@ -20,8 +20,8 @@ export function SiteNav() {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 w-full bg-white transition-all border-b border-black/5 h-16 lg:h-20 flex items-center",
-        scrolled && "shadow-sm",
+        "fixed top-0 inset-x-0 z-50 w-full bg-[#020A23] transition-all border-b border-white/10 h-16 lg:h-20 flex items-center",
+        scrolled && "shadow-[0_10px_40px_rgba(0,0,0,.35)]",
       )}
     >
       <div className="w-full h-full flex items-center justify-between pl-0.5 pr-2 lg:pl-1 lg:pr-4">
@@ -30,7 +30,7 @@ export function SiteNav() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex flex-1 items-center justify-center gap-[clamp(4px,0.5vw,10px)] whitespace-nowrap min-w-0" aria-label="Primary">
+        <nav className="hidden xl:flex flex-1 items-center justify-center gap-[clamp(4px,0.5vw,10px)] whitespace-nowrap min-w-0">
           {SITE.sections
             .filter((s) => ["about", "products", "platforms", "solutions", "services", "consulting", "segments", "partners", "insights"].includes(s.key))
             .map((section) => (
@@ -38,7 +38,7 @@ export function SiteNav() {
             ))}
         </nav>
 
-        <div className="hidden lg:block shrink-0 ml-2 contact-menu-btn">
+        <div className="hidden xl:block shrink-0 ml-2 contact-menu-btn">
           <Button asChild size="sm" className="rounded-full px-2 lg:px-3 xl:px-4 text-xs xl:text-sm shrink-0">
             <Link to="/contact">CONTACT US</Link>
           </Button>
@@ -47,22 +47,22 @@ export function SiteNav() {
         {/* Mobile */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="lg:hidden text-black hover:text-black hover:bg-black/5" aria-label="Open menu">
+            <Button variant="ghost" size="icon" className="xl:hidden text-black hover:text-black hover:bg-white/10" aria-label="Open menu">
               <Menu className="size-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-full max-w-sm overflow-y-auto p-0">
+          <SheetContent side="right" className="w-full max-w-sm overflow-y-auto p-0 bg-[#020A23] border-l border-white/10">
             <SheetTitle className="sr-only">Site navigation</SheetTitle>
             <div className="flex items-center justify-between border-b px-5 py-4">
               <Logo />
               <Button variant="ghost" size="icon" onClick={() => setOpen(false)} aria-label="Close menu">
-                <X className="size-5" />
+                <X className="size-5 text-white" />
               </Button>
             </div>
             <div className="px-5 py-4">
               {SITE.sections.map((section) => (
                 <details key={section.key} className="group border-b py-3 last:border-none">
-                  <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-ink">
+                  <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-white">
                     {section.label}
                     <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
                   </summary>
@@ -73,7 +73,7 @@ export function SiteNav() {
                           to={`${section.basePath}/$slug` as never}
                           params={{ slug: p.slug } as never}
                           onClick={() => setOpen(false)}
-                          className="block rounded-md px-2 py-1.5 text-sm text-ink-2 hover:bg-surface hover:text-brand"
+                          className="block rounded-md px-2 py-1.5 text-sm text-white/70 hover:bg-white/10 hover:text-[#FF7A00]"
                         >
                           {cleanMenuTitle(p.title, section.key)}
                         </Link>
@@ -117,10 +117,10 @@ function NavDropdown({ sectionKey, align = "center" }: { sectionKey: SectionKey;
       <Link
         to={section.basePath as never}
         onClick={close}
-        className="flex items-center gap-[2px] rounded-full px-1 lg:px-[6px] xl:px-[8px] py-1.5 text-[11px] lg:text-[13px] xl:text-[14px] font-semibold tracking-tight text-black transition-colors hover:bg-black/5 group"
+        className="flex items-center gap-[2px] rounded-full px-1 lg:px-[6px] xl:px-[8px] py-1.5 text-[11px] lg:text-[13px] xl:text-[14px] font-semibold tracking-tight text-white transition-colors hover:bg-black/5 group"
       >
         {section.label}
-        <ChevronDown className={cn("size-3 lg:size-4 opacity-90 transition-transform text-black group-hover:text-black", isOpen && "rotate-180")} />
+        <ChevronDown className={cn("size-3 lg:size-4 opacity-90 transition-transform text-white group-hover:text-white", isOpen && "rotate-180")} />
       </Link>
       <div
         className={cn(
@@ -180,10 +180,10 @@ function MoreDropdown() {
     >
       <button
         onClick={close}
-        className="flex items-center gap-[2px] rounded-full px-1 lg:px-[4px] xl:px-[6px] py-1.5 text-xs lg:text-[15px] font-semibold tracking-tight text-black transition-colors hover:bg-black/5 group cursor-pointer"
+        className="flex items-center gap-[2px] rounded-full px-1 lg:px-[4px] xl:px-[6px] py-1.5 text-xs lg:text-[15px] font-semibold tracking-tight text-white transition-colors hover:bg-black/5 group cursor-pointer"
       >
         MORE
-        <ChevronDown className={cn("size-3 lg:size-4 opacity-90 transition-transform text-black group-hover:text-black", isOpen && "rotate-180")} />
+        <ChevronDown className={cn("size-3 lg:size-4 opacity-90 transition-transform text-white group-hover:text-black", isOpen && "rotate-180")} />
       </button>
 
       <div

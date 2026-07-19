@@ -17,6 +17,7 @@ import image16 from "@/assets/doc_extracted/image16.png";
 import image17 from "@/assets/doc_extracted/image17.png";
 import image18 from "@/assets/doc_extracted/Join-our-journey.png";
 import image19 from "@/assets/doc_extracted/image19.png";
+import image20 from "@/assets/doc_extracted/Our-DNA-Principles.png";
 
 export const DOC_IMAGES = {
   image1,
@@ -38,11 +39,13 @@ export const DOC_IMAGES = {
   image17,
   image18,
   image19,
+  image20,
 };
 
 export const SLUG_DOC_IMAGES: Record<string, string[]> = {
   "who-we-are": [image7],
   "vision": [image8],
+  "our-dna": [image20],
   "board-of-directors": [image10],
   "leadership-team": [image11],
   "design-thinking": [image12],

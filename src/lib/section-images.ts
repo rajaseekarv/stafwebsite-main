@@ -70,6 +70,7 @@ import topicIntegration from "@/assets/topic-integration.jpg";
 // About — per-card cinematic imagery
 import aboutWhoWeAre from "@/assets/about-who-we-are.jpg";
 import aboutVision from "@/assets/about-vision.jpg";
+import aboutDna from "@/assets/about-vision.jpg";
 import aboutBoard from "@/assets/about-board.jpg";
 import aboutLeadership from "@/assets/about-leadership.jpg";
 import aboutDesignThinking from "@/assets/about-design-thinking.jpg";
@@ -86,6 +87,7 @@ import aboutJoin from "@/assets/about-join.jpg";
 const ABOUT_SLUG_IMAGES: Record<string, string> = {
   "who-we-are": aboutWhoWeAre,
   "vision": aboutVision,
+  "our-dna": aboutDna,
   "our-story": topicAbout,
   "board-of-directors": aboutBoard,
   "leadership-team": aboutLeadership,

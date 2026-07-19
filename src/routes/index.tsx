@@ -419,7 +419,7 @@ function Home() {
                 </p>
                 
                 <div className="text-base text-white/85 text-left">
-                  <p className="font-semibold text-white mb-4 text-lg">Our flagship platforms include:</p>
+                  <p className="font-semibold text-black mb-4 text-lg">Our flagship platforms include:</p>
                   <div className="space-y-4">
                     <div className="bg-gradient-to-b from-[#020b2d] via-[#040e3d] to-[#020b2d] backdrop-blur-md border border-white/10 p-5 rounded-xl hover:border-brand/40 transition-all shadow-md group">
                       <span className="font-bold text-lg block mb-1 bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-200 bg-clip-text text-transparent group-hover:brightness-110 transition-all">RevNexure 360° Suite</span>
